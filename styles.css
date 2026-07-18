@@ -1237,6 +1237,7 @@ p {
 
 .checkout-form {
   grid-template-columns: 1fr;
+  gap: 11px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -1405,12 +1406,14 @@ select:focus {
 
 .cart-panel {
   width: min(460px, calc(100vw - 22px));
-  height: calc(100vh - 22px);
+  height: calc(100dvh - 22px);
+  max-height: calc(100dvh - 22px);
   display: grid;
-  grid-template-rows: auto 1fr auto auto auto;
-  gap: 18px;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 14px;
   margin: 11px 11px 11px auto;
-  padding: 18px;
+  padding: 16px;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #17202a;
@@ -1468,13 +1471,21 @@ select:focus {
   font-size: 1.3rem;
 }
 
-.cart-items {
+.cart-body {
   min-height: 0;
   overflow: auto;
   display: grid;
   align-content: start;
-  gap: 12px;
+  gap: 14px;
   padding-right: 2px;
+}
+
+.cart-items {
+  min-height: 0;
+  overflow: visible;
+  display: grid;
+  align-content: start;
+  gap: 12px;
 }
 
 .cart-empty {
@@ -1578,9 +1589,16 @@ select:focus {
 
 .cart-summary {
   display: grid;
-  gap: 8px;
-  padding-top: 14px;
+  gap: 6px;
+  padding-top: 12px;
   border-top: 1px solid var(--line);
+}
+
+.cart-footer {
+  display: grid;
+  gap: 12px;
+  padding-top: 2px;
+  background: #17202a;
 }
 
 .cart-summary div {
@@ -2023,8 +2041,10 @@ select:focus {
 
   .cart-panel {
     width: calc(100vw - 16px);
-    height: calc(100vh - 16px);
+    height: calc(100dvh - 16px);
+    max-height: calc(100dvh - 16px);
     margin: 8px;
+    padding: 13px;
   }
 
   .floating-dock {

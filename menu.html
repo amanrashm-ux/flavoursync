@@ -117,32 +117,36 @@
         </div>
       </header>
 
-      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-body">
+        <div class="cart-items" id="cartItems"></div>
 
-      <form class="checkout-form" id="checkoutForm">
-        <label><span>Name</span><input id="customerName" type="text" placeholder="Customer name"></label>
-        <label><span>Delivery Locality</span><input id="customerArea" type="text" placeholder="Danapur, Saguna More..."></label>
-        <label><span>Service</span><select id="serviceType"><option>Delivery</option><option>Takeaway enquiry</option></select></label>
-        <label><span>Spice Level</span><select id="spiceLevel"><option>Regular spice</option><option>Mild</option><option>Extra spicy</option></select></label>
-        <div class="order-mode" role="group" aria-label="Delivery timing">
-          <button class="active" type="button" data-order-mode="asap">ASAP</button>
-          <button type="button" data-order-mode="schedule">Schedule</button>
-        </div>
-        <div class="schedule-fields" id="scheduleFields" hidden>
-          <label><span>Schedule Date</span><input id="scheduledDate" type="date"></label>
-          <label><span>Preferred Time</span><input id="scheduledTime" type="time"></label>
-        </div>
-        <label><span>Payment Preference</span><select id="paymentPreference"><option>Confirm on WhatsApp</option><option>UPI</option><option>Cash on delivery</option></select></label>
-        <label><span>Notes</span><textarea id="orderNotes" rows="3" placeholder="Spice preference, landmark, delivery timing..."></textarea></label>
-      </form>
-
-      <div class="cart-summary">
-        <div><span>Subtotal</span><strong id="cartSubtotal">Rs 0</strong></div>
-        <div><span>Packaging</span><strong id="cartPackaging">Rs 0</strong></div>
-        <div class="total"><span>Total</span><strong id="cartTotal">Rs 0</strong></div>
+        <form class="checkout-form" id="checkoutForm">
+          <label><span>Name</span><input id="customerName" type="text" placeholder="Customer name"></label>
+          <label><span>Delivery Locality</span><input id="customerArea" type="text" placeholder="Danapur, Saguna More..."></label>
+          <label><span>Service</span><select id="serviceType"><option>Delivery</option><option>Takeaway enquiry</option></select></label>
+          <label><span>Spice Level</span><select id="spiceLevel"><option>Regular spice</option><option>Mild</option><option>Extra spicy</option></select></label>
+          <div class="order-mode" role="group" aria-label="Delivery timing">
+            <button class="active" type="button" data-order-mode="asap">ASAP</button>
+            <button type="button" data-order-mode="schedule">Schedule</button>
+          </div>
+          <div class="schedule-fields" id="scheduleFields" hidden>
+            <label><span>Schedule Date</span><input id="scheduledDate" type="date"></label>
+            <label><span>Preferred Time</span><input id="scheduledTime" type="time"></label>
+          </div>
+          <label><span>Payment Preference</span><select id="paymentPreference"><option>Confirm on WhatsApp</option><option>UPI</option><option>Cash on delivery</option></select></label>
+          <label><span>Notes</span><textarea id="orderNotes" rows="3" placeholder="Spice preference, landmark, delivery timing..."></textarea></label>
+        </form>
       </div>
 
-      <button class="btn btn-primary checkout-button" id="checkoutButton" type="button"><i data-lucide="message-circle"></i> Send Order on WhatsApp</button>
+      <div class="cart-footer">
+        <div class="cart-summary">
+          <div><span>Subtotal</span><strong id="cartSubtotal">Rs 0</strong></div>
+          <div><span>Packaging</span><strong id="cartPackaging">Rs 0</strong></div>
+          <div class="total"><span>Total</span><strong id="cartTotal">Rs 0</strong></div>
+        </div>
+
+        <button class="btn btn-primary checkout-button" id="checkoutButton" type="button"><i data-lucide="message-circle"></i> Send Order on WhatsApp</button>
+      </div>
     </div>
   </aside>
 
