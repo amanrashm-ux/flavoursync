@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121821">
+  <meta name="description" content="Browse the FlavourSync.in menu, choose delivery preferences and send your order to WhatsApp with optional schedule details.">
+  <title>Menu & Ordering | FlavourSync.in</title>
+  <link rel="icon" href="assets/flavoursync-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loader" id="loader" aria-label="Loading FlavourSync">
+    <div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="FlavourSync.in home">
+      <span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span>
+      <span class="brand-copy"><strong>FlavourSync<span>.in</span></strong><small>Classic Flavours, Modern Sync.</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="menu.html">Menu</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="about.html">About</a>
+      <a href="catering.html">Catering</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="topbar-actions">
+      <a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to place an order." aria-label="Order on WhatsApp"><i data-lucide="message-circle"></i></a>
+      <button class="cart-button" id="cartButton" type="button" aria-label="Open cart"><i data-lucide="shopping-bag"></i><span id="cartCount">0</span></button>
+      <button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="about.html">About</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section class="page-hero compact-hero">
+      <div>
+        <span class="service-pill"><i data-lucide="shopping-bag"></i> Menu and ordering</span>
+        <h1>Choose dishes, timing and delivery notes in one place.</h1>
+        <p>Add items, set quantities, choose ASAP or scheduled delivery, then send everything to WhatsApp for confirmation.</p>
+      </div>
+      <div class="mini-panel">
+        <strong>Order contact</strong>
+        <span>WhatsApp +91 84059 17655</span>
+        <a class="btn btn-secondary whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, please share today's menu and ordering details."><i data-lucide="message-circle"></i> Ask on WhatsApp</a>
+      </div>
+    </section>
+
+    <section class="menu-section" id="order">
+      <div class="section-heading">
+        <span>Menu</span>
+        <h2>Choose your meal</h2>
+        <p>Browse current favourites and confirm availability, final bill and delivery timing on WhatsApp.</p>
+      </div>
+
+      <div class="menu-toolbar">
+        <div class="filters" id="filters" aria-label="Menu filters"></div>
+        <label class="search-box">
+          <i data-lucide="search"></i>
+          <input id="searchInput" type="search" placeholder="Search mutton, chicken, thali..." autocomplete="off">
+        </label>
+      </div>
+
+      <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="combo-section">
+      <div class="section-heading center">
+        <span>Suggested Packs</span>
+        <h2>Quick add order plans</h2>
+        <p>These shortcuts help customers place common orders faster.</p>
+      </div>
+      <div class="combo-grid">
+        <article class="combo-card">
+          <span class="combo-label">Lunch</span>
+          <h3>Office Lunch Box</h3>
+          <p>Rice, roti, dal, curry, salad and chutney. Built for clean weekday ordering.</p>
+          <button class="btn btn-soft combo-order" type="button" data-combo="Office Lunch Box"><i data-lucide="plus"></i> Add Suggested Items</button>
+        </article>
+        <article class="combo-card highlighted">
+          <span class="combo-label">Dinner</span>
+          <h3>Family Dinner Pack</h3>
+          <p>Two mains, rice, rotis and sides for sharing at home.</p>
+          <button class="btn btn-primary combo-order" type="button" data-combo="Family Dinner Pack"><i data-lucide="plus"></i> Add Suggested Items</button>
+        </article>
+        <article class="combo-card">
+          <span class="combo-label">Advance</span>
+          <h3>Scheduled Meal</h3>
+          <p>Use schedule mode inside checkout or open the dedicated schedule order page.</p>
+          <a class="btn btn-soft" href="schedule.html"><i data-lucide="calendar-clock"></i> Schedule Order</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Cart">
+    <div class="cart-panel">
+      <header>
+        <div><span>Your Order</span><strong id="cartTitle">0 items</strong></div>
+        <div class="cart-tools">
+          <button class="cart-text-button" id="clearCart" type="button">Clear</button>
+          <button class="icon-action" id="closeCart" type="button" aria-label="Close cart"><i data-lucide="x"></i></button>
+        </div>
+      </header>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <form class="checkout-form" id="checkoutForm">
+        <label><span>Name</span><input id="customerName" type="text" placeholder="Customer name"></label>
+        <label><span>Delivery Locality</span><input id="customerArea" type="text" placeholder="Danapur, Saguna More..."></label>
+        <label><span>Service</span><select id="serviceType"><option>Delivery</option><option>Takeaway enquiry</option></select></label>
+        <label><span>Spice Level</span><select id="spiceLevel"><option>Regular spice</option><option>Mild</option><option>Extra spicy</option></select></label>
+        <div class="order-mode" role="group" aria-label="Delivery timing">
+          <button class="active" type="button" data-order-mode="asap">ASAP</button>
+          <button type="button" data-order-mode="schedule">Schedule</button>
+        </div>
+        <div class="schedule-fields" id="scheduleFields" hidden>
+          <label><span>Schedule Date</span><input id="scheduledDate" type="date"></label>
+          <label><span>Preferred Time</span><input id="scheduledTime" type="time"></label>
+        </div>
+        <label><span>Payment Preference</span><select id="paymentPreference"><option>Confirm on WhatsApp</option><option>UPI</option><option>Cash on delivery</option></select></label>
+        <label><span>Notes</span><textarea id="orderNotes" rows="3" placeholder="Spice preference, landmark, delivery timing..."></textarea></label>
+      </form>
+
+      <div class="cart-summary">
+        <div><span>Subtotal</span><strong id="cartSubtotal">Rs 0</strong></div>
+        <div><span>Packaging</span><strong id="cartPackaging">Rs 0</strong></div>
+        <div class="total"><span>Total</span><strong id="cartTotal">Rs 0</strong></div>
+      </div>
+
+      <button class="btn btn-primary checkout-button" id="checkoutButton" type="button"><i data-lucide="message-circle"></i> Send Order on WhatsApp</button>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <img src="assets/flavoursync-icon.png" alt="" aria-hidden="true">
+    <div><strong>FlavourSync.in</strong><span>Classic Flavours, Modern Sync.</span></div>
+    <p>Direct menu orders and scheduled meals route to WhatsApp.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="site.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121821">
+  <meta name="description" content="FlavourSync.in is a delivery-first cloud kitchen for classic Indian platters, scheduled orders and bulk meals in Danapur and nearby Patna.">
+  <meta property="og:title" content="FlavourSync.in | Classic Flavours, Modern Sync">
+  <meta property="og:description" content="Order fresh platters, schedule meals and plan bulk food orders through WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flavoursync.in/">
+  <meta property="og:image" content="assets/flavoursync-logo.png">
+  <title>FlavourSync.in | Classic Flavours, Modern Sync</title>
+  <link rel="icon" href="assets/flavoursync-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FoodEstablishment",
+      "name": "FlavourSync.in",
+      "url": "https://flavoursync.in/",
+      "telephone": "+918405917655",
+      "servesCuisine": ["Indian", "Bihari", "North Indian"],
+      "areaServed": ["Danapur", "Khagaul", "Saguna More", "Bailey Road", "Patna"],
+      "description": "Delivery-first cloud kitchen for Indian platters, scheduled orders and bulk meals."
+    }
+  </script>
+</head>
+<body>
+  <div class="loader" id="loader" aria-label="Loading FlavourSync">
+    <div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="FlavourSync.in home">
+      <span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span>
+      <span class="brand-copy"><strong>FlavourSync<span>.in</span></strong><small>Classic Flavours, Modern Sync.</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="about.html">About</a>
+      <a href="catering.html">Catering</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="topbar-actions">
+      <a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to place an order." aria-label="Order on WhatsApp"><i data-lucide="message-circle"></i></a>
+      <a class="cart-link" href="menu.html#order"><i data-lucide="shopping-bag"></i><span>Order</span></a>
+      <button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="about.html">About</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section class="home-hero">
+      <div class="home-hero-copy">
+        <span class="service-pill"><i data-lucide="flame"></i> Danapur cloud kitchen</span>
+        <h1>FlavourSync.in delivers proper Indian meals.</h1>
+        <p>Slow-cooked mutton, chicken, biryani and homestyle thalis for everyday meals, planned dinners and office orders across Danapur and nearby Patna.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="menu.html"><i data-lucide="utensils"></i> Start an Order</a>
+          <a class="btn btn-secondary whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, please share today's available dishes."><i data-lucide="message-circle"></i> WhatsApp Menu</a>
+        </div>
+        <div class="hero-orderline" aria-label="Quick ordering options">
+          <a href="menu.html#order"><span>Today's menu</span><strong>8 ready dishes</strong></a>
+          <a href="schedule.html"><span>Schedule slots</span><strong>Lunch and dinner</strong></a>
+          <button class="whatsapp-link" type="button" data-whatsapp="Hello FlavourSync, I want quick help placing an order."><span>Need help?</span><strong>Message now</strong></button>
+        </div>
+        <div class="hero-badges" aria-label="Service highlights">
+          <span>Direct WhatsApp confirmation</span>
+          <span>Scheduled meal slots</span>
+          <span>Bulk food planning</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-grid" aria-label="FlavourSync service highlights">
+      <article><i data-lucide="clock-3"></i><strong>Cooked in batches</strong><span>Orders are prepared close to dispatch so gravies, rice and breads travel better.</span></article>
+      <article><i data-lucide="package-check"></i><strong>Packed neatly</strong><span>Mains, sides and breads are organized for clean delivery and easy serving.</span></article>
+      <article><i data-lucide="calendar-check"></i><strong>Plan ahead</strong><span>Schedule office lunches, family dinners and special meal windows in advance.</span></article>
+      <article><i data-lucide="message-circle"></i><strong>Direct contact</strong><span>Every enquiry routes to WhatsApp at +91 84059 17655.</span></article>
+    </section>
+
+    <section class="split-section">
+      <div>
+        <span class="section-kicker">Why FlavourSync</span>
+        <h2>Food built for cravings, timing and travel.</h2>
+        <p>A delivery meal has to do more than taste good in the kitchen. It needs the right portion, the right packing, a clear delivery window and a direct way to confirm details before dispatch.</p>
+      </div>
+      <div class="feature-list">
+        <article><i data-lucide="chef-hat"></i><strong>Focused menu</strong><span>Mutton, chicken, biryani, veg meals and party packs instead of an overloaded catalogue.</span></article>
+        <article><i data-lucide="map-pin"></i><strong>Local service area</strong><span>Danapur, Khagaul, Saguna More, Bailey Road and nearby Patna stay clearly visible.</span></article>
+        <article><i data-lucide="receipt-text"></i><strong>Direct order handoff</strong><span>Your item list, schedule, locality and notes are sent cleanly to WhatsApp.</span></article>
+      </div>
+    </section>
+
+    <section class="service-strip">
+      <div>
+        <span class="section-kicker">Service Area</span>
+        <h2>Serving Danapur and nearby Patna localities.</h2>
+      </div>
+      <div class="area-tags" aria-label="Service areas">
+        <span>Danapur</span>
+        <span>Khagaul</span>
+        <span>Saguna More</span>
+        <span>RPS More</span>
+        <span>Bailey Road</span>
+        <span>Rupaspur</span>
+        <span>Gola Road</span>
+        <span>Nearby Patna</span>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading center">
+        <span>Signature Dishes</span>
+        <h2>Menu highlights</h2>
+        <p>Start with the meals customers are most likely to order again.</p>
+      </div>
+      <div class="spotlight-grid">
+        <article class="spotlight-card">
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=84" alt="Mutton curry platter">
+          <div><span>Bestseller</span><h3>Handi Mutton Platter</h3><p>Slow-cooked gravy, rice, rotis and salad for a complete non-veg meal.</p></div>
+        </article>
+        <article class="spotlight-card">
+          <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=900&q=84" alt="Chicken biryani">
+          <div><span>Weekend</span><h3>Dum Chicken Biryani</h3><p>Layered basmati rice, masala chicken, raita and salan-style gravy.</p></div>
+        </article>
+        <article class="spotlight-card">
+          <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=900&q=84" alt="Paneer curry">
+          <div><span>Vegetarian</span><h3>Paneer Butter Combo</h3><p>Paneer, jeera rice, rotis, salad and pickle in a reliable meal format.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="daypart-section">
+      <div class="section-heading center">
+        <span>Order Moments</span>
+        <h2>Match the meal to the plan.</h2>
+      </div>
+      <div class="daypart-grid">
+        <article>
+          <i data-lucide="sun"></i>
+          <h3>Lunch break</h3>
+          <p>Compact platters and bowls for weekday meals without heavy planning.</p>
+          <a href="menu.html">Order lunch</a>
+        </article>
+        <article>
+          <i data-lucide="moon"></i>
+          <h3>Dinner at home</h3>
+          <p>Family-style mains, rice, breads and sides for a relaxed evening meal.</p>
+          <a href="schedule.html">Schedule dinner</a>
+        </article>
+        <article>
+          <i data-lucide="building-2"></i>
+          <h3>Office orders</h3>
+          <p>Share headcount and preferences so the kitchen can suggest portions.</p>
+          <a href="catering.html">Plan office meal</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="process-section">
+      <div class="section-heading center">
+        <span>Order Flow</span>
+        <h2>Three ways to order</h2>
+      </div>
+      <div class="process-grid">
+        <article><span>01</span><h3>Order now</h3><p>Build a cart on the menu page and send it to WhatsApp for confirmation.</p><a href="menu.html">Open menu</a></article>
+        <article><span>02</span><h3>Schedule for later</h3><p>Select your preferred date, time, locality and meal notes for advance planning.</p><a href="schedule.html">Schedule meal</a></article>
+        <article><span>03</span><h3>Plan bulk food</h3><p>Send headcount, service style and menu preferences for office or family orders.</p><a href="catering.html">Bulk enquiry</a></article>
+      </div>
+    </section>
+
+    <section class="story-preview">
+      <div>
+        <span class="section-kicker">Brand Story</span>
+        <h2>Traditional cooking discipline with a modern ordering layer.</h2>
+        <p>FlavourSync is built around a simple promise: familiar food, prepared with consistency, packed carefully and ordered without friction.</p>
+        <a class="btn btn-soft" href="about.html"><i data-lucide="book-open"></i> Read About Us</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1100&q=84" alt="Kitchen preparation">
+    </section>
+
+    <section class="review-section">
+      <div class="section-heading center">
+        <span>Customer Notes</span>
+        <h2>The details people remember.</h2>
+      </div>
+      <div class="review-grid">
+        <article><div class="stars">5/5</div><p>The mutton platter feels like a complete meal, not just curry and rice. The gravy depth is the highlight.</p><strong>Regular dinner order</strong></article>
+        <article><div class="stars">5/5</div><p>Scheduling ahead makes office lunch simple. The portions are clear and the food stays neat in delivery.</p><strong>Office lunch enquiry</strong></article>
+        <article><div class="stars">5/5</div><p>Chicken masala, rice and chutney work well together. Direct WhatsApp confirmation makes ordering easier.</p><strong>Local customer</strong></article>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div>
+        <span class="section-kicker">Ready to serve</span>
+        <h2>Ready when the craving is.</h2>
+        <p>Order now, schedule a later slot or send a bulk enquiry for your next group meal.</p>
+      </div>
+      <a class="btn btn-primary whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to place an order from flavoursync.in."><i data-lucide="message-circle"></i> WhatsApp +91 84059 17655</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/flavoursync-icon.png" alt="" aria-hidden="true">
+    <div><strong>FlavourSync.in</strong><span>Classic Flavours, Modern Sync.</span></div>
+    <p>Delivery-first cloud kitchen for Danapur and nearby Patna.</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

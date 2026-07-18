@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121821">
+  <meta name="description" content="Bulk food and catering enquiry page for FlavourSync.in.">
+  <title>Catering & Bulk Orders | FlavourSync.in</title>
+  <link rel="icon" href="assets/flavoursync-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loader" id="loader" aria-label="Loading FlavourSync"><div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span><span class="brand-copy"><strong>FlavourSync<span>.in</span></strong><small>Classic Flavours, Modern Sync.</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="schedule.html">Schedule</a><a href="about.html">About</a><a class="active" href="catering.html">Catering</a><a href="contact.html">Contact</a></nav>
+    <div class="topbar-actions"><a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to enquire about bulk food." aria-label="WhatsApp"><i data-lucide="message-circle"></i></a><a class="cart-link" href="menu.html#order"><i data-lucide="shopping-bag"></i><span>Order</span></a><button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="schedule.html">Schedule</a><a href="about.html">About</a><a href="catering.html">Catering</a><a href="contact.html">Contact</a></nav>
+
+  <main>
+    <section class="page-hero compact-hero">
+      <div>
+        <span class="service-pill"><i data-lucide="party-popper"></i> Catering and Bulk Orders</span>
+        <h1>Group meals without guessing portions.</h1>
+        <p>Share headcount, food preference, timing and locality so FlavourSync can suggest the right trays and packs.</p>
+      </div>
+      <div class="mini-panel">
+        <strong>Recommended lead time</strong>
+        <span>Send the enquiry early so quantities, menu and delivery timing can be confirmed.</span>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="plan-grid">
+        <article class="plan-card"><span>Office</span><h3>Lunch Boxes</h3><p>Simple portions for weekday teams: rice, roti, curry, dal, salad and chutney.</p></article>
+        <article class="plan-card highlighted"><span>Family</span><h3>Dinner Packs</h3><p>Shared mutton, chicken, veg mains, rice, rotis and sides for home gatherings.</p></article>
+        <article class="plan-card"><span>Events</span><h3>Party Trays</h3><p>Advance trays for biryani, gravies, kebabs, rice, breads and vegetarian options.</p></article>
+      </div>
+    </section>
+
+    <section class="schedule-layout">
+      <form class="pro-form" id="cateringForm">
+        <div class="form-title"><span>Bulk Enquiry</span><h2>Share your requirement</h2></div>
+        <label><span>Name</span><input id="cateringName" type="text" placeholder="Your name"></label>
+        <label><span>People</span><input id="cateringPeople" type="number" min="5" placeholder="25"></label>
+        <label><span>Occasion</span><select id="cateringOccasion"><option>Office lunch</option><option>Family gathering</option><option>House party</option><option>Small event</option><option>Other</option></select></label>
+        <label><span>Service Style</span><select id="cateringStyle"><option>Individual meal boxes</option><option>Shared trays</option><option>Mixed boxes and trays</option></select></label>
+        <label><span>Date and Time</span><input id="cateringDate" type="text" placeholder="Sunday, 7:30 PM"></label>
+        <label><span>Delivery Locality</span><input id="cateringArea" type="text" placeholder="Danapur, Patna..."></label>
+        <label class="full-field"><span>Food Requirement</span><textarea id="cateringDetails" rows="5" placeholder="Example: Chicken biryani for 30, handi mutton for 15, veg thali for 10, extra raita."></textarea></label>
+        <button class="btn btn-primary full-field" type="submit"><i data-lucide="message-circle"></i> Send Bulk Enquiry</button>
+      </form>
+
+      <aside class="side-rail">
+        <h2>What to include</h2>
+        <div class="rail-list">
+          <span>Headcount and veg/non-veg split</span>
+          <span>Preferred dishes and spice level</span>
+          <span>Date, time and locality</span>
+          <span>Disposable plates or serving needs</span>
+          <span>Budget range, if fixed</span>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer"><img src="assets/flavoursync-icon.png" alt="" aria-hidden="true"><div><strong>FlavourSync.in</strong><span>Classic Flavours, Modern Sync.</span></div><p>Bulk order enquiries route to WhatsApp.</p></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

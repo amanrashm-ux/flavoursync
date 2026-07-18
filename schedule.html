@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121821">
+  <meta name="description" content="Schedule a FlavourSync.in meal order for later through WhatsApp.">
+  <title>Schedule Order | FlavourSync.in</title>
+  <link rel="icon" href="assets/flavoursync-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loader" id="loader" aria-label="Loading FlavourSync"><div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span><span class="brand-copy"><strong>FlavourSync<span>.in</span></strong><small>Classic Flavours, Modern Sync.</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Menu</a><a class="active" href="schedule.html">Schedule</a><a href="about.html">About</a><a href="catering.html">Catering</a><a href="contact.html">Contact</a></nav>
+    <div class="topbar-actions"><a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to schedule an order." aria-label="WhatsApp"><i data-lucide="message-circle"></i></a><a class="cart-link" href="menu.html#order"><i data-lucide="shopping-bag"></i><span>Order</span></a><button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="schedule.html">Schedule</a><a href="about.html">About</a><a href="catering.html">Catering</a><a href="contact.html">Contact</a></nav>
+
+  <main>
+    <section class="page-hero compact-hero">
+      <div>
+        <span class="service-pill"><i data-lucide="calendar-clock"></i> Schedule Order</span>
+        <h1>Reserve a meal window before the rush begins.</h1>
+        <p>Plan dinner, office lunch or a guest meal with preferred date, time, locality and dish notes.</p>
+      </div>
+      <div class="mini-panel">
+        <strong>Best for</strong>
+        <span>Family dinners, office lunches, guests, recurring meals and special timing.</span>
+      </div>
+    </section>
+
+    <section class="schedule-layout">
+      <form class="pro-form" id="scheduleOrderForm">
+        <div class="form-title"><span>Order Details</span><h2>Schedule request</h2></div>
+        <label><span>Name</span><input id="scheduleName" type="text" placeholder="Your name"></label>
+        <label><span>Delivery Locality</span><input id="scheduleArea" type="text" placeholder="Danapur, Khagaul, Saguna More..."></label>
+        <label><span>Date</span><input id="scheduleDate" type="date"></label>
+        <label><span>Preferred Time</span><input id="scheduleTime" type="time"></label>
+        <label><span>People</span><input id="schedulePeople" type="number" min="1" placeholder="4"></label>
+        <label><span>Meal Type</span><select id="scheduleMeal"><option>Family dinner</option><option>Office lunch</option><option>Individual meal</option><option>Party pack</option><option>Custom request</option></select></label>
+        <label><span>Service</span><select id="scheduleService"><option>Delivery</option><option>Takeaway enquiry</option></select></label>
+        <label><span>Spice Level</span><select id="scheduleSpice"><option>Regular spice</option><option>Mild</option><option>Extra spicy</option><option>Mixed preference</option></select></label>
+        <label class="full-field"><span>Preferred Items</span><textarea id="scheduleDetails" rows="5" placeholder="Example: 2 Handi Mutton Platters, 1 Dum Chicken Biryani, mild spice, extra rotis."></textarea></label>
+        <button class="btn btn-primary full-field" type="submit"><i data-lucide="message-circle"></i> Send Scheduled Order</button>
+      </form>
+
+      <aside class="side-rail">
+        <h2>Quick slots</h2>
+        <p>Select a common timing suggestion, then adjust the form if needed.</p>
+        <button class="slot-button" type="button" data-slot="12:30">Office lunch - 12:30 PM</button>
+        <button class="slot-button" type="button" data-slot="19:30">Family dinner - 7:30 PM</button>
+        <button class="slot-button" type="button" data-slot="20:30">Late dinner - 8:30 PM</button>
+        <div class="notice-box"><i data-lucide="info"></i><span>Scheduled orders are requests until FlavourSync confirms availability, final bill and delivery time on WhatsApp.</span></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer"><img src="assets/flavoursync-icon.png" alt="" aria-hidden="true"><div><strong>FlavourSync.in</strong><span>Classic Flavours, Modern Sync.</span></div><p>Schedule-order page with WhatsApp handoff.</p></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
