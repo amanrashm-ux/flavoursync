@@ -13,7 +13,7 @@
       price: 399,
       description: "Slow-cooked mutton gravy with four soft rotis, jeera rice, salad and house chutney.",
       meta: ["Rich gravy", "Serves 1", "Medium hot"],
-      image: "https://images.unsplash.com/photo-1606843046080-45bf7a23c39f?auto=format&fit=crop&w=900&q=84"
+      image: "assets/menu/handi-mutton.jpg"
     },
     {
       id: "chicken-masala",
@@ -23,7 +23,7 @@
       price: 299,
       description: "Chicken cooked in thick masala with basmati rice, salad and green chutney.",
       meta: ["Juicy chicken", "Serves 1", "Balanced spice"],
-      image: "https://images.unsplash.com/photo-1742599361539-f096753d1100?auto=format&fit=crop&w=900&q=84"
+      image: "assets/menu/chicken-masala.jpg"
     },
     {
       id: "veg-thali",
@@ -33,7 +33,7 @@
       price: 239,
       description: "Paneer curry, dal, rice, rotis, salad and a rotating homestyle vegetable side.",
       meta: ["Vegetarian", "Serves 1", "Comfort meal"],
-      image: "https://images.unsplash.com/photo-1742281257687-092746ad6021?auto=format&fit=crop&w=900&q=84"
+      image: "assets/menu/veg-thali.jpg"
     },
     {
       id: "biryani",
@@ -43,7 +43,7 @@
       price: 279,
       description: "Layered basmati rice, masala chicken, fried onions, raita and salan-style gravy.",
       meta: ["Rice bowl", "Raita", "Weekend fit"],
-      image: "https://images.unsplash.com/photo-1559528896-c5310744cce8?auto=format&fit=crop&w=900&q=84"
+      image: "assets/menu/biryani.jpg"
     },
     {
       id: "paneer-combo",
@@ -53,7 +53,7 @@
       price: 259,
       description: "Paneer butter masala with jeera rice, two rotis, salad and pickle.",
       meta: ["Vegetarian", "Mild", "Creamy"],
-      image: "https://images.unsplash.com/photo-1631452180539-96aca7d48617?auto=format&fit=crop&w=900&q=84"
+      image: "assets/menu/paneer-combo.jpg"
     },
     {
       id: "kebab-box",
@@ -63,7 +63,7 @@
       price: 249,
       description: "Smoky chicken kebabs with onion rings, lemon, mint chutney and masala dip.",
       meta: ["Snack", "Shareable", "Smoky"],
-      image: "https://images.unsplash.com/photo-1705359573325-f2006d5e459f?auto=format&fit=crop&w=900&q=84"
+      image: "assets/menu/kebab-box.jpg"
     },
     {
       id: "dal-rice",
@@ -73,7 +73,7 @@
       price: 179,
       description: "Yellow dal tadka, steamed rice, pickle, salad and crisp papad for a simple daily meal.",
       meta: ["Vegetarian", "Light", "Daily meal"],
-      image: "https://images.unsplash.com/photo-1680359873815-f5300586dd8d?auto=format&fit=crop&w=900&q=84"
+      image: "assets/menu/dal-rice.jpg"
     },
     {
       id: "party-mutton",
@@ -83,7 +83,7 @@
       price: 1499,
       description: "Larger mutton curry portion for shared meals. Best ordered in advance through WhatsApp.",
       meta: ["Bulk", "Advance", "Shared"],
-      image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=84"
+      image: "assets/menu/party-mutton.jpg"
     }
   ];
 

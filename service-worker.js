@@ -1,4 +1,4 @@
-const CACHE_NAME = "flavoursync-pwa-v3";
+const CACHE_NAME = "flavoursync-pwa-v4";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -9,6 +9,7 @@ const APP_SHELL = [
   "./catering.html",
   "./contact.html",
   "./policies.html",
+  "./credits.html",
   "./offline.html",
   "./styles.css",
   "./site.js",
@@ -19,7 +20,15 @@ const APP_SHELL = [
   "./assets/pwa-icon-192.png",
   "./assets/pwa-icon-512.png",
   "./assets/pwa-maskable-512.png",
-  "./assets/apple-touch-icon.png"
+  "./assets/apple-touch-icon.png",
+  "./assets/menu/handi-mutton.jpg",
+  "./assets/menu/chicken-masala.jpg",
+  "./assets/menu/veg-thali.jpg",
+  "./assets/menu/biryani.jpg",
+  "./assets/menu/paneer-combo.jpg",
+  "./assets/menu/kebab-box.jpg",
+  "./assets/menu/dal-rice.jpg",
+  "./assets/menu/party-mutton.jpg"
 ];
 
 function scopedUrl(path) {

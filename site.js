@@ -197,6 +197,7 @@
         <a href="catering.html">Bulk Orders</a>
         <a href="story.html">Story</a>
         <a href="policies.html">Policies</a>
+        <a href="credits.html">Credits</a>
         <a href="contact.html">Contact</a>
       </nav>
     `);
