@@ -6,6 +6,8 @@
   const menuButton = document.getElementById("menuButton");
   const mobileNav = document.getElementById("mobileNav");
   let currentOrderMessage = "";
+  let deferredInstallPrompt = null;
+  let installButton = null;
 
   function getWhatsAppUrl(message) {
     const encodedMessage = encodeURIComponent(message);
@@ -94,6 +96,44 @@
     showToast.timer = setTimeout(() => toast.classList.remove("show"), 2200);
   }
 
+  function isStandalone() {
+    return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone;
+  }
+
+  function refreshInstallButton() {
+    if (!installButton) return;
+    const label = installButton.querySelector("span");
+    const installed = isStandalone();
+    installButton.classList.toggle("is-installed", installed);
+    installButton.setAttribute("aria-label", installed ? "FlavourSync app is installed" : "Install FlavourSync app");
+    if (label) label.textContent = installed ? "Installed" : "Install";
+  }
+
+  async function handleInstallClick() {
+    if (isStandalone()) {
+      showToast("FlavourSync is already installed.");
+      return;
+    }
+
+    if (!deferredInstallPrompt) {
+      showToast("Use your browser menu to install this app.");
+      return;
+    }
+
+    deferredInstallPrompt.prompt();
+    const choice = await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    refreshInstallButton();
+    showToast(choice.outcome === "accepted" ? "Install started." : "Install dismissed.");
+  }
+
+  function registerServiceWorker() {
+    if (!("serviceWorker" in navigator) || location.protocol === "file:") return;
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("service-worker.js").catch(() => {});
+    });
+  }
+
   function todayValue() {
     const date = new Date();
     date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
@@ -101,6 +141,19 @@
   }
 
   window.FlavourSync = { openWhatsApp, showToast };
+  registerServiceWorker();
+
+  window.addEventListener("beforeinstallprompt", event => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    refreshInstallButton();
+  });
+
+  window.addEventListener("appinstalled", () => {
+    deferredInstallPrompt = null;
+    refreshInstallButton();
+    showToast("FlavourSync installed.");
+  });
 
   window.addEventListener("load", () => {
     if (loader) setTimeout(() => loader.classList.add("done"), 550);
@@ -153,10 +206,14 @@
   dock.className = "floating-dock";
   dock.innerHTML = `
     <a href="menu.html#order" aria-label="Open menu"><i data-lucide="utensils"></i><span>Menu</span></a>
+    <button class="install-app-button" type="button" data-install-app aria-label="Install FlavourSync app"><i data-lucide="download"></i><span>Install</span></button>
     <button type="button" aria-label="Order on WhatsApp"><i data-lucide="message-circle"></i><span>WhatsApp</span></button>
   `;
   document.body.appendChild(dock);
-  dock.querySelector("button").addEventListener("click", () => {
+  installButton = dock.querySelector("[data-install-app]");
+  installButton.addEventListener("click", handleInstallClick);
+  refreshInstallButton();
+  dock.querySelector("button:not([data-install-app])").addEventListener("click", () => {
     openWhatsApp("Hello FlavourSync, I want to place an order.");
   });
   if (window.lucide) {

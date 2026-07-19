@@ -1690,9 +1690,53 @@ select:focus {
   background: var(--green);
 }
 
+.floating-dock .install-app-button {
+  color: #151a21;
+  border-color: rgba(239, 180, 63, 0.45);
+  background: linear-gradient(135deg, var(--gold), #ffe08c);
+}
+
+.floating-dock .install-app-button.is-installed {
+  color: var(--gold-strong);
+  background: rgba(239, 180, 63, 0.12);
+}
+
 .floating-dock svg {
   width: 18px;
   height: 18px;
+}
+
+.floating-dock span {
+  white-space: nowrap;
+}
+
+.offline-page {
+  min-height: 100svh;
+}
+
+.offline-shell {
+  width: var(--container);
+  min-height: calc(100svh - 120px);
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  margin: 0 auto;
+  padding: 78px 0;
+}
+
+.offline-shell img {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 18px 44px rgba(239, 180, 63, 0.2);
+}
+
+.offline-shell p {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 1.05rem;
 }
 
 .order-sheet {
@@ -1911,9 +1955,14 @@ select:focus {
     --topbar: 68px;
   }
 
+  body {
+    padding-bottom: calc(82px + env(safe-area-inset-bottom));
+  }
+
   .topbar {
     gap: 10px;
-    padding: 0 14px;
+    padding-right: max(14px, env(safe-area-inset-right));
+    padding-left: max(14px, env(safe-area-inset-left));
   }
 
   .brand-icon {
@@ -1939,7 +1988,7 @@ select:focus {
 
   .home-hero {
     min-height: calc(100svh - var(--topbar) - 52px);
-    padding: 58px 14px;
+    padding: 58px 14px 76px;
   }
 
   .home-hero::before {
@@ -2043,23 +2092,59 @@ select:focus {
   }
 
   .cart-panel {
-    width: calc(100vw - 16px);
-    height: calc(100dvh - 16px);
-    max-height: calc(100dvh - 16px);
-    margin: 8px;
-    padding: 13px;
+    width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: max(13px, env(safe-area-inset-top)) max(13px, env(safe-area-inset-right)) max(13px, env(safe-area-inset-bottom)) max(13px, env(safe-area-inset-left));
+    border-radius: 0;
+  }
+
+  .cart-body {
+    padding-right: 0;
+  }
+
+  .cart-item {
+    min-height: 88px;
+    grid-template-columns: 58px 1fr;
+    padding: 9px;
+  }
+
+  .cart-item img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .cart-row {
+    gap: 8px;
+  }
+
+  .checkout-button {
+    min-height: 54px;
   }
 
   .floating-dock {
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
+    right: max(10px, env(safe-area-inset-right));
+    bottom: max(10px, env(safe-area-inset-bottom));
+    left: max(10px, env(safe-area-inset-left));
     justify-content: stretch;
+    gap: 6px;
+    padding: 6px;
   }
 
   .floating-dock a,
   .floating-dock button {
     flex: 1;
+    min-height: 52px;
+    flex-direction: column;
+    gap: 3px;
+    padding: 5px 6px;
+    font-size: 0.73rem;
+  }
+
+  .floating-dock svg {
+    width: 17px;
+    height: 17px;
   }
 
   .announcement {
@@ -2069,14 +2154,46 @@ select:focus {
   }
 
   .order-sheet-panel {
-    right: 8px;
-    bottom: 8px;
-    width: calc(100vw - 16px);
-    max-height: calc(100vh - 16px);
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    max-height: 92dvh;
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    border-radius: var(--radius) var(--radius) 0 0;
   }
 
   .order-sheet-actions {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-copy small {
+    display: none;
+  }
+
+  .brand-copy strong {
+    font-size: 1.08rem;
+  }
+
+  .cart-panel header {
+    gap: 10px;
+  }
+
+  .cart-tools {
+    gap: 6px;
+  }
+
+  .cart-text-button {
+    padding: 0 9px;
+  }
+
+  .cart-item h4 {
+    font-size: 0.9rem;
+  }
+
+  .floating-dock span {
+    font-size: 0.68rem;
   }
 }
 
