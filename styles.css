@@ -41,6 +41,7 @@ body {
     var(--bg);
   font-family: "DM Sans", system-ui, sans-serif;
   line-height: 1.55;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -574,6 +575,16 @@ p {
   text-decoration: none;
   cursor: pointer;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.btn,
+.filter-chip,
+.cart-text-button,
+.slot-button,
+.floating-dock a,
+.floating-dock button,
+.order-mode button {
+  touch-action: manipulation;
 }
 
 .btn:hover {
@@ -1951,7 +1962,7 @@ select:focus {
 
 @media (max-width: 720px) {
   :root {
-    --container: min(100vw - 28px, 1180px);
+    --container: min(100vw - 24px, 1180px);
     --topbar: 68px;
   }
 
@@ -1959,7 +1970,16 @@ select:focus {
     padding-bottom: calc(82px + env(safe-area-inset-bottom));
   }
 
+  h2 {
+    font-size: clamp(1.85rem, 10vw, 2.75rem);
+  }
+
+  h3 {
+    font-size: 1.08rem;
+  }
+
   .topbar {
+    height: var(--topbar);
     gap: 10px;
     padding-right: max(14px, env(safe-area-inset-right));
     padding-left: max(14px, env(safe-area-inset-left));
@@ -1988,7 +2008,7 @@ select:focus {
 
   .home-hero {
     min-height: calc(100svh - var(--topbar) - 52px);
-    padding: 58px 14px 76px;
+    padding: 42px 14px 70px;
   }
 
   .home-hero::before {
@@ -1998,7 +2018,15 @@ select:focus {
   }
 
   h1 {
-    font-size: clamp(2.9rem, 15vw, 4.4rem);
+    max-width: 100%;
+    font-size: clamp(2.35rem, 11.8vw, 3.65rem);
+    line-height: 0.98;
+  }
+
+  .home-hero-copy p,
+  .page-hero p,
+  .offline-shell p {
+    font-size: 1rem;
   }
 
   .hero-actions,
@@ -2025,8 +2053,19 @@ select:focus {
     display: grid;
   }
 
+  .btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 11px 14px;
+  }
+
   .hero-orderline {
     grid-template-columns: 1fr;
+  }
+
+  .hero-orderline a,
+  .hero-orderline button {
+    min-height: 64px;
   }
 
   .trust-grid {
@@ -2043,11 +2082,25 @@ select:focus {
 .daypart-section,
 .review-section,
   .timeline-section {
-    padding: 54px 0;
+    padding: 44px 0;
+  }
+
+  .split-section,
+  .story-preview,
+  .page-hero,
+  .schedule-layout,
+  .contact-section,
+  .service-strip {
+    gap: 22px;
   }
 
   .service-strip {
     padding: 20px;
+  }
+
+  .area-tags span {
+    padding: 8px 10px;
+    font-size: 0.82rem;
   }
 
   .area-tags {
@@ -2055,31 +2108,92 @@ select:focus {
   }
 
   .page-hero {
-    padding: 48px 0 30px;
+    padding: 38px 0 24px;
   }
 
   .story-hero {
-    padding: 64px 18px;
+    min-height: 360px;
+    padding: 58px 18px;
   }
 
   .menu-toolbar {
     position: static;
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
   }
 
   .filters {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 
   .filter-chip {
     width: 100%;
+    min-height: 40px;
+    padding: 9px 10px;
+    font-size: 0.82rem;
+  }
+
+  .search-box {
+    min-height: 44px;
+  }
+
+  .dish-image {
+    height: 190px;
+  }
+
+  .dish-body,
+  .spotlight-card div,
+  .process-grid article,
+  .combo-card,
+  .plan-card,
+  .values-grid article,
+  .daypart-grid article,
+  .review-grid article,
+  .policy-grid article,
+  .faq-grid article {
+    padding: 18px;
+  }
+
+  .dish-head {
+    align-items: start;
+    gap: 10px;
+  }
+
+  .dish-head h3 {
+    font-size: 1.2rem;
+  }
+
+  .dish-card p {
+    min-height: auto;
+  }
+
+  .spotlight-card {
+    grid-template-rows: 190px 1fr;
   }
 
   .cta-band,
   .contact-section {
     grid-template-columns: 1fr;
     padding: 20px;
+  }
+
+  .pro-form {
+    gap: 12px;
+    padding: 18px;
+  }
+
+  input,
+  select {
+    min-height: 48px;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
   }
 
   .footer {
@@ -2119,6 +2233,11 @@ select:focus {
     gap: 8px;
   }
 
+  .qty-control button {
+    width: 32px;
+    height: 32px;
+  }
+
   .checkout-button {
     min-height: 54px;
   }
@@ -2150,6 +2269,7 @@ select:focus {
   .announcement {
     flex-wrap: wrap;
     gap: 8px 12px;
+    min-height: 44px;
     text-align: center;
   }
 
@@ -2165,15 +2285,77 @@ select:focus {
   .order-sheet-actions {
     grid-template-columns: 1fr;
   }
+
+  .toast {
+    right: 10px;
+    bottom: calc(86px + env(safe-area-inset-bottom));
+    left: 10px;
+    max-width: none;
+  }
 }
 
 @media (max-width: 420px) {
+  :root {
+    --container: min(100vw - 18px, 1180px);
+    --topbar: 64px;
+  }
+
   .brand-copy small {
     display: none;
   }
 
   .brand-copy strong {
     font-size: 1.08rem;
+  }
+
+  .brand-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .topbar-actions {
+    gap: 6px;
+  }
+
+  .icon-action,
+  .cart-button,
+  .mobile-menu-button,
+  .cart-link {
+    min-width: 40px;
+    height: 40px;
+  }
+
+  .home-hero {
+    padding-top: 34px;
+  }
+
+  h1 {
+    font-size: clamp(2.05rem, 10.8vw, 2.8rem);
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 9vw, 2.25rem);
+  }
+
+  .service-pill,
+  .section-kicker,
+  .section-heading span,
+  .form-title span {
+    font-size: 0.68rem;
+  }
+
+  .announcement {
+    padding: 6px 10px;
+    font-size: 0.76rem;
+  }
+
+  .mobile-nav {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
   }
 
   .cart-panel header {
@@ -2192,8 +2374,37 @@ select:focus {
     font-size: 0.9rem;
   }
 
+  .cart-item {
+    grid-template-columns: 52px 1fr;
+    gap: 9px;
+  }
+
+  .cart-item img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .cart-row {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .cart-row strong {
+    align-self: end;
+  }
+
   .floating-dock span {
     font-size: 0.68rem;
+  }
+
+  .order-sheet-panel {
+    max-height: 94dvh;
+    padding: 16px;
+  }
+
+  .order-sheet pre {
+    max-height: 220px;
+    font-size: 0.84rem;
   }
 }
 
