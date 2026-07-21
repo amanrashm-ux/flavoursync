@@ -1,15 +1,15 @@
 {
-  "name": "FlavourSync.in",
-  "short_name": "FlavourSync",
-  "description": "Classic Indian meals, scheduled orders and bulk food enquiries for Danapur and nearby Patna.",
+  "name": "NutriBihar",
+  "short_name": "NutriBihar",
+  "description": "Fresh meals, dairy, nutrition foods, spices and traceability for the NutriBihar ecosystem.",
   "id": "./",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "orientation": "portrait-primary",
-  "background_color": "#141719",
-  "theme_color": "#141719",
+  "background_color": "#f8f2e6",
+  "theme_color": "#f8f2e6",
   "categories": ["food", "shopping", "business"],
   "lang": "en-IN",
   "icons": [
@@ -36,7 +36,7 @@
     {
       "name": "Order Menu",
       "short_name": "Menu",
-      "description": "Open the FlavourSync order menu.",
+      "description": "Open NutriBihar fresh meals.",
       "url": "./menu.html",
       "icons": [{ "src": "assets/pwa-icon-192.png", "sizes": "192x192" }]
     },
@@ -45,6 +45,13 @@
       "short_name": "Schedule",
       "description": "Send a scheduled meal request.",
       "url": "./schedule.html",
+      "icons": [{ "src": "assets/pwa-icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Fresh Dairy",
+      "short_name": "Dairy",
+      "description": "Open NutriBihar fresh dairy products.",
+      "url": "./dairy.html",
       "icons": [{ "src": "assets/pwa-icon-192.png", "sizes": "192x192" }]
     }
   ]

@@ -6,90 +6,120 @@
 
   const menuItems = [
     {
-      id: "handi-mutton",
-      name: "Handi Mutton Platter",
-      category: "Non-Veg",
-      tag: "Bestseller",
-      price: 399,
-      description: "Slow-cooked mutton gravy with four soft rotis, jeera rice, salad and house chutney.",
-      meta: ["Rich gravy", "Serves 1", "Medium hot"],
-      image: "assets/menu/handi-mutton.jpg"
+      id: "sattu-litti",
+      name: "Sattu Litti-Chokha Power Meal",
+      category: "Kitchen",
+      fulfillment: "Fresh kitchen delivery",
+      tag: "Bihar hero",
+      price: 199,
+      description: "Roasted litti with sattu filling, chokha, chutney and optional fresh dahi add-on.",
+      meta: ["Vegetarian", "Sattu base", "Lunch/Dinner"],
+      image: "assets/nutribihar/sattu.webp"
     },
     {
-      id: "chicken-masala",
-      name: "Chicken Masala Combo",
-      category: "Non-Veg",
-      tag: "Popular",
-      price: 299,
-      description: "Chicken cooked in thick masala with basmati rice, salad and green chutney.",
-      meta: ["Juicy chicken", "Serves 1", "Balanced spice"],
-      image: "assets/menu/chicken-masala.jpg"
+      id: "millet-khichdi",
+      name: "Millet Moong Khichdi Bowl",
+      category: "Kitchen",
+      fulfillment: "Fresh kitchen delivery",
+      tag: "Comfort",
+      price: 169,
+      description: "Millet mix, moong dal, vegetables, light masala and a cooling dahi pairing.",
+      meta: ["Vegetarian", "Millet base", "Light meal"],
+      image: "assets/nutribihar/khichdi.webp"
     },
     {
-      id: "veg-thali",
-      name: "Classic Veg Thali",
-      category: "Veg",
-      tag: "Wholesome",
-      price: 239,
-      description: "Paneer curry, dal, rice, rotis, salad and a rotating homestyle vegetable side.",
-      meta: ["Vegetarian", "Serves 1", "Comfort meal"],
-      image: "assets/menu/veg-thali.jpg"
+      id: "paneer-millet",
+      name: "Paneer Millet Power Bowl",
+      category: "Kitchen",
+      fulfillment: "Fresh kitchen delivery",
+      tag: "Protein",
+      price: 229,
+      description: "Fresh paneer, millet base, vegetables and chutney for a high-protein bowl.",
+      meta: ["Vegetarian", "Paneer", "Power bowl"],
+      image: "assets/nutribihar/fresh-paneer.png"
     },
     {
-      id: "biryani",
-      name: "Dum Chicken Biryani",
-      category: "Rice",
-      tag: "Aromatic",
-      price: 279,
-      description: "Layered basmati rice, masala chicken, fried onions, raita and salan-style gravy.",
-      meta: ["Rice bowl", "Raita", "Weekend fit"],
-      image: "assets/menu/biryani.jpg"
+      id: "sattu-paneer-wrap",
+      name: "Sattu-Paneer Protein Wrap",
+      category: "Kitchen",
+      fulfillment: "Fresh kitchen delivery",
+      tag: "Wrap",
+      price: 189,
+      description: "Multigrain roti filled with sattu, paneer, vegetables and house chutney.",
+      meta: ["Vegetarian", "Portable", "Protein"],
+      image: "assets/nutribihar/sattu.webp"
     },
     {
-      id: "paneer-combo",
-      name: "Paneer Butter Combo",
-      category: "Veg",
-      tag: "Creamy",
-      price: 259,
-      description: "Paneer butter masala with jeera rice, two rotis, salad and pickle.",
-      meta: ["Vegetarian", "Mild", "Creamy"],
-      image: "assets/menu/paneer-combo.jpg"
+      id: "sattu-paratha",
+      name: "Sattu Paratha with Fresh Dahi",
+      category: "Kitchen",
+      fulfillment: "Fresh kitchen delivery",
+      tag: "Breakfast",
+      price: 169,
+      description: "Sattu-filled paratha served with fresh dahi and house pickle.",
+      meta: ["Vegetarian", "Breakfast", "Dahi side"],
+      image: "assets/nutribihar/atta.webp"
     },
     {
-      id: "kebab-box",
-      name: "Tandoori Kebab Box",
-      category: "Snacks",
-      tag: "Starter",
-      price: 249,
-      description: "Smoky chicken kebabs with onion rings, lemon, mint chutney and masala dip.",
-      meta: ["Snack", "Shareable", "Smoky"],
-      image: "assets/menu/kebab-box.jpg"
+      id: "makhana-chaat",
+      name: "Roasted Makhana Dahi Chaat",
+      category: "Kitchen",
+      fulfillment: "Fresh kitchen delivery",
+      tag: "Snack",
+      price: 149,
+      description: "Roasted makhana, fresh dahi, chutneys and house spice mix assembled fresh.",
+      meta: ["Vegetarian", "Makhana", "Cold assembly"],
+      image: "assets/nutribihar/makhana.webp"
     },
     {
-      id: "dal-rice",
-      name: "Dal Tadka Rice Bowl",
-      category: "Rice",
-      tag: "Daily",
-      price: 179,
-      description: "Yellow dal tadka, steamed rice, pickle, salad and crisp papad for a simple daily meal.",
-      meta: ["Vegetarian", "Light", "Daily meal"],
-      image: "assets/menu/dal-rice.jpg"
+      id: "fresh-dahi",
+      name: "Fresh Farm Dahi Cup",
+      category: "Dairy",
+      fulfillment: "Fresh dairy delivery",
+      tag: "Dairy",
+      price: 59,
+      description: "Pilot dairy SKU for one-time orders and future daily subscription plans.",
+      meta: ["Fresh dairy", "Cup pack", "Batch dated"],
+      image: "assets/nutribihar/fresh-dahi.png"
     },
     {
-      id: "party-mutton",
-      name: "Mutton Party Tray",
-      category: "Bulk",
-      tag: "Advance",
-      price: 1499,
-      description: "Larger mutton curry portion for shared meals. Best ordered in advance through WhatsApp.",
-      meta: ["Bulk", "Advance", "Shared"],
-      image: "assets/menu/party-mutton.jpg"
+      id: "masala-chaas",
+      name: "Masala Chaas",
+      category: "Dairy",
+      fulfillment: "Fresh dairy delivery",
+      tag: "Drink",
+      price: 69,
+      description: "Chilled dahi-based chaas with jeera, spices and light seasoning.",
+      meta: ["Fresh dairy", "Bottle/cup", "Cold chain"],
+      image: "assets/nutribihar/masala-chaas.png"
+    },
+    {
+      id: "sattu-lassi",
+      name: "Sattu Lassi",
+      category: "Dairy",
+      fulfillment: "Fresh dairy delivery",
+      tag: "Drink",
+      price: 99,
+      description: "Fresh dahi blended with sattu and optional jaggery for a filling drink.",
+      meta: ["Fresh dairy", "Sattu", "Filling"],
+      image: "assets/nutribihar/sattu.webp"
+    },
+    {
+      id: "makhana-kheer",
+      name: "Makhana Kheer",
+      category: "Dessert",
+      fulfillment: "Fresh dairy delivery",
+      tag: "Dessert",
+      price: 109,
+      description: "Milk, roasted makhana and cardamom dessert for add-on and scheduled orders.",
+      meta: ["Fresh dairy", "Dessert", "Makhana"],
+      image: "assets/nutribihar/makhana.webp"
     }
   ];
 
   const comboMap = {
-    "Office Lunch Box": ["veg-thali", "chicken-masala"],
-    "Family Dinner Pack": ["handi-mutton", "chicken-masala", "veg-thali"]
+    "Office Lunch Box": ["millet-khichdi", "paneer-millet", "masala-chaas"],
+    "Family Dinner Pack": ["sattu-litti", "sattu-paratha", "fresh-dahi", "makhana-kheer"]
   };
 
   const state = {
@@ -120,7 +150,7 @@
 
   function loadCart() {
     try {
-      const saved = JSON.parse(localStorage.getItem("flavoursyncCart") || "[]");
+      const saved = JSON.parse(localStorage.getItem("nutribiharCart") || localStorage.getItem("flavoursyncCart") || "[]");
       return new Map(saved.filter(([id, quantity]) => {
         return typeof id === "string" && Number.isFinite(quantity) && quantity > 0;
       }));
@@ -145,7 +175,7 @@
   }
 
   function saveCart() {
-    localStorage.setItem("flavoursyncCart", JSON.stringify([...state.cart.entries()]));
+    localStorage.setItem("nutribiharCart", JSON.stringify([...state.cart.entries()]));
   }
 
   function openWhatsApp(message) {
@@ -259,23 +289,34 @@
     cartPackaging.textContent = formatRs(packaging);
     cartTotal.textContent = formatRs(total);
 
-    cartItems.innerHTML = lines.length ? lines.map(line => `
-      <article class="cart-item">
-        <img src="${line.image}" alt="${line.name}">
-        <div>
-          <h4>${line.name}</h4>
-          <p>${formatRs(line.price)} each</p>
-          <div class="cart-row">
-            <div class="qty-control" aria-label="Quantity controls for ${line.name}">
-              <button type="button" data-qty="${line.quantity - 1}" data-id="${line.id}" aria-label="Decrease ${line.name}">-</button>
-              <span>${line.quantity}</span>
-              <button type="button" data-qty="${line.quantity + 1}" data-id="${line.id}" aria-label="Increase ${line.name}">+</button>
+    const groupedLines = Object.groupBy ? Object.groupBy(lines, line => line.fulfillment) : lines.reduce((groups, line) => {
+      groups[line.fulfillment] = groups[line.fulfillment] || [];
+      groups[line.fulfillment].push(line);
+      return groups;
+    }, {});
+
+    cartItems.innerHTML = lines.length ? Object.entries(groupedLines).map(([fulfillment, groupLines]) => `
+      <section class="cart-group">
+        <strong class="cart-group-title">${fulfillment}</strong>
+        ${groupLines.map(line => `
+          <article class="cart-item">
+            <img src="${line.image}" alt="${line.name}">
+            <div>
+              <h4>${line.name}</h4>
+              <p>${formatRs(line.price)} each</p>
+              <div class="cart-row">
+                <div class="qty-control" aria-label="Quantity controls for ${line.name}">
+                  <button type="button" data-qty="${line.quantity - 1}" data-id="${line.id}" aria-label="Decrease ${line.name}">-</button>
+                  <span>${line.quantity}</span>
+                  <button type="button" data-qty="${line.quantity + 1}" data-id="${line.id}" aria-label="Increase ${line.name}">+</button>
+                </div>
+                <strong>${formatRs(line.lineTotal)}</strong>
+              </div>
             </div>
-            <strong>${formatRs(line.lineTotal)}</strong>
-          </div>
-        </div>
-      </article>
-    `).join("") : `<div class="cart-empty">Your order is empty. Add dishes from the menu to prepare a WhatsApp checkout.</div>`;
+          </article>
+        `).join("")}
+      </section>
+    `).join("") : `<div class="cart-empty">Your order is empty. Add NutriBihar Kitchen or Dairy items to prepare a WhatsApp checkout.</div>`;
     clearCart.disabled = !lines.length;
     checkoutButton.disabled = !lines.length;
   }
@@ -310,10 +351,18 @@
     const notes = document.getElementById("orderNotes").value.trim();
     const date = document.getElementById("scheduledDate").value.trim();
     const time = document.getElementById("scheduledTime").value.trim();
-    const orderLines = lines.map(line => `- ${line.name} x ${line.quantity} = ${formatRs(line.lineTotal)}`).join("\n");
+    const groupedLines = lines.reduce((groups, line) => {
+      groups[line.fulfillment] = groups[line.fulfillment] || [];
+      groups[line.fulfillment].push(line);
+      return groups;
+    }, {});
+    const orderLines = Object.entries(groupedLines).map(([fulfillment, groupLines]) => [
+      `${fulfillment}:`,
+      ...groupLines.map(line => `- ${line.name} x ${line.quantity} = ${formatRs(line.lineTotal)}`)
+    ].join("\n")).join("\n\n");
 
     return [
-      "Hello FlavourSync, I want to place an order.",
+      "Hello NutriBihar, I want to place an order.",
       name ? `Name: ${name}` : "",
       area ? `Delivery locality: ${area}` : "",
       serviceType ? `Service: ${serviceType}` : "",
@@ -330,7 +379,7 @@
       paymentPreference ? `Payment preference: ${paymentPreference}` : "",
       notes ? `Notes: ${notes}` : "",
       "",
-      "Please confirm availability, final bill and delivery time."
+      "Please confirm availability, fulfilment group timings, final bill and delivery time."
     ].filter(Boolean).join("\n");
   }
 

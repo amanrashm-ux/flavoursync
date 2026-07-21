@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f2e6">
+  <meta name="description" content="NutriBihar subscription model for dairy, breakfast, corporate lunch bowls, pantry bundles and repeat orders.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="NutriBihar">
+  <title>Subscriptions | NutriBihar</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/flavoursync-icon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loader" id="loader" aria-label="Loading NutriBihar"><div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span><span class="brand-copy"><strong>Nutri<span>Bihar</span></strong><small>Daily food. Trusted source.</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+    <div class="topbar-actions"><a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello NutriBihar, I want subscription details." aria-label="WhatsApp"><i data-lucide="message-circle"></i></a><a class="cart-link" href="menu.html#order"><i data-lucide="shopping-bag"></i><span>Order</span></a><button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+
+  <main>
+    <section class="page-hero compact-hero">
+      <div><span class="service-pill"><i data-lucide="repeat"></i> Subscriptions</span><h1>Design repeat orders without mixing fulfilment.</h1><p>Dairy, breakfast, corporate bowls and pantry bundles should each have their own delivery rhythm, pause controls and monthly invoice logic.</p></div>
+      <div class="mini-panel"><strong>Customer controls</strong><span>Daily, alternate-day, vacation mode, delivery instructions, monthly invoice and repeat last order.</span><a class="btn btn-primary whatsapp-link" href="#" data-whatsapp="Hello NutriBihar, I want to start a subscription."><i data-lucide="message-circle"></i> Start Enquiry</a></div>
+    </section>
+
+    <section class="page-section">
+      <div class="plan-grid">
+        <article class="plan-card"><span>Dairy</span><h3>Dahi + Chaas Plan</h3><p>Daily or alternate-day delivery, pause/resume, vacation mode, cold-chain notes and batch date visibility.</p><a class="btn btn-soft" href="dairy.html">View dairy</a></article>
+        <article class="plan-card"><span>Breakfast</span><h3>Sattu Morning Plan</h3><p>Sattu paratha, sattu lassi, dahi and millet options for scheduled morning delivery zones.</p><a class="btn btn-soft" href="menu.html">View meals</a></article>
+        <article class="plan-card"><span>Corporate</span><h3>Lunch Bowl Plan</h3><p>Corporate lunch bowls, high-protein options, headcount forecast and weekly meal rotation.</p><a class="btn btn-soft" href="catering.html">Bulk orders</a></article>
+        <article class="plan-card"><span>Pantry</span><h3>Foods & Spices Bundle</h3><p>Monthly sattu, makhana, khichdi mix, atta and spice starter replenishment.</p><a class="btn btn-soft" href="shop.html">Shop products</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><img src="assets/flavoursync-icon.png" alt="" aria-hidden="true"><div><strong>NutriBihar</strong><span>Subscriptions</span></div><p>Repeat orders need clear frequency, fulfilment and pause controls.</p></footer>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

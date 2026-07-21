@@ -26,7 +26,7 @@
           <header>
             <div>
               <span>Order Handoff</span>
-              <h2 id="orderSheetTitle">Send this to FlavourSync</h2>
+              <h2 id="orderSheetTitle">Send this to NutriBihar</h2>
             </div>
             <button class="icon-action" type="button" data-close-order-sheet aria-label="Close order handoff"><i data-lucide="x"></i></button>
           </header>
@@ -105,13 +105,13 @@
     const label = installButton.querySelector("span");
     const installed = isStandalone();
     installButton.classList.toggle("is-installed", installed);
-    installButton.setAttribute("aria-label", installed ? "FlavourSync app is installed" : "Install FlavourSync app");
+    installButton.setAttribute("aria-label", installed ? "NutriBihar app is installed" : "Install NutriBihar app");
     if (label) label.textContent = installed ? "Installed" : "Install";
   }
 
   async function handleInstallClick() {
     if (isStandalone()) {
-      showToast("FlavourSync is already installed.");
+      showToast("NutriBihar is already installed.");
       return;
     }
 
@@ -141,6 +141,7 @@
   }
 
   window.FlavourSync = { openWhatsApp, showToast };
+  window.NutriBihar = { openWhatsApp, showToast };
   registerServiceWorker();
 
   window.addEventListener("beforeinstallprompt", event => {
@@ -152,7 +153,7 @@
   window.addEventListener("appinstalled", () => {
     deferredInstallPrompt = null;
     refreshInstallButton();
-    showToast("FlavourSync installed.");
+    showToast("NutriBihar installed.");
   });
 
   window.addEventListener("load", () => {
@@ -162,8 +163,8 @@
   if (!document.querySelector(".announcement")) {
     document.body.insertAdjacentHTML("afterbegin", `
       <div class="announcement">
-        <span>Fresh batch ordering</span>
-        <strong>Danapur and nearby Patna</strong>
+        <span>Kitchen, Dairy and Packaged</span>
+        <strong>NutriBihar Patna pilot</strong>
         <a href="tel:+${WHATSAPP_NUMBER}">${PHONE_DISPLAY}</a>
       </div>
     `);
@@ -184,7 +185,7 @@
   document.querySelectorAll(".whatsapp-link").forEach(link => {
     link.addEventListener("click", event => {
       event.preventDefault();
-      openWhatsApp(link.dataset.whatsapp || "Hello FlavourSync, I want to place an order.");
+      openWhatsApp(link.dataset.whatsapp || "Hello NutriBihar, I want to place an order.");
     });
   });
 
@@ -192,13 +193,15 @@
   if (footer && !footer.querySelector(".footer-nav")) {
     footer.insertAdjacentHTML("beforeend", `
       <nav class="footer-nav" aria-label="Footer links">
-        <a href="menu.html">Menu</a>
-        <a href="schedule.html">Schedule</a>
-        <a href="catering.html">Bulk Orders</a>
-        <a href="story.html">Story</a>
-        <a href="policies.html">Policies</a>
-        <a href="credits.html">Credits</a>
-        <a href="contact.html">Contact</a>
+        <a href="menu.html">Fresh Meals</a>
+        <a href="shop.html">Foods & Spices</a>
+        <a href="dairy.html">Fresh Dairy</a>
+        <a href="subscriptions.html">Subscriptions</a>
+        <a href="grade.html">Grade</a>
+        <a href="trace.html">Trace</a>
+        <a href="farmers.html">Farmers</a>
+        <a href="catering.html">Bulk</a>
+        <a href="contact.html">Help</a>
       </nav>
     `);
   }
@@ -206,8 +209,8 @@
   const dock = document.createElement("div");
   dock.className = "floating-dock";
   dock.innerHTML = `
-    <a href="menu.html#order" aria-label="Open menu"><i data-lucide="utensils"></i><span>Menu</span></a>
-    <button class="install-app-button" type="button" data-install-app aria-label="Install FlavourSync app"><i data-lucide="download"></i><span>Install</span></button>
+    <a href="menu.html#order" aria-label="Open fresh meals"><i data-lucide="utensils"></i><span>Meals</span></a>
+    <button class="install-app-button" type="button" data-install-app aria-label="Install NutriBihar app"><i data-lucide="download"></i><span>Install</span></button>
     <button type="button" aria-label="Order on WhatsApp"><i data-lucide="message-circle"></i><span>WhatsApp</span></button>
   `;
   document.body.appendChild(dock);
@@ -215,7 +218,7 @@
   installButton.addEventListener("click", handleInstallClick);
   refreshInstallButton();
   dock.querySelector("button:not([data-install-app])").addEventListener("click", () => {
-    openWhatsApp("Hello FlavourSync, I want to place an order.");
+    openWhatsApp("Hello NutriBihar, I want to place an order.");
   });
   if (window.lucide) {
     window.lucide.createIcons();
@@ -243,6 +246,90 @@
   document.querySelectorAll('input[type="date"]').forEach(input => {
     input.min = todayValue();
   });
+
+  const serviceChecker = document.getElementById("serviceChecker");
+  if (serviceChecker) {
+    const pinInput = document.getElementById("servicePin");
+    const localityInput = document.getElementById("serviceLocation");
+    const typeSelect = document.getElementById("serviceType");
+    const resultPanel = document.getElementById("serviceResult");
+    const coreAreas = ["patna", "danapur", "bailey", "saguna", "khagaul", "rupaspur", "gola", "boring", "kankarbagh"];
+
+    function isCoreArea(pin, locality) {
+      const normalizedPin = pin.replace(/\D/g, "");
+      const normalizedLocality = locality.toLowerCase();
+      return normalizedPin.startsWith("800") || coreAreas.some(area => normalizedLocality.includes(area));
+    }
+
+    function renderServiceResult(covered, selectedType) {
+      const lanes = [
+        {
+          type: "Fresh kitchen delivery",
+          title: "Fresh meals",
+          detail: covered ? "Available for lunch and dinner scheduling in pilot zones." : "Confirm the kitchen route before placing a fresh meal order."
+        },
+        {
+          type: "Fresh dairy delivery",
+          title: "Dairy",
+          detail: covered ? "Available for morning delivery and subscription setup." : "Dairy delivery needs manual route confirmation."
+        },
+        {
+          type: "Packaged-product delivery",
+          title: "Foods & spices",
+          detail: covered ? "Available with local delivery or pickup coordination." : "Can still be checked for courier or pickup options."
+        }
+      ].filter(lane => selectedType === "All categories" || lane.type === selectedType);
+
+      resultPanel.className = `service-result ${covered ? "is-ready" : "needs-confirmation"}`;
+      resultPanel.innerHTML = `
+        <div class="service-result-head">
+          <span class="status-dot"></span>
+          <div>
+            <strong>${covered ? "Likely serviceable in the Patna pilot zone" : "Needs manual confirmation"}</strong>
+            <p>${covered ? "Use the matching order page or confirm final timing on WhatsApp." : "Share your locality so NutriBihar can confirm the route, timing and charges."}</p>
+          </div>
+        </div>
+        <div class="service-result-grid">
+          ${lanes.map(lane => `
+            <article class="availability-card">
+              <span>${lane.type}</span>
+              <strong>${lane.title}</strong>
+              <p>${lane.detail}</p>
+            </article>
+          `).join("")}
+        </div>
+        <button class="btn btn-soft service-whatsapp" type="button"><i data-lucide="message-circle"></i> Confirm on WhatsApp</button>
+      `;
+
+      resultPanel.querySelector(".service-whatsapp").addEventListener("click", () => {
+        openWhatsApp([
+          "Hello NutriBihar, I want to check delivery availability.",
+          pinInput.value.trim() ? `PIN code: ${pinInput.value.trim()}` : "",
+          localityInput.value.trim() ? `Locality: ${localityInput.value.trim()}` : "",
+          `Delivery type: ${typeSelect.value}`,
+          "Please confirm route, timing and delivery charges."
+        ].filter(Boolean).join("\n"));
+      });
+
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    serviceChecker.addEventListener("submit", event => {
+      event.preventDefault();
+      pinInput.value = pinInput.value.replace(/\D/g, "").slice(0, 6);
+      const pin = pinInput.value.trim();
+      const locality = localityInput.value.trim();
+
+      if (!pin && !locality) {
+        resultPanel.className = "service-result needs-confirmation";
+        resultPanel.innerHTML = `<span class="status-dot"></span><p>Add a PIN code or locality to check delivery availability.</p>`;
+        showToast("Add PIN code or locality.");
+        return;
+      }
+
+      renderServiceResult(isCoreArea(pin, locality), typeSelect.value);
+    });
+  }
 
   document.querySelectorAll(".slot-button").forEach(button => {
     button.addEventListener("click", () => {
@@ -274,7 +361,7 @@
       }
 
       openWhatsApp([
-        "Hello FlavourSync, I want to schedule an order.",
+        "Hello NutriBihar, I want to schedule an order.",
         name ? `Name: ${name}` : "",
         area ? `Delivery locality: ${area}` : "",
         `Preferred date: ${date}`,
@@ -307,7 +394,7 @@
       }
 
       openWhatsApp([
-        "Hello FlavourSync, I want to enquire about a bulk order.",
+        "Hello NutriBihar, I want to enquire about a corporate or bulk order.",
         name ? `Name: ${name}` : "",
         `People: ${people}`,
         occasion ? `Occasion: ${occasion}` : "",

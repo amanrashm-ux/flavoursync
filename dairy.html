@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f2e6">
+  <meta name="description" content="NutriBihar Dairy starts with fresh dahi, fresh paneer and masala chaas for kitchen support and independent orders.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="NutriBihar">
+  <title>Fresh Dairy | NutriBihar</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/flavoursync-icon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loader" id="loader" aria-label="Loading NutriBihar"><div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span><span class="brand-copy"><strong>Nutri<span>Bihar</span></strong><small>Daily food. Trusted source.</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+    <div class="topbar-actions"><a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello NutriBihar, I want fresh dairy details." aria-label="WhatsApp"><i data-lucide="message-circle"></i></a><a class="cart-link" href="menu.html#order"><i data-lucide="shopping-bag"></i><span>Order</span></a><button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+
+  <main>
+    <section class="page-hero compact-hero">
+      <div>
+        <span class="service-pill"><i data-lucide="milk"></i> NutriBihar Dairy</span>
+        <h1>Start with three dairy SKUs, not ten.</h1>
+        <p>Fresh Dahi, Fresh Paneer and Masala Chaas support the kitchen menu and can also be sold independently with batch dates and cold-chain handling.</p>
+      </div>
+      <div class="mini-panel"><strong>Pilot capacity</strong><span>For roughly 100 to 300 litres daily, plan testing, pasteurisation, chilling, incubation, paneer pressing, filling and temperature logs.</span><a class="btn btn-primary" href="subscriptions.html"><i data-lucide="repeat"></i> Subscription Logic</a></div>
+    </section>
+
+    <section class="page-section">
+      <div class="spotlight-grid">
+        <article class="spotlight-card"><img src="assets/nutribihar/fresh-dahi.png" alt="Fresh dahi"><div><span>Start SKU 1</span><h3>Fresh Dahi</h3><p>Daily meal add-on and future subscription base. Track batch, packing date and cold storage.</p></div></article>
+        <article class="spotlight-card"><img src="assets/nutribihar/fresh-paneer.png" alt="Fresh paneer"><div><span>Start SKU 2</span><h3>Fresh Paneer</h3><p>Supports paneer bowls, kitchen prep and independent retail orders.</p></div></article>
+        <article class="spotlight-card"><img src="assets/nutribihar/masala-chaas.png" alt="Masala chaas"><div><span>Start SKU 3</span><h3>Masala Chaas</h3><p>Low-friction beverage cross-sell for meals, subscriptions and office lunch plans.</p></div></article>
+      </div>
+    </section>
+
+    <section class="process-section">
+      <div class="section-heading center"><span>Controls</span><h2>Dairy needs a separate operating lane.</h2></div>
+      <div class="process-grid">
+        <article><span>01</span><h3>Separate room</h3><p>Dairy processing should not happen beside vegetable washing, dirty utensils or dispatch traffic.</p></article>
+        <article><span>02</span><h3>Cold chain</h3><p>Use dedicated refrigeration, cold-room discipline, insulated bags and temperature data logs.</p></article>
+        <article><span>03</span><h3>Batch records</h3><p>Record milk receipt, testing, pasteurisation, incubation, packing date and customer complaint process.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><img src="assets/flavoursync-icon.png" alt="" aria-hidden="true"><div><strong>NutriBihar</strong><span>Fresh Dairy</span></div><p>Dahi, paneer and chaas stay operationally separate from hot cooking.</p></footer>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

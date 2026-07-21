@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriBihar Packaging Label Sheet</title>
+  <style>
+    :root {
+      --bg: #141719;
+      --ink: #171a1c;
+      --gold: #e8ad3f;
+      --paper: #fffdf4;
+      --muted: #6d6257;
+      --veg: #2f7d4a;
+      --nonveg: #7c2f26;
+      --rice: #d99b2f;
+      --snack: #245f5b;
+      --bulk: #30343a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #e9e2d4;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .sheet-actions {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      color: #fff;
+      background: var(--bg);
+    }
+
+    .sheet-actions strong,
+    .sheet-actions span {
+      display: block;
+    }
+
+    .sheet-actions span {
+      color: #d8c9b5;
+      font-size: 13px;
+    }
+
+    button {
+      min-height: 42px;
+      padding: 0 16px;
+      border: 0;
+      border-radius: 8px;
+      color: #171a1c;
+      background: var(--gold);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .sheet {
+      width: 210mm;
+      min-height: 297mm;
+      display: grid;
+      gap: 8mm;
+      margin: 18px auto;
+      padding: 12mm;
+      background: white;
+      box-shadow: 0 12px 44px rgba(0, 0, 0, 0.18);
+    }
+
+    .label-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8mm;
+      align-items: start;
+    }
+
+    .main-label,
+    .seal-label,
+    .band-label {
+      position: relative;
+      overflow: hidden;
+      border: 0.3mm solid #1b2024;
+      background: var(--paper);
+      break-inside: avoid;
+    }
+
+    .main-label {
+      width: 90mm;
+      height: 55mm;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 5mm;
+    }
+
+    .main-label::before,
+    .band-label::before {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6mm;
+      content: "";
+    }
+
+    .main-label.veg::before { background: var(--veg); }
+    .main-label.nonveg::before { background: var(--nonveg); }
+    .main-label.rice::before { background: var(--rice); }
+    .main-label.snack::before { background: var(--snack); }
+    .main-label.bulk::before { background: var(--bulk); }
+
+    .label-head,
+    .label-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4mm;
+      margin-left: 5mm;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 2mm;
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 10mm;
+      height: 10mm;
+      border-radius: 50%;
+    }
+
+    .diet {
+      width: 8mm;
+      height: 8mm;
+      display: grid;
+      place-items: center;
+      border: 0.5mm solid currentColor;
+    }
+
+    .diet::after {
+      width: 4.4mm;
+      height: 4.4mm;
+      background: currentColor;
+      content: "";
+    }
+
+    .diet.veg {
+      color: var(--veg);
+    }
+
+    .diet.veg::after {
+      border-radius: 50%;
+    }
+
+    .diet.nonveg {
+      color: var(--nonveg);
+    }
+
+    .diet.nonveg::after {
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
+
+    .dish-name {
+      align-self: center;
+      margin-left: 5mm;
+    }
+
+    .dish-name strong {
+      display: block;
+      font-size: 17pt;
+      line-height: 1;
+    }
+
+    .dish-name span {
+      display: block;
+      margin-top: 2mm;
+      color: var(--muted);
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .field-line {
+      min-width: 20mm;
+      border-bottom: 0.3mm solid #9c9184;
+    }
+
+    .label-foot {
+      color: var(--muted);
+      font-size: 8pt;
+      font-weight: 700;
+    }
+
+    .seal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6mm;
+    }
+
+    .seal-label {
+      width: 38mm;
+      height: 38mm;
+      display: grid;
+      place-items: center;
+      padding: 4mm;
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    .seal-label img {
+      width: 13mm;
+      height: 13mm;
+      border-radius: 50%;
+    }
+
+    .seal-label strong,
+    .seal-label span {
+      display: block;
+    }
+
+    .seal-label strong {
+      color: var(--gold);
+      font-size: 9pt;
+    }
+
+    .seal-label span {
+      color: var(--muted);
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .band-label {
+      width: 180mm;
+      height: 55mm;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 8mm;
+      align-items: center;
+      padding: 7mm 9mm 7mm 14mm;
+      color: #fff8ec;
+      background: #171c1f;
+    }
+
+    .band-label::before {
+      background: linear-gradient(180deg, var(--gold), #c9573b);
+    }
+
+    .band-label img {
+      width: 24mm;
+      height: 24mm;
+      border-radius: 50%;
+    }
+
+    .band-label strong {
+      display: block;
+      font-size: 22pt;
+      line-height: 1;
+    }
+
+    .band-label span {
+      color: #d8c9b5;
+      font-size: 9pt;
+      font-weight: 700;
+    }
+
+    .band-label small {
+      color: var(--gold);
+      font-size: 8pt;
+      font-weight: 900;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .sheet-actions {
+        display: none;
+      }
+
+      .sheet {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet-actions">
+    <div><strong>NutriBihar label sheet</strong><span>A4 print layout with main labels, round seals and tray bands.</span></div>
+    <button type="button" onclick="window.print()">Print Labels</button>
+  </div>
+
+  <main class="sheet">
+    <section class="label-row">
+      <article class="main-label nonveg">
+        <div class="label-head"><div class="brand"><img src="../flavoursync-icon.png" alt="">NutriBihar</div><span class="diet nonveg"></span></div>
+        <div class="dish-name"><strong>Handi Mutton Platter</strong><span>Regular - Medium hot</span></div>
+        <div class="label-foot"><span>Packed time</span><span class="field-line"></span><span>+91 84059 17655</span></div>
+      </article>
+      <article class="main-label nonveg">
+        <div class="label-head"><div class="brand"><img src="../flavoursync-icon.png" alt="">NutriBihar</div><span class="diet nonveg"></span></div>
+        <div class="dish-name"><strong>Chicken Masala Combo</strong><span>Regular - Balanced spice</span></div>
+        <div class="label-foot"><span>Packed time</span><span class="field-line"></span><span>+91 84059 17655</span></div>
+      </article>
+    </section>
+
+    <section class="label-row">
+      <article class="main-label veg">
+        <div class="label-head"><div class="brand"><img src="../flavoursync-icon.png" alt="">NutriBihar</div><span class="diet veg"></span></div>
+        <div class="dish-name"><strong>Classic Veg Thali</strong><span>Regular - Comfort meal</span></div>
+        <div class="label-foot"><span>Packed time</span><span class="field-line"></span><span>+91 84059 17655</span></div>
+      </article>
+      <article class="main-label rice">
+        <div class="label-head"><div class="brand"><img src="../flavoursync-icon.png" alt="">NutriBihar</div><span class="diet nonveg"></span></div>
+        <div class="dish-name"><strong>Dum Chicken Biryani</strong><span>750 ml - Raita separate</span></div>
+        <div class="label-foot"><span>Packed time</span><span class="field-line"></span><span>+91 84059 17655</span></div>
+      </article>
+    </section>
+
+    <section class="label-row">
+      <article class="main-label veg">
+        <div class="label-head"><div class="brand"><img src="../flavoursync-icon.png" alt="">NutriBihar</div><span class="diet veg"></span></div>
+        <div class="dish-name"><strong>Paneer Butter Combo</strong><span>Regular - Mild</span></div>
+        <div class="label-foot"><span>Packed time</span><span class="field-line"></span><span>+91 84059 17655</span></div>
+      </article>
+      <article class="main-label snack">
+        <div class="label-head"><div class="brand"><img src="../flavoursync-icon.png" alt="">NutriBihar</div><span class="diet nonveg"></span></div>
+        <div class="dish-name"><strong>Tandoori Kebab Box</strong><span>10 pieces - Mint chutney</span></div>
+        <div class="label-foot"><span>Packed time</span><span class="field-line"></span><span>+91 84059 17655</span></div>
+      </article>
+    </section>
+
+    <section class="label-row">
+      <article class="main-label veg">
+        <div class="label-head"><div class="brand"><img src="../flavoursync-icon.png" alt="">NutriBihar</div><span class="diet veg"></span></div>
+        <div class="dish-name"><strong>Dal Tadka Rice Bowl</strong><span>Regular - Daily meal</span></div>
+        <div class="label-foot"><span>Packed time</span><span class="field-line"></span><span>+91 84059 17655</span></div>
+      </article>
+      <article class="main-label bulk">
+        <div class="label-head"><div class="brand"><img src="../flavoursync-icon.png" alt="">NutriBihar</div><span class="diet nonveg"></span></div>
+        <div class="dish-name"><strong>Mutton Party Tray</strong><span>Bulk - Advance order</span></div>
+        <div class="label-foot"><span>Packed time</span><span class="field-line"></span><span>+91 84059 17655</span></div>
+      </article>
+    </section>
+
+    <section class="seal-grid">
+      <article class="seal-label"><img src="../flavoursync-icon.png" alt=""><strong>Fresh Seal</strong><span>Do not accept if open</span></article>
+      <article class="seal-label"><img src="../flavoursync-icon.png" alt=""><strong>Raita</strong><span>Keep cool</span></article>
+      <article class="seal-label"><img src="../flavoursync-icon.png" alt=""><strong>Chutney</strong><span>Side cup</span></article>
+      <article class="seal-label"><img src="../flavoursync-icon.png" alt=""><strong>Paid</strong><span>Confirm bill</span></article>
+    </section>
+
+    <section>
+      <article class="band-label">
+        <img src="../flavoursync-icon.png" alt="">
+        <div><strong>NutriBihar</strong><span>Daily food. Trusted source. - Danapur and nearby Patna</span></div>
+        <small>Tray band - Bulk order</small>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

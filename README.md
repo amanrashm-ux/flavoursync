@@ -1,6 +1,6 @@
-# FlavourSync.in UI
+# NutriBihar UI
 
-Professional static website and ordering experience for FlavourSync.in.
+Professional static website and ordering experience for NutriBihar.
 
 ## Pages
 
@@ -10,8 +10,10 @@ Professional static website and ordering experience for FlavourSync.in.
 - `about.html` - about us page
 - `story.html` - deeper brand story page
 - `catering.html` - bulk order and catering enquiry page
+- `packaging.html` - packaging system, pack sizes and printable label resources
 - `contact.html` - contact, WhatsApp, phone and FAQ page
 - `policies.html` - order, schedule, cancellation and privacy notes
+- `credits.html` - menu image source and license notes
 
 ## Assets
 
@@ -19,6 +21,9 @@ Professional static website and ordering experience for FlavourSync.in.
 - `assets/flavoursync-icon.png` - cropped icon mark used for loader/header
 - `assets/pwa-icon-192.png`, `assets/pwa-icon-512.png`, `assets/pwa-maskable-512.png` - installable app icons
 - `assets/apple-touch-icon.png` - iOS home-screen icon
+- `assets/menu/` - local dish photos used by menu cards
+- `assets/packaging/flavoursync-packaging-spec.csv` - vendor-ready pack size sheet
+- `assets/packaging/label-sheet.html` - printable A4 label sheet
 
 ## PWA
 

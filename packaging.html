@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f2e6">
+  <meta name="description" content="NutriBihar packaging system with branded labels, pack sizes, menu mapping and printable order stickers.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="NutriBihar">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Packaging System | NutriBihar</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/flavoursync-icon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loader" id="loader" aria-label="Loading NutriBihar"><div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span><span class="brand-copy"><strong>Nutri<span>Bihar</span></strong><small>Daily food. Trusted source.</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+    <div class="topbar-actions"><a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello NutriBihar, I want to discuss packaging for orders." aria-label="WhatsApp"><i data-lucide="message-circle"></i></a><a class="cart-link" href="menu.html#order"><i data-lucide="shopping-bag"></i><span>Order</span></a><button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+
+  <main>
+    <section class="page-hero compact-hero">
+      <div>
+        <span class="service-pill"><i data-lucide="package-check"></i> Packaging System</span>
+        <h1>Branded packs for every NutriBihar order size.</h1>
+        <p>A practical packaging guide for bowls, thalis, combo boxes, kebab boxes, chutney cups and bulk trays with label sizes, color coding and customer handoff details.</p>
+      </div>
+      <div class="mini-panel">
+        <strong>Ready for vendors</strong>
+        <span>Use these as starting specs for printer and packaging supplier discussions.</span>
+        <a class="btn btn-primary" href="assets/packaging/flavoursync-packaging-spec.csv" download><i data-lucide="download"></i> Download Size Sheet</a>
+        <a class="btn btn-soft" href="assets/packaging/label-sheet.html"><i data-lucide="printer"></i> Open Label Sheet</a>
+      </div>
+    </section>
+
+    <section class="packaging-section">
+      <div class="section-heading">
+        <span>Brand System</span>
+        <h2>One identity, different order types.</h2>
+        <p>The pack design uses a charcoal base, warm gold brand mark, and dish-type color strips so delivery partners and customers can identify items quickly.</p>
+      </div>
+      <div class="packaging-showcase">
+        <article class="package-mockup meal-pack">
+          <div class="package-lid">
+            <span class="diet-mark nonveg-mark"></span>
+            <img src="assets/flavoursync-icon.png" alt="">
+            <strong>Handi Mutton</strong>
+            <small>Meal box - Regular</small>
+          </div>
+          <div class="package-band mutton">Slow cooked - Medium hot - Rs confirmed on WhatsApp</div>
+        </article>
+        <article class="package-mockup bowl-pack">
+          <div class="bowl-lid">
+            <img src="assets/flavoursync-icon.png" alt="">
+            <strong>Dum Biryani</strong>
+            <span>750 ml</span>
+          </div>
+          <div class="steam-line"></div>
+        </article>
+        <article class="package-mockup tray-pack">
+          <div class="tray-foil"></div>
+          <div class="tray-band">
+            <img src="assets/flavoursync-icon.png" alt="">
+            <div><strong>Mutton Party Tray</strong><span>Bulk order - seal before dispatch</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="packaging-section">
+      <div class="section-heading center">
+        <span>Menu Mapping</span>
+        <h2>Pack type and sizes</h2>
+        <p>Each card gives the recommended pack family, serving size, label size and operating notes.</p>
+      </div>
+      <div class="packaging-grid">
+        <article class="pack-card nonveg-card">
+          <span class="pack-code">Mutton</span>
+          <h3>Handi Mutton Platter</h3>
+          <p>Rigid meal box plus separate gravy cup so rotis and rice stay clean.</p>
+          <div class="pack-sizes"><span>S - 500 ml gravy + 2 roti sleeve</span><span>R - 750 ml gravy + rice cup</span><span>L - 1000 ml gravy + family sleeve</span></div>
+          <small>Label: 90 x 55 mm main sticker, 180 x 55 mm sleeve band.</small>
+        </article>
+        <article class="pack-card nonveg-card">
+          <span class="pack-code">Chicken</span>
+          <h3>Chicken Masala Combo</h3>
+          <p>Leak-resistant combo tray with masala, rice and salad separated.</p>
+          <div class="pack-sizes"><span>S - 650 ml combo tray</span><span>R - 900 ml 3-partition tray</span><span>L - 1200 ml shared tray</span></div>
+          <small>Label: 100 x 65 mm lid sticker with spice and delivery fields.</small>
+        </article>
+        <article class="pack-card veg-card">
+          <span class="pack-code">Veg</span>
+          <h3>Classic Veg Thali</h3>
+          <p>Five-partition thali tray for dal, curry, sabzi, rice and roti.</p>
+          <div class="pack-sizes"><span>S - 750 ml thali tray</span><span>R - 1000 ml thali tray</span><span>L - 1400 ml family thali tray</span></div>
+          <small>Label: 90 x 55 mm with green vegetarian symbol area.</small>
+        </article>
+        <article class="pack-card rice-card">
+          <span class="pack-code">Rice</span>
+          <h3>Dum Chicken Biryani</h3>
+          <p>Deep round bowl with raita cup clipped or packed separately.</p>
+          <div class="pack-sizes"><span>S - 500 ml bowl</span><span>R - 750 ml bowl</span><span>L - 1000 ml bowl</span></div>
+          <small>Label: 70 x 70 mm round lid seal plus 45 mm raita cup sticker.</small>
+        </article>
+        <article class="pack-card veg-card">
+          <span class="pack-code">Paneer</span>
+          <h3>Paneer Butter Combo</h3>
+          <p>Paneer gravy cup with roti sleeve and rice cup in one carry tray.</p>
+          <div class="pack-sizes"><span>S - 350 ml gravy + 2 rotis</span><span>R - 500 ml gravy + rice</span><span>L - 750 ml gravy + 4 rotis</span></div>
+          <small>Label: 90 x 55 mm main sticker, 45 mm dip sticker.</small>
+        </article>
+        <article class="pack-card snack-card">
+          <span class="pack-code">Snacks</span>
+          <h3>Tandoori Kebab Box</h3>
+          <p>Vented kraft snack box with onion, lemon and chutney cup.</p>
+          <div class="pack-sizes"><span>S - 6 pieces / 500 ml box</span><span>R - 10 pieces / 750 ml box</span><span>L - 20 pieces / 1200 ml party box</span></div>
+          <small>Label: 80 x 45 mm top seal, 30 mm chutney seal.</small>
+        </article>
+        <article class="pack-card veg-card">
+          <span class="pack-code">Daily</span>
+          <h3>Dal Tadka Rice Bowl</h3>
+          <p>Dual-compartment bowl or separate dal cup for better travel.</p>
+          <div class="pack-sizes"><span>S - 500 ml rice bowl</span><span>R - 750 ml dual bowl</span><span>L - 1000 ml comfort bowl</span></div>
+          <small>Label: 70 x 55 mm lid sticker with reheating note area.</small>
+        </article>
+        <article class="pack-card bulk-card">
+          <span class="pack-code">Bulk</span>
+          <h3>Mutton Party Tray</h3>
+          <p>Foil tray with board sleeve, tamper seal and item-count sticker.</p>
+          <div class="pack-sizes"><span>S - 1 kg half tray</span><span>R - 2 kg medium tray</span><span>L - 4 kg full tray</span></div>
+          <small>Label: 210 x 70 mm tray band plus 45 mm side seal.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="packaging-section">
+      <div class="section-heading">
+        <span>Label Hierarchy</span>
+        <h2>What every pack should show.</h2>
+        <p>Use the same layout for every sticker so orders look consistent even when the container size changes.</p>
+      </div>
+      <div class="label-system">
+        <article class="label-sample large-label">
+          <div><img src="assets/flavoursync-icon.png" alt=""><strong>NutriBihar</strong></div>
+          <h3>Paneer Butter Combo</h3>
+          <p>Regular - Mild - Packed fresh</p>
+          <span class="diet-mark veg-mark"></span>
+          <small>Order ID - Packed time - Contact +91 84059 17655</small>
+        </article>
+        <article class="label-sample seal-label">
+          <img src="assets/flavoursync-icon.png" alt="">
+          <strong>Fresh Seal</strong>
+          <span>Do not accept if open</span>
+        </article>
+        <article class="label-sample sleeve-label">
+          <strong>Daily food. Trusted source.</strong>
+          <span>Danapur - Scheduled orders - WhatsApp confirmation</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div>
+        <span class="section-kicker">Supplier note</span>
+        <h2>Confirm final material and food-contact compliance before print.</h2>
+        <p>Use these layouts as the design direction, then confirm exact dielines, laminate, adhesive, ink, sealing method and required regulatory fields with your packaging vendor.</p>
+      </div>
+      <a class="btn btn-secondary whatsapp-link" href="#" data-whatsapp="Hello NutriBihar, I want to discuss packaging sizes and label design."><i data-lucide="message-circle"></i> Discuss Packaging</a>
+    </section>
+  </main>
+
+  <footer class="footer"><img src="assets/flavoursync-icon.png" alt="" aria-hidden="true"><div><strong>NutriBihar</strong><span>Daily food. Trusted source.</span></div><p>Packaging system for delivery, scheduled and bulk orders.</p></footer>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

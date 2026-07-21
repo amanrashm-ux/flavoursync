@@ -1,0 +1,25 @@
+menu_item,category,package_family,size_code,container_size,primary_pack,secondary_pack,label_size,accent_color,notes
+Handi Mutton Platter,Non-Veg,Mutton meal box,S,500 ml gravy + 2 roti sleeve,Leak-resistant gravy cup,Roti paper sleeve,90 x 55 mm main sticker + 180 x 55 mm sleeve band,Deep mutton red,Keep gravy separate from breads
+Handi Mutton Platter,Non-Veg,Mutton meal box,R,750 ml gravy + rice cup,Leak-resistant gravy cup,Rice cup + roti sleeve,90 x 55 mm main sticker + 180 x 55 mm sleeve band,Deep mutton red,Standard dinner portion
+Handi Mutton Platter,Non-Veg,Mutton meal box,L,1000 ml gravy + family sleeve,Leak-resistant gravy cup,Family roti sleeve + rice cup,100 x 65 mm main sticker + 210 x 70 mm band,Deep mutton red,Shared meal or advance order
+Chicken Masala Combo,Non-Veg,Combo tray,S,650 ml combo tray,2-partition tray,Salad/chutney cup,90 x 55 mm lid sticker,Ember chicken orange,Separate salad from hot food
+Chicken Masala Combo,Non-Veg,Combo tray,R,900 ml 3-partition tray,3-partition tray,Salad/chutney cup,100 x 65 mm lid sticker,Ember chicken orange,Best default delivery pack
+Chicken Masala Combo,Non-Veg,Combo tray,L,1200 ml shared tray,Large partition tray,Two chutney cups,140 x 55 mm band,Ember chicken orange,Shared combo
+Classic Veg Thali,Veg,Thali tray,S,750 ml thali tray,5-partition tray,Papad sleeve,90 x 55 mm sticker,Sage green,Vegetarian symbol area required
+Classic Veg Thali,Veg,Thali tray,R,1000 ml thali tray,5-partition tray,Papad sleeve,100 x 65 mm sticker,Sage green,Best default thali pack
+Classic Veg Thali,Veg,Thali tray,L,1400 ml family thali tray,Large 5-partition tray,Papad sleeve + side cup,140 x 55 mm band,Sage green,Shared thali
+Dum Chicken Biryani,Rice,Biryani bowl,S,500 ml bowl,Deep round bowl,Raita cup,70 x 70 mm round seal + 45 mm cup sticker,Golden rice,Small rice bowl
+Dum Chicken Biryani,Rice,Biryani bowl,R,750 ml bowl,Deep round bowl,Raita cup,70 x 70 mm round seal + 45 mm cup sticker,Golden rice,Best default biryani pack
+Dum Chicken Biryani,Rice,Biryani bowl,L,1000 ml bowl,Deep round bowl,Large raita cup,90 x 55 mm sticker + 45 mm cup sticker,Golden rice,Shared biryani
+Paneer Butter Combo,Veg,Paneer combo tray,S,350 ml gravy + 2 rotis,Gravy cup,Roti sleeve,90 x 55 mm main sticker,Sage green,Vegetarian symbol area required
+Paneer Butter Combo,Veg,Paneer combo tray,R,500 ml gravy + rice,Gravy cup,Rice cup + roti sleeve,90 x 55 mm main sticker,Sage green,Standard combo
+Paneer Butter Combo,Veg,Paneer combo tray,L,750 ml gravy + 4 rotis,Gravy cup,Family roti sleeve,100 x 65 mm sticker,Sage green,Shared vegetarian combo
+Tandoori Kebab Box,Snacks,Vented snack box,S,6 pieces / 500 ml box,Vented kraft box,Chutney cup,80 x 45 mm seal + 30 mm cup sticker,Smoky teal,Keep vents clear
+Tandoori Kebab Box,Snacks,Vented snack box,R,10 pieces / 750 ml box,Vented kraft box,Chutney cup,80 x 45 mm seal + 30 mm cup sticker,Smoky teal,Standard snack box
+Tandoori Kebab Box,Snacks,Vented snack box,L,20 pieces / 1200 ml party box,Vented kraft party box,Two chutney cups,140 x 55 mm band + 30 mm cup sticker,Smoky teal,Party starter
+Dal Tadka Rice Bowl,Veg,Dal rice bowl,S,500 ml rice bowl,Single bowl,Pickle/papad pouch,70 x 55 mm sticker,Sage green,Light daily meal
+Dal Tadka Rice Bowl,Veg,Dal rice bowl,R,750 ml dual bowl,Dual-compartment bowl,Pickle/papad pouch,70 x 55 mm sticker,Sage green,Best travel setup
+Dal Tadka Rice Bowl,Veg,Dal rice bowl,L,1000 ml comfort bowl,Dual-compartment bowl,Pickle/papad pouch,90 x 55 mm sticker,Sage green,Large daily meal
+Mutton Party Tray,Bulk,Bulk foil tray,S,1 kg half tray,Foil half tray,Board sleeve + side seal,210 x 70 mm tray band + 45 mm side seal,Graphite gold,Bulk tray seal required
+Mutton Party Tray,Bulk,Bulk foil tray,R,2 kg medium tray,Foil medium tray,Board sleeve + side seal,210 x 70 mm tray band + 45 mm side seal,Graphite gold,Advance order recommended
+Mutton Party Tray,Bulk,Bulk foil tray,L,4 kg full tray,Foil full tray,Board sleeve + side seal,260 x 80 mm tray band + 45 mm side seal,Graphite gold,Large group order
