@@ -26,7 +26,7 @@
           <header>
             <div>
               <span>Order Handoff</span>
-              <h2 id="orderSheetTitle">Send this to NutriBihar</h2>
+              <h2 id="orderSheetTitle">Send this to FlavourSync</h2>
             </div>
             <button class="icon-action" type="button" data-close-order-sheet aria-label="Close order handoff"><i data-lucide="x"></i></button>
           </header>
@@ -105,13 +105,13 @@
     const label = installButton.querySelector("span");
     const installed = isStandalone();
     installButton.classList.toggle("is-installed", installed);
-    installButton.setAttribute("aria-label", installed ? "NutriBihar app is installed" : "Install NutriBihar app");
+    installButton.setAttribute("aria-label", installed ? "FlavourSync app is installed" : "Install FlavourSync app");
     if (label) label.textContent = installed ? "Installed" : "Install";
   }
 
   async function handleInstallClick() {
     if (isStandalone()) {
-      showToast("NutriBihar is already installed.");
+      showToast("FlavourSync is already installed.");
       return;
     }
 
@@ -141,7 +141,6 @@
   }
 
   window.FlavourSync = { openWhatsApp, showToast };
-  window.NutriBihar = { openWhatsApp, showToast };
   registerServiceWorker();
 
   window.addEventListener("beforeinstallprompt", event => {
@@ -153,7 +152,7 @@
   window.addEventListener("appinstalled", () => {
     deferredInstallPrompt = null;
     refreshInstallButton();
-    showToast("NutriBihar installed.");
+    showToast("FlavourSync installed.");
   });
 
   window.addEventListener("load", () => {
@@ -163,8 +162,8 @@
   if (!document.querySelector(".announcement")) {
     document.body.insertAdjacentHTML("afterbegin", `
       <div class="announcement">
-        <span>Kitchen, Dairy and Packaged</span>
-        <strong>NutriBihar Patna pilot</strong>
+        <span>Juicy non-veg orders</span>
+        <strong>FlavourSync Danapur pilot</strong>
         <a href="tel:+${WHATSAPP_NUMBER}">${PHONE_DISPLAY}</a>
       </div>
     `);
@@ -185,7 +184,7 @@
   document.querySelectorAll(".whatsapp-link").forEach(link => {
     link.addEventListener("click", event => {
       event.preventDefault();
-      openWhatsApp(link.dataset.whatsapp || "Hello NutriBihar, I want to place an order.");
+      openWhatsApp(link.dataset.whatsapp || "Hello FlavourSync, I want to place an order.");
     });
   });
 
@@ -193,15 +192,12 @@
   if (footer && !footer.querySelector(".footer-nav")) {
     footer.insertAdjacentHTML("beforeend", `
       <nav class="footer-nav" aria-label="Footer links">
-        <a href="menu.html">Fresh Meals</a>
-        <a href="shop.html">Foods & Spices</a>
-        <a href="dairy.html">Fresh Dairy</a>
-        <a href="subscriptions.html">Subscriptions</a>
-        <a href="grade.html">Grade</a>
-        <a href="trace.html">Trace</a>
-        <a href="farmers.html">Farmers</a>
+        <a href="menu.html">Menu</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="packaging.html">Packaging</a>
         <a href="catering.html">Bulk</a>
-        <a href="contact.html">Help</a>
+        <a href="contact.html">Contact</a>
+        <a href="policies.html">Policies</a>
       </nav>
     `);
   }
@@ -209,8 +205,8 @@
   const dock = document.createElement("div");
   dock.className = "floating-dock";
   dock.innerHTML = `
-    <a href="menu.html#order" aria-label="Open fresh meals"><i data-lucide="utensils"></i><span>Meals</span></a>
-    <button class="install-app-button" type="button" data-install-app aria-label="Install NutriBihar app"><i data-lucide="download"></i><span>Install</span></button>
+    <a href="menu.html#order" aria-label="Open juicy menu"><i data-lucide="utensils"></i><span>Menu</span></a>
+    <button class="install-app-button" type="button" data-install-app aria-label="Install FlavourSync app"><i data-lucide="download"></i><span>Install</span></button>
     <button type="button" aria-label="Order on WhatsApp"><i data-lucide="message-circle"></i><span>WhatsApp</span></button>
   `;
   document.body.appendChild(dock);
@@ -218,7 +214,7 @@
   installButton.addEventListener("click", handleInstallClick);
   refreshInstallButton();
   dock.querySelector("button:not([data-install-app])").addEventListener("click", () => {
-    openWhatsApp("Hello NutriBihar, I want to place an order.");
+    openWhatsApp("Hello FlavourSync, I want to place an order.");
   });
   if (window.lucide) {
     window.lucide.createIcons();
@@ -264,19 +260,19 @@
     function renderServiceResult(covered, selectedType) {
       const lanes = [
         {
-          type: "Fresh kitchen delivery",
-          title: "Fresh meals",
-          detail: covered ? "Available for lunch and dinner scheduling in pilot zones." : "Confirm the kitchen route before placing a fresh meal order."
+          type: "Hot kitchen delivery",
+          title: "Mutton, chicken and biryani",
+          detail: covered ? "Available for lunch and dinner scheduling in pilot zones." : "Confirm the kitchen route before placing a hot meal order."
         },
         {
-          type: "Fresh dairy delivery",
-          title: "Dairy",
-          detail: covered ? "Available for morning delivery and subscription setup." : "Dairy delivery needs manual route confirmation."
+          type: "Scheduled order",
+          title: "Planned family meals",
+          detail: covered ? "Available for advance lunch, dinner and late-evening requests." : "Scheduled orders need manual route and kitchen confirmation."
         },
         {
-          type: "Packaged-product delivery",
-          title: "Foods & spices",
-          detail: covered ? "Available with local delivery or pickup coordination." : "Can still be checked for courier or pickup options."
+          type: "Bulk tray fulfilment",
+          title: "Party trays",
+          detail: covered ? "Available with headcount, timing and packaging confirmation." : "Bulk trays can still be checked for pickup or custom delivery."
         }
       ].filter(lane => selectedType === "All categories" || lane.type === selectedType);
 
@@ -286,7 +282,7 @@
           <span class="status-dot"></span>
           <div>
             <strong>${covered ? "Likely serviceable in the Patna pilot zone" : "Needs manual confirmation"}</strong>
-            <p>${covered ? "Use the matching order page or confirm final timing on WhatsApp." : "Share your locality so NutriBihar can confirm the route, timing and charges."}</p>
+            <p>${covered ? "Use the matching order page or confirm final timing on WhatsApp." : "Share your locality so FlavourSync can confirm the route, timing and charges."}</p>
           </div>
         </div>
         <div class="service-result-grid">
@@ -303,7 +299,7 @@
 
       resultPanel.querySelector(".service-whatsapp").addEventListener("click", () => {
         openWhatsApp([
-          "Hello NutriBihar, I want to check delivery availability.",
+          "Hello FlavourSync, I want to check delivery availability.",
           pinInput.value.trim() ? `PIN code: ${pinInput.value.trim()}` : "",
           localityInput.value.trim() ? `Locality: ${localityInput.value.trim()}` : "",
           `Delivery type: ${typeSelect.value}`,
@@ -361,7 +357,7 @@
       }
 
       openWhatsApp([
-        "Hello NutriBihar, I want to schedule an order.",
+        "Hello FlavourSync, I want to schedule an order.",
         name ? `Name: ${name}` : "",
         area ? `Delivery locality: ${area}` : "",
         `Preferred date: ${date}`,
@@ -394,7 +390,7 @@
       }
 
       openWhatsApp([
-        "Hello NutriBihar, I want to enquire about a corporate or bulk order.",
+        "Hello FlavourSync, I want to enquire about a corporate or bulk order.",
         name ? `Name: ${name}` : "",
         `People: ${people}`,
         occasion ? `Occasion: ${occasion}` : "",

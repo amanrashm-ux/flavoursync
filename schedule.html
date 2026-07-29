@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#f8f2e6">
-  <meta name="description" content="Schedule a NutriBihar meal order for later through WhatsApp.">
+  <meta name="description" content="Schedule a FlavourSync meal order for later through WhatsApp.">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="NutriBihar">
+  <meta name="apple-mobile-web-app-title" content="FlavourSync">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Schedule Order | NutriBihar</title>
+  <title>Schedule Order | FlavourSync</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/flavoursync-icon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -19,13 +19,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="loader" id="loader" aria-label="Loading NutriBihar"><div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div></div>
+  <div class="loader" id="loader" aria-label="Loading FlavourSync"><div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div></div>
   <header class="topbar">
-    <a class="brand" href="index.html"><span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span><span class="brand-copy"><strong>Nutri<span>Bihar</span></strong><small>Daily food. Trusted source.</small></span></a>
-    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
-    <div class="topbar-actions"><a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello NutriBihar, I want to schedule an order." aria-label="WhatsApp"><i data-lucide="message-circle"></i></a><a class="cart-link" href="menu.html#order"><i data-lucide="shopping-bag"></i><span>Order</span></a><button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></div>
+    <a class="brand" href="index.html" aria-label="FlavourSync home"><span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span><span class="brand-copy"><strong>Flavour<span>Sync</span></strong><small>Classic flavours. Modern sync.</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="schedule.html">Schedule</a><a href="packaging.html">Packaging</a><a href="catering.html">Bulk</a><a href="contact.html">Contact</a></nav>
+    <div class="topbar-actions"><a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to schedule an order." aria-label="WhatsApp"><i data-lucide="message-circle"></i></a><a class="cart-link" href="menu.html#order"><i data-lucide="shopping-bag"></i><span>Order</span></a><button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></div>
   </header>
-  <nav class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="schedule.html">Schedule</a><a href="packaging.html">Packaging</a><a href="catering.html">Bulk</a><a href="contact.html">Contact</a></nav>
 
   <main>
     <section class="page-hero compact-hero">
@@ -61,12 +61,12 @@
         <button class="slot-button" type="button" data-slot="12:30">Office lunch - 12:30 PM</button>
         <button class="slot-button" type="button" data-slot="19:30">Family dinner - 7:30 PM</button>
         <button class="slot-button" type="button" data-slot="20:30">Late dinner - 8:30 PM</button>
-        <div class="notice-box"><i data-lucide="info"></i><span>Scheduled orders are requests until NutriBihar confirms availability, final bill and delivery time on WhatsApp.</span></div>
+        <div class="notice-box"><i data-lucide="info"></i><span>Scheduled orders are requests until FlavourSync confirms availability, final bill and delivery time on WhatsApp.</span></div>
       </aside>
     </section>
   </main>
 
-  <footer class="footer"><img src="assets/flavoursync-icon.png" alt="" aria-hidden="true"><div><strong>NutriBihar</strong><span>Daily food. Trusted source.</span></div><p>Schedule-order page with WhatsApp handoff.</p></footer>
+  <footer class="footer"><img src="assets/flavoursync-icon.png" alt="" aria-hidden="true"><div><strong>FlavourSync</strong><span>Classic flavours. Modern sync.</span></div><p>Schedule-order page with WhatsApp handoff.</p></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="site.js"></script>

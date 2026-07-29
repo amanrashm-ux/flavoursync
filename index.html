@@ -3,146 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f8f2e6">
-  <meta name="description" content="NutriBihar brings fresh meals, honest dairy, nutrition foods, spices and farm traceability into one customer ecosystem.">
+  <meta name="theme-color" content="#090706">
+  <meta name="description" content="FlavourSync.in is an animated non-veg cloud-kitchen ordering experience for juicy mutton, chicken, kebabs, biryani and party trays.">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="NutriBihar">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta property="og:title" content="NutriBihar | From Bihar's farms to your daily table">
-  <meta property="og:description" content="Fresh meals, dairy, nutrition foods and farm-origin spices with one customer account.">
+  <meta name="apple-mobile-web-app-title" content="FlavourSync">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:title" content="FlavourSync.in | Juicy non-veg meals in motion">
+  <meta property="og:description" content="Mutton, chicken, kebabs, biryani and party trays with a reel-style animated ordering experience.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/nutribihar/makhana.webp">
-  <title>NutriBihar | Daily Food From A Trusted Source</title>
+  <meta property="og:image" content="assets/flavoursync-logo.png">
+  <title>FlavourSync.in | Juicy Non-Veg Meals In Motion</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/flavoursync-icon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="loader" id="loader" aria-label="Loading NutriBihar"><div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div></div>
+<body class="flavoursync-reel">
+  <div class="loader" id="loader" aria-label="Loading FlavourSync">
+    <div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div>
+  </div>
 
   <header class="topbar">
-    <a class="brand" href="index.html" aria-label="NutriBihar home">
-      <span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span>
-      <span class="brand-copy"><strong>Nutri<span>Bihar</span></strong><small>Daily food. Trusted source.</small></span>
-    </a>
-    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+    <a class="brand" href="index.html" aria-label="FlavourSync home"><span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span><span class="brand-copy"><strong>Flavour<span>Sync</span></strong><small>Classic flavours. Modern sync.</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="schedule.html">Schedule</a><a href="packaging.html">Packaging</a><a href="catering.html">Bulk</a><a href="contact.html">Contact</a></nav>
     <div class="topbar-actions">
-      <a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello NutriBihar, I want to check delivery availability." aria-label="Contact NutriBihar"><i data-lucide="message-circle"></i></a>
+      <a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to order juicy non-veg food." aria-label="Order on WhatsApp"><i data-lucide="message-circle"></i></a>
       <a class="cart-link" href="menu.html#order"><i data-lucide="shopping-bag"></i><span>Order</span></a>
       <button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
     </div>
   </header>
 
-  <nav class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="schedule.html">Schedule</a><a href="packaging.html">Packaging</a><a href="catering.html">Bulk</a><a href="contact.html">Contact</a></nav>
 
   <main>
-    <section class="home-hero nutribihar-hero">
-      <div class="home-hero-copy">
-        <span class="service-pill"><i data-lucide="leaf"></i> NutriBihar ecosystem</span>
-        <h1>From Bihar's farms to your daily table.</h1>
-        <p>Fresh meals, honest dairy, nutrition foods and farm-origin spices on one website, with separate fulfilment for Kitchen, Dairy and packaged products.</p>
+    <section class="reel-hero" aria-label="Animated FlavourSync homepage">
+      <div class="reel-progress" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+      <div class="story-topline" aria-hidden="true">
+        <span class="story-back"><i data-lucide="arrow-left"></i></span>
+        <img src="assets/flavoursync-icon.png" alt="">
+        <div><strong>FlavourSync</strong><small>hot now</small></div>
+        <span class="story-camera"><i data-lucide="camera"></i></span>
+      </div>
+
+      <aside class="reel-action-rail" aria-label="Social style actions">
+        <a class="whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want today's juicy non-veg menu."><i data-lucide="heart"></i><span>Order</span></a>
+        <a href="menu.html#order"><i data-lucide="message-circle"></i><span>Menu</span></a>
+        <a href="schedule.html"><i data-lucide="repeat-2"></i><span>Plan</span></a>
+        <a href="packaging.html"><i data-lucide="bookmark"></i><span>Packs</span></a>
+      </aside>
+
+      <div class="reel-hero-copy">
+        <span class="service-pill"><i data-lucide="flame"></i> Non-veg cloud kitchen</span>
+        <h1>Juicy mutton, chicken and kebabs with a reel-worthy reveal.</h1>
+        <p>Swipe through signature gravies, smoky kebab boxes, dum biryani and party trays. Pick a dish, schedule it, and send the order straight to WhatsApp.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="menu.html"><i data-lucide="utensils"></i> Order from Kitchen</a>
-          <a class="btn btn-soft" href="shop.html"><i data-lucide="package"></i> Shop Packaged Foods</a>
-          <a class="btn btn-secondary" href="dairy.html"><i data-lucide="milk"></i> Start Dairy Subscription</a>
-        </div>
-        <div class="hero-orderline" aria-label="NutriBihar fulfilment groups">
-          <a href="menu.html"><span>Kitchen</span><strong>10 vegetarian launch SKUs</strong></a>
-          <a href="dairy.html"><span>Dairy</span><strong>Dahi, paneer and chaas</strong></a>
-          <a href="shop.html"><span>Packaged</span><strong>Foods, spices and bundles</strong></a>
+          <a class="btn btn-primary" href="menu.html#order"><i data-lucide="utensils"></i> Open Juicy Menu</a>
+          <a class="btn btn-secondary whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to place a non-veg order."><i data-lucide="message-circle"></i> WhatsApp Order</a>
         </div>
       </div>
-      <div class="hero-product-stack" aria-hidden="true">
-        <div class="hero-pack-halo"></div>
-        <img class="hero-pack hero-pack-main" src="assets/nutribihar/sattu.webp" alt="">
-        <img class="hero-pack hero-pack-side hero-pack-left" src="assets/nutribihar/makhana.webp" alt="">
-        <img class="hero-pack hero-pack-side hero-pack-right" src="assets/nutribihar/turmeric.webp" alt="">
-        <div class="hero-grade-badge"><strong>A-E</strong><span>Grade-ready product language</span></div>
-        <div class="hero-delivery-badge"><strong>3</strong><span>Separate fulfilment lanes</span></div>
+
+      <div class="story-caption">FlavourSync makes it juicy.</div>
+
+      <div class="reel-stage" aria-label="Animated food showcase">
+        <div class="browser-strip"><span></span><span></span><span></span><strong>flavoursync.in/nonveg</strong></div>
+        <div class="stage-screen">
+          <img class="stage-bg" src="assets/menu/handi-mutton.jpg" alt="">
+          <img class="hero-dish hero-dish-main" src="assets/menu/handi-mutton.jpg" alt="Handi mutton platter">
+          <img class="hero-dish hero-dish-left" src="assets/menu/kebab-box.jpg" alt="Tandoori kebab box">
+          <img class="hero-dish hero-dish-right" src="assets/menu/biryani.jpg" alt="Dum chicken biryani">
+          <div class="sauce-streak sauce-one"></div>
+          <div class="sauce-streak sauce-two"></div>
+          <div class="pack-reveal">
+            <img src="assets/flavoursync-icon.png" alt="">
+            <strong>FLAVOURSYNC</strong>
+            <span>Sealed hot. Served bold.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-bottom">
+        <div class="story-profile"><img src="assets/flavoursync-icon.png" alt=""><strong>flavoursync.in</strong><a href="menu.html#order">Follow taste</a></div>
+        <p>Scroll to discover #nonveg #biryani #kebab #cloudkitchen</p>
       </div>
     </section>
 
-    <section class="trust-grid" aria-label="NutriBihar business units">
-      <article><i data-lucide="chef-hat"></i><strong>NutriBihar Kitchen</strong><span>Fresh vegetarian meals prepared in Patna with schedule-ready fulfilment.</span></article>
-      <article><i data-lucide="milk"></i><strong>NutriBihar Dairy</strong><span>Fresh dahi, paneer and masala chaas supporting meals and independent orders.</span></article>
-      <article><i data-lucide="package-check"></i><strong>Foods & Spices</strong><span>Sattu, makhana, atta, mixes and farm-origin spices for repeat household use.</span></article>
-      <article><i data-lucide="scan-line"></i><strong>Farm Network</strong><span>Batch traceability, farmer stories, lab reports and origin information.</span></article>
+    <section class="reel-strip" aria-label="Signature non-veg dishes">
+      <article class="reel-food-card is-large">
+        <img src="assets/menu/handi-mutton.jpg" alt="Handi mutton platter">
+        <span>Mutton slow-cook</span>
+        <h2>Handi Mutton Platter</h2>
+        <p>Rich gravy, soft rotis, rice and chutney packed hot for a full non-veg meal.</p>
+      </article>
+      <article class="reel-food-card">
+        <img src="assets/menu/chicken-masala.jpg" alt="Chicken masala combo">
+        <span>Chicken gravy</span>
+        <h3>Chicken Masala Combo</h3>
+      </article>
+      <article class="reel-food-card">
+        <img src="assets/menu/kebab-box.jpg" alt="Tandoori kebab box">
+        <span>Smoky box</span>
+        <h3>Tandoori Kebab Box</h3>
+      </article>
+      <article class="reel-food-card">
+        <img src="assets/menu/biryani.jpg" alt="Dum chicken biryani">
+        <span>Dum rice</span>
+        <h3>Dum Chicken Biryani</h3>
+      </article>
     </section>
 
-    <section class="service-strip service-checker">
-      <div>
-        <span class="section-kicker">Serviceability Checker</span>
-        <h2>Check what can reach your area first.</h2>
-      </div>
-      <form class="checker-form" id="serviceChecker">
-        <label><span>PIN code</span><input id="servicePin" type="text" inputmode="numeric" maxlength="6" placeholder="8000xx" autocomplete="postal-code"></label>
-        <label><span>Location</span><input id="serviceLocation" type="text" placeholder="Danapur, Bailey Road..." autocomplete="address-level2"></label>
-        <label><span>Delivery type</span><select id="serviceType"><option>All categories</option><option>Fresh kitchen delivery</option><option>Fresh dairy delivery</option><option>Packaged-product delivery</option></select></label>
-        <button class="btn btn-primary" type="submit">Check Availability</button>
-      </form>
-      <div class="service-result" id="serviceResult" aria-live="polite">
-        <span class="status-dot"></span>
-        <p>Enter your PIN or locality to see the likely fulfilment lanes before ordering.</p>
-      </div>
-    </section>
-
-    <section class="page-section">
+    <section class="motion-board">
       <div class="section-heading center">
-        <span>One Account, Separate Fulfilment</span>
-        <h2>Customers can pay once without mixing operations.</h2>
-        <p>The checkout architecture separates fresh kitchen delivery, fresh dairy delivery and packaged-product delivery, each with its own delivery time, charges and tracking status.</p>
+        <span>How it moves</span>
+        <h2>Order flow designed like a short food reel.</h2>
+        <p>Bold caption cards, cinematic food reveals and direct WhatsApp checkout keep the experience fast on mobile.</p>
       </div>
-      <div class="process-grid">
-        <article><span>Kitchen</span><h3>Fresh meals</h3><p>Breakfast, lunch and dinner availability, sold-out status, customisation, allergens, nutrition and scheduled delivery.</p><a href="menu.html">Open fresh meals</a></article>
-        <article><span>Dairy</span><h3>Fresh subscriptions</h3><p>One-time purchase, daily or alternate-day subscriptions, pause/resume, delivery instructions and monthly invoices.</p><a href="dairy.html">Explore dairy</a></article>
-        <article><span>Packaged</span><h3>Pantry products</h3><p>Individual products, bundles, lab reports, farmer traceability, QR lookup and pan-India shipping readiness.</p><a href="shop.html">Shop products</a></article>
+      <div class="motion-grid">
+        <article>
+          <span>01</span>
+          <h3>Hook</h3>
+          <p>Black caption block, hot food, sauce glow and right-side action rail create the first-screen pull.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Reveal</h3>
+          <p>Dish cards slide upward like frames in a reel: mutton, chicken, kebab, biryani, party tray.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Order</h3>
+          <p>Every path ends in the same WhatsApp handoff with item, timing, locality and confirmation request.</p>
+        </article>
       </div>
     </section>
 
-    <section class="split-section">
+    <section class="split-section reel-order-panel">
       <div>
-        <span class="section-kicker">Launch Menu Logic</span>
-        <h2>Ten kitchen items from six shared components.</h2>
-        <p>The first kitchen menu stays vegetarian and operationally tight: sattu filling, millet base, fresh paneer, fresh dahi, roasted makhana, chutneys and one masala base.</p>
+        <span class="section-kicker">Juicy picks</span>
+        <h2>Mostly non-veg. Fully order-ready.</h2>
+        <p>FlavourSync focuses on the dishes people crave at night, at work and for parties: mutton gravy, chicken masala, dum biryani, kebab boxes and bulk trays.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="menu.html#order"><i data-lucide="shopping-bag"></i> Build Order</a>
+          <a class="btn btn-soft" href="schedule.html"><i data-lucide="calendar-clock"></i> Schedule</a>
+        </div>
       </div>
-      <div class="feature-list">
-        <article><i data-lucide="wheat"></i><strong>Sattu-led meals</strong><span>Litti-chokha, protein wrap and sattu paratha share prep and inventory.</span></article>
-        <article><i data-lucide="sprout"></i><strong>Millet base</strong><span>Khichdi and paneer bowls reuse the same grain base and vegetable prep.</span></article>
-        <article><i data-lucide="milk"></i><strong>Dairy cross-sell</strong><span>Dahi, chaas, lassi and kheer support kitchen orders and dairy retail.</span></article>
-      </div>
-    </section>
-
-    <section class="daypart-section">
-      <div class="section-heading center">
-        <span>Launch Sequence</span>
-        <h2>Build in phases, not all at once.</h2>
-      </div>
-      <div class="daypart-grid">
-        <article><i data-lucide="calendar-days"></i><h3>First 60 days</h3><p>Cloud kitchen, ten vegetarian SKUs, dahi, paneer, chaas, own website, aggregators and three delivery zones in Patna.</p><a href="menu.html">Start with meals</a></article>
-        <article><i data-lucide="repeat"></i><h3>Months 3 to 6</h3><p>Dairy subscriptions, corporate bowls, gym meal plans, breakfast subscriptions, party trays and packaged-food cross-sell.</p><a href="subscriptions.html">Plan subscriptions</a></article>
-        <article><i data-lucide="building-2"></i><h3>Months 6 to 12</h3><p>More Patna zones, collection point, reusable dairy packaging, institutional dairy and franchise-ready SOPs.</p><a href="catering.html">Plan bulk ops</a></article>
+      <div class="reel-pack-stack">
+        <article><img src="assets/menu/party-mutton.jpg" alt=""><strong>Mutton Party Tray</strong><span>Bulk packs for groups</span></article>
+        <article><img src="assets/menu/chicken-masala.jpg" alt=""><strong>Chicken Masala Combo</strong><span>Hot gravy meal box</span></article>
+        <article><img src="assets/menu/kebab-box.jpg" alt=""><strong>Kebab Starter Box</strong><span>Smoky, saucy, shareable</span></article>
       </div>
     </section>
 
-    <section class="cta-band">
+    <section class="cta-band reel-cta">
       <div>
-        <span class="section-kicker">Positioning</span>
-        <h2>Everything your family eats daily, from a source you can trust.</h2>
-        <p>One customer can order lunch from Kitchen, receive fresh dahi from Dairy and reorder sattu, makhana and spices from the same account.</p>
+        <span class="section-kicker">Order on WhatsApp</span>
+        <h2>Tell us what you want hot, juicy and packed.</h2>
+        <p>Send the dish, quantity, delivery locality and timing. FlavourSync confirms availability, final bill and delivery time.</p>
       </div>
-      <a class="btn btn-primary whatsapp-link" href="#" data-whatsapp="Hello NutriBihar, I want to discuss the launch plan and delivery areas."><i data-lucide="message-circle"></i> Discuss Launch</a>
+      <a class="btn btn-secondary whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to order juicy non-veg food. Please share availability and delivery time."><i data-lucide="message-circle"></i> Start Order</a>
     </section>
   </main>
 
   <footer class="footer">
     <img src="assets/flavoursync-icon.png" alt="" aria-hidden="true">
-    <div><strong>NutriBihar</strong><span>Daily food. Trusted source.</span></div>
-    <p>Kitchen, Dairy, Foods & Spices and Farm Network on one customer ecosystem.</p>
+    <div><strong>FlavourSync.in</strong><span>Classic flavours. Modern sync.</span></div>
+    <p>Juicy non-veg meals, scheduled orders and party packs routed through WhatsApp.</p>
   </footer>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>

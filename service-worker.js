@@ -1,14 +1,8 @@
-const CACHE_NAME = "nutribihar-pwa-v1";
+const CACHE_NAME = "flavoursync-reel-v1";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./menu.html",
-  "./shop.html",
-  "./dairy.html",
-  "./subscriptions.html",
-  "./grade.html",
-  "./trace.html",
-  "./farmers.html",
   "./schedule.html",
   "./about.html",
   "./story.html",
@@ -30,33 +24,14 @@ const APP_SHELL = [
   "./assets/apple-touch-icon.png",
   "./assets/packaging/flavoursync-packaging-spec.csv",
   "./assets/packaging/label-sheet.html",
-  "./assets/nutribihar/atta.webp",
-  "./assets/nutribihar/black_pepper.webp",
-  "./assets/nutribihar/chana_seeds.webp",
-  "./assets/nutribihar/coriander.webp",
-  "./assets/nutribihar/dosa_idli.webp",
-  "./assets/nutribihar/fresh-dahi.png",
-  "./assets/nutribihar/fresh-paneer.png",
-  "./assets/nutribihar/ginger.webp",
-  "./assets/nutribihar/green_chilli.webp",
-  "./assets/nutribihar/jeera.webp",
-  "./assets/nutribihar/khichdi.webp",
-  "./assets/nutribihar/makhana.webp",
-  "./assets/nutribihar/masala-chaas.png",
-  "./assets/nutribihar/muesli.webp",
-  "./assets/nutribihar/nut_butters.webp",
-  "./assets/nutribihar/oats.webp",
-  "./assets/nutribihar/red_chilli.webp",
-  "./assets/nutribihar/sattu.webp",
-  "./assets/nutribihar/turmeric.webp",
   "./assets/menu/handi-mutton.jpg",
   "./assets/menu/chicken-masala.jpg",
-  "./assets/menu/veg-thali.jpg",
   "./assets/menu/biryani.jpg",
-  "./assets/menu/paneer-combo.jpg",
   "./assets/menu/kebab-box.jpg",
   "./assets/menu/dal-rice.jpg",
-  "./assets/menu/party-mutton.jpg"
+  "./assets/menu/party-mutton.jpg",
+  "./assets/menu/paneer-combo.jpg",
+  "./assets/menu/veg-thali.jpg"
 ];
 
 function scopedUrl(path) {

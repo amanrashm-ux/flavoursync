@@ -6,120 +6,107 @@
 
   const menuItems = [
     {
-      id: "sattu-litti",
-      name: "Sattu Litti-Chokha Power Meal",
-      category: "Kitchen",
-      fulfillment: "Fresh kitchen delivery",
-      tag: "Bihar hero",
-      price: 199,
-      description: "Roasted litti with sattu filling, chokha, chutney and optional fresh dahi add-on.",
-      meta: ["Vegetarian", "Sattu base", "Lunch/Dinner"],
-      image: "assets/nutribihar/sattu.webp"
+      id: "handi-mutton",
+      name: "Handi Mutton Platter",
+      category: "Mutton",
+      fulfillment: "Hot kitchen delivery",
+      tag: "Rich gravy",
+      price: 399,
+      description: "Slow-cooked mutton gravy with four soft rotis, jeera rice, salad and house chutney.",
+      meta: ["Non-veg", "Slow cooked", "Medium hot"],
+      ingredients: ["Mutton", "Handi gravy", "Soft roti", "Jeera rice", "Onion", "Lemon", "House chutney"],
+      image: "assets/menu/handi-mutton.jpg"
     },
     {
-      id: "millet-khichdi",
-      name: "Millet Moong Khichdi Bowl",
-      category: "Kitchen",
-      fulfillment: "Fresh kitchen delivery",
+      id: "chicken-masala",
+      name: "Chicken Masala Combo",
+      category: "Chicken",
+      fulfillment: "Hot kitchen delivery",
+      tag: "Juicy combo",
+      price: 299,
+      description: "Boneless-style chicken masala with rice, two rotis, salad and spicy chutney.",
+      meta: ["Non-veg", "Gravy", "Serves 1"],
+      ingredients: ["Chicken", "Masala gravy", "Rice", "Roti", "Potato", "Mint", "Spicy chutney"],
+      image: "assets/menu/chicken-masala.jpg"
+    },
+    {
+      id: "dum-chicken-biryani",
+      name: "Dum Chicken Biryani",
+      category: "Biryani",
+      fulfillment: "Hot kitchen delivery",
+      tag: "Dum sealed",
+      price: 279,
+      description: "Aromatic chicken biryani with raita, salan and fried onion garnish.",
+      meta: ["Non-veg", "Rice meal", "Raita side"],
+      ingredients: ["Chicken", "Basmati rice", "Fried onion", "Raita", "Salan", "Cardamom", "Saffron rice"],
+      image: "assets/menu/biryani.jpg"
+    },
+    {
+      id: "tandoori-kebab-box",
+      name: "Tandoori Kebab Box",
+      category: "Kebab",
+      fulfillment: "Hot kitchen delivery",
+      tag: "Smoky",
+      price: 249,
+      description: "Charred kebab pieces with onion rings, mint chutney and lemon.",
+      meta: ["Non-veg", "Starter", "Smoky"],
+      ingredients: ["Kebab", "Tandoori masala", "Onion", "Lemon", "Mint chutney", "Coriander", "Char smoke"],
+      image: "assets/menu/kebab-box.jpg"
+    },
+    {
+      id: "party-mutton-tray",
+      name: "Mutton Party Tray",
+      category: "Party Tray",
+      fulfillment: "Bulk tray fulfilment",
+      tag: "Bulk",
+      price: 1499,
+      description: "Group-size mutton gravy tray with rice, rotis, salad and chutney cups.",
+      meta: ["Non-veg", "Advance order", "Serves 4-6"],
+      ingredients: ["Mutton", "Party gravy", "Rice", "Roti", "Salad", "Chutney cups", "Tray seal"],
+      image: "assets/menu/party-mutton.jpg"
+    },
+    {
+      id: "chicken-dal-rice",
+      name: "Chicken Dal Rice Bowl",
+      category: "Chicken",
+      fulfillment: "Hot kitchen delivery",
       tag: "Comfort",
-      price: 169,
-      description: "Millet mix, moong dal, vegetables, light masala and a cooling dahi pairing.",
-      meta: ["Vegetarian", "Millet base", "Light meal"],
-      image: "assets/nutribihar/khichdi.webp"
-    },
-    {
-      id: "paneer-millet",
-      name: "Paneer Millet Power Bowl",
-      category: "Kitchen",
-      fulfillment: "Fresh kitchen delivery",
-      tag: "Protein",
       price: 229,
-      description: "Fresh paneer, millet base, vegetables and chutney for a high-protein bowl.",
-      meta: ["Vegetarian", "Paneer", "Power bowl"],
-      image: "assets/nutribihar/fresh-paneer.png"
+      description: "Juicy chicken masala served over dal rice with pickle and onion salad.",
+      meta: ["Non-veg", "Comfort bowl", "Lunch"],
+      ingredients: ["Chicken", "Dal", "Rice", "Ghee tadka", "Pickle", "Onion salad", "Masala oil"],
+      image: "assets/menu/dal-rice.jpg"
     },
     {
-      id: "sattu-paneer-wrap",
-      name: "Sattu-Paneer Protein Wrap",
-      category: "Kitchen",
-      fulfillment: "Fresh kitchen delivery",
-      tag: "Wrap",
-      price: 189,
-      description: "Multigrain roti filled with sattu, paneer, vegetables and house chutney.",
-      meta: ["Vegetarian", "Portable", "Protein"],
-      image: "assets/nutribihar/sattu.webp"
+      id: "paneer-butter-combo",
+      name: "Paneer Butter Combo",
+      category: "Veg Backup",
+      fulfillment: "Hot kitchen delivery",
+      tag: "Veg option",
+      price: 259,
+      description: "Paneer butter masala with rice, two rotis and salad for vegetarian orders.",
+      meta: ["Veg", "Creamy gravy", "Serves 1"],
+      ingredients: ["Paneer", "Butter gravy", "Cream", "Rice", "Roti", "Salad", "Kasuri methi"],
+      image: "assets/menu/paneer-combo.jpg"
     },
     {
-      id: "sattu-paratha",
-      name: "Sattu Paratha with Fresh Dahi",
-      category: "Kitchen",
-      fulfillment: "Fresh kitchen delivery",
-      tag: "Breakfast",
-      price: 169,
-      description: "Sattu-filled paratha served with fresh dahi and house pickle.",
-      meta: ["Vegetarian", "Breakfast", "Dahi side"],
-      image: "assets/nutribihar/atta.webp"
-    },
-    {
-      id: "makhana-chaat",
-      name: "Roasted Makhana Dahi Chaat",
-      category: "Kitchen",
-      fulfillment: "Fresh kitchen delivery",
-      tag: "Snack",
-      price: 149,
-      description: "Roasted makhana, fresh dahi, chutneys and house spice mix assembled fresh.",
-      meta: ["Vegetarian", "Makhana", "Cold assembly"],
-      image: "assets/nutribihar/makhana.webp"
-    },
-    {
-      id: "fresh-dahi",
-      name: "Fresh Farm Dahi Cup",
-      category: "Dairy",
-      fulfillment: "Fresh dairy delivery",
-      tag: "Dairy",
-      price: 59,
-      description: "Pilot dairy SKU for one-time orders and future daily subscription plans.",
-      meta: ["Fresh dairy", "Cup pack", "Batch dated"],
-      image: "assets/nutribihar/fresh-dahi.png"
-    },
-    {
-      id: "masala-chaas",
-      name: "Masala Chaas",
-      category: "Dairy",
-      fulfillment: "Fresh dairy delivery",
-      tag: "Drink",
-      price: 69,
-      description: "Chilled dahi-based chaas with jeera, spices and light seasoning.",
-      meta: ["Fresh dairy", "Bottle/cup", "Cold chain"],
-      image: "assets/nutribihar/masala-chaas.png"
-    },
-    {
-      id: "sattu-lassi",
-      name: "Sattu Lassi",
-      category: "Dairy",
-      fulfillment: "Fresh dairy delivery",
-      tag: "Drink",
-      price: 99,
-      description: "Fresh dahi blended with sattu and optional jaggery for a filling drink.",
-      meta: ["Fresh dairy", "Sattu", "Filling"],
-      image: "assets/nutribihar/sattu.webp"
-    },
-    {
-      id: "makhana-kheer",
-      name: "Makhana Kheer",
-      category: "Dessert",
-      fulfillment: "Fresh dairy delivery",
-      tag: "Dessert",
-      price: 109,
-      description: "Milk, roasted makhana and cardamom dessert for add-on and scheduled orders.",
-      meta: ["Fresh dairy", "Dessert", "Makhana"],
-      image: "assets/nutribihar/makhana.webp"
+      id: "classic-veg-thali",
+      name: "Classic Veg Thali",
+      category: "Veg Backup",
+      fulfillment: "Hot kitchen delivery",
+      tag: "Backup",
+      price: 239,
+      description: "Dal, seasonal sabzi, rice, rotis, salad and chutney for mixed group orders.",
+      meta: ["Veg", "Thali", "Serves 1"],
+      ingredients: ["Dal", "Sabzi", "Rice", "Roti", "Salad", "Chutney", "Pickle"],
+      image: "assets/menu/veg-thali.jpg"
     }
   ];
 
   const comboMap = {
-    "Office Lunch Box": ["millet-khichdi", "paneer-millet", "masala-chaas"],
-    "Family Dinner Pack": ["sattu-litti", "sattu-paratha", "fresh-dahi", "makhana-kheer"]
+    "Office Lunch Box": ["chicken-masala", "chicken-dal-rice", "tandoori-kebab-box"],
+    "Family Dinner Pack": ["handi-mutton", "dum-chicken-biryani", "tandoori-kebab-box"],
+    "Juicy Non-Veg Pack": ["handi-mutton", "chicken-masala", "dum-chicken-biryani", "tandoori-kebab-box"]
   };
 
   const state = {
@@ -150,7 +137,7 @@
 
   function loadCart() {
     try {
-      const saved = JSON.parse(localStorage.getItem("nutribiharCart") || localStorage.getItem("flavoursyncCart") || "[]");
+      const saved = JSON.parse(localStorage.getItem("flavoursyncCart") || "[]");
       return new Map(saved.filter(([id, quantity]) => {
         return typeof id === "string" && Number.isFinite(quantity) && quantity > 0;
       }));
@@ -175,7 +162,7 @@
   }
 
   function saveCart() {
-    localStorage.setItem("nutribiharCart", JSON.stringify([...state.cart.entries()]));
+    localStorage.setItem("flavoursyncCart", JSON.stringify([...state.cart.entries()]));
   }
 
   function openWhatsApp(message) {
@@ -226,6 +213,9 @@
           <img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async">
           <span class="dish-tag">${item.tag}</span>
           <span class="dish-category">${item.category}</span>
+          <div class="ingredient-burst" aria-label="Key ingredients for ${item.name}">
+            ${item.ingredients.map((ingredient, index) => `<span style="--ingredient-index: ${index}">${ingredient}</span>`).join("")}
+          </div>
         </div>
         <div class="dish-body">
           <div class="dish-head">
@@ -234,6 +224,7 @@
           </div>
           <p>${item.description}</p>
           <div class="dish-meta">${item.meta.map(meta => `<span>${meta}</span>`).join("")}</div>
+          <div class="ingredient-list"><strong>Ingredients</strong><span>${item.ingredients.join(", ")}</span></div>
           <button class="btn btn-soft add-item" type="button" data-id="${item.id}">
             <i data-lucide="plus"></i> Add to Order
           </button>
@@ -316,7 +307,7 @@
           </article>
         `).join("")}
       </section>
-    `).join("") : `<div class="cart-empty">Your order is empty. Add NutriBihar Kitchen or Dairy items to prepare a WhatsApp checkout.</div>`;
+    `).join("") : `<div class="cart-empty">Your order is empty. Add juicy mutton, chicken, biryani or kebab items to prepare a WhatsApp checkout.</div>`;
     clearCart.disabled = !lines.length;
     checkoutButton.disabled = !lines.length;
   }
@@ -362,7 +353,7 @@
     ].join("\n")).join("\n\n");
 
     return [
-      "Hello NutriBihar, I want to place an order.",
+      "Hello FlavourSync, I want to place an order.",
       name ? `Name: ${name}` : "",
       area ? `Delivery locality: ${area}` : "",
       serviceType ? `Service: ${serviceType}` : "",
@@ -379,7 +370,7 @@
       paymentPreference ? `Payment preference: ${paymentPreference}` : "",
       notes ? `Notes: ${notes}` : "",
       "",
-      "Please confirm availability, fulfilment group timings, final bill and delivery time."
+      "Please confirm availability, final bill and delivery time."
     ].filter(Boolean).join("\n");
   }
 

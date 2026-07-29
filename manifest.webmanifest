@@ -1,15 +1,15 @@
 {
-  "name": "NutriBihar",
-  "short_name": "NutriBihar",
-  "description": "Fresh meals, dairy, nutrition foods, spices and traceability for the NutriBihar ecosystem.",
+  "name": "FlavourSync.in",
+  "short_name": "FlavourSync",
+  "description": "Juicy non-veg meals, scheduled orders, kebab boxes, biryani and party trays from FlavourSync.",
   "id": "./",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "orientation": "portrait-primary",
-  "background_color": "#f8f2e6",
-  "theme_color": "#f8f2e6",
+  "background_color": "#090706",
+  "theme_color": "#090706",
   "categories": ["food", "shopping", "business"],
   "lang": "en-IN",
   "icons": [
@@ -34,9 +34,9 @@
   ],
   "shortcuts": [
     {
-      "name": "Order Menu",
+      "name": "Juicy Menu",
       "short_name": "Menu",
-      "description": "Open NutriBihar fresh meals.",
+      "description": "Open FlavourSync mutton, chicken, biryani and kebab items.",
       "url": "./menu.html",
       "icons": [{ "src": "assets/pwa-icon-192.png", "sizes": "192x192" }]
     },
@@ -48,10 +48,10 @@
       "icons": [{ "src": "assets/pwa-icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Fresh Dairy",
-      "short_name": "Dairy",
-      "description": "Open NutriBihar fresh dairy products.",
-      "url": "./dairy.html",
+      "name": "Party Packs",
+      "short_name": "Bulk",
+      "description": "Open FlavourSync bulk tray and party order details.",
+      "url": "./catering.html",
       "icons": [{ "src": "assets/pwa-icon-192.png", "sizes": "192x192" }]
     }
   ]

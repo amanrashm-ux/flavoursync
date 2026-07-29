@@ -1,11 +1,11 @@
-# NutriBihar UI
+# FlavourSync UI
 
-Professional static website and ordering experience for NutriBihar.
+Professional static website and ordering experience for FlavourSync.in.
 
 ## Pages
 
-- `index.html` - homepage and brand overview
-- `menu.html` - live menu, cart checkout and schedule mode
+- `index.html` - animated reel-style homepage and brand overview
+- `menu.html` - live menu, animated ingredient cards, cart checkout and schedule mode
 - `schedule.html` - dedicated scheduled order flow
 - `about.html` - about us page
 - `story.html` - deeper brand story page

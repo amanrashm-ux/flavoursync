@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#f8f2e6">
-  <meta name="description" content="Order NutriBihar Kitchen vegetarian launch meals with dairy add-ons, schedule details and separated fulfilment groups.">
+  <meta name="description" content="Order FlavourSync juicy non-veg meals, mutton platters, chicken combos, kebabs, biryani and party trays.">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="NutriBihar">
+  <meta name="apple-mobile-web-app-title" content="FlavourSync">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Order Fresh Meals | NutriBihar</title>
+  <title>Order Juicy Non-Veg Meals | FlavourSync</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/flavoursync-icon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -18,52 +18,49 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="loader" id="loader" aria-label="Loading NutriBihar">
+<body class="flavoursync-menu">
+  <div class="loader" id="loader" aria-label="Loading FlavourSync">
     <div class="loader-mark" aria-hidden="true"><img src="assets/flavoursync-icon.png" alt=""></div>
   </div>
 
   <header class="topbar">
-    <a class="brand" href="index.html" aria-label="NutriBihar home">
-      <span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span>
-      <span class="brand-copy"><strong>Nutri<span>Bihar</span></strong><small>Daily food. Trusted source.</small></span>
-    </a>
-    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+    <a class="brand" href="index.html" aria-label="FlavourSync home"><span class="brand-icon"><img src="assets/flavoursync-icon.png" alt=""></span><span class="brand-copy"><strong>Flavour<span>Sync</span></strong><small>Classic flavours. Modern sync.</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="schedule.html">Schedule</a><a href="packaging.html">Packaging</a><a href="catering.html">Bulk</a><a href="contact.html">Contact</a></nav>
     <div class="topbar-actions">
-      <a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello NutriBihar, I want to place an order." aria-label="Order on WhatsApp"><i data-lucide="message-circle"></i></a>
+      <a class="icon-action whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to place an order." aria-label="Order on WhatsApp"><i data-lucide="message-circle"></i></a>
       <button class="cart-button" id="cartButton" type="button" aria-label="Open cart"><i data-lucide="shopping-bag"></i><span id="cartCount">0</span></button>
       <button class="mobile-menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
     </div>
   </header>
 
-  <nav class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="menu.html">Fresh Meals</a><a href="shop.html">Foods & Spices</a><a href="dairy.html">Fresh Dairy</a><a href="subscriptions.html">Subscriptions</a><a href="grade.html">Grade</a><a href="trace.html">Trace</a><a href="farmers.html">Farmers</a><a href="catering.html">Bulk</a><a href="contact.html">Help</a></nav>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="schedule.html">Schedule</a><a href="packaging.html">Packaging</a><a href="catering.html">Bulk</a><a href="contact.html">Contact</a></nav>
 
   <main>
     <section class="page-hero compact-hero">
       <div>
-        <span class="service-pill"><i data-lucide="shopping-bag"></i> NutriBihar Kitchen</span>
-        <h1>Order vegetarian launch meals with dairy add-ons.</h1>
-        <p>Start with the efficient first ten SKUs: sattu, millet, paneer, fresh dahi, chaas, lassi and makhana dessert. The cart separates kitchen and dairy fulfilment groups.</p>
+        <span class="service-pill"><i data-lucide="flame"></i> FlavourSync Kitchen</span>
+        <h1>Order juicy non-veg meals, kebabs and biryani.</h1>
+        <p>Start with mutton gravy, chicken masala, dum biryani, smoky kebab boxes and party trays. Veg options stay available for mixed groups.</p>
       </div>
       <div class="mini-panel">
         <strong>Order contact</strong>
-        <span>Kitchen, dairy and scheduled orders route to +91 84059 17655.</span>
-        <a class="btn btn-secondary whatsapp-link" href="#" data-whatsapp="Hello NutriBihar, please share today's fresh meal and dairy availability."><i data-lucide="message-circle"></i> Ask on WhatsApp</a>
+        <span>Non-veg, scheduled and bulk orders route to +91 84059 17655.</span>
+        <a class="btn btn-secondary whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, please share today's juicy non-veg availability."><i data-lucide="message-circle"></i> Ask on WhatsApp</a>
       </div>
     </section>
 
     <section class="menu-section" id="order">
       <div class="section-heading">
-        <span>Fresh Meals</span>
-        <h2>Choose from the first 10 SKUs</h2>
-        <p>Built from six shared components: sattu filling, millet base, fresh paneer, fresh dahi, roasted makhana, chutneys and one masala base.</p>
+        <span>Juicy Menu</span>
+        <h2>Choose mutton, chicken, kebabs and biryani</h2>
+        <p>Built for hot delivery: rich gravies, smoky starters, dum rice, sealed packaging and scheduled party trays.</p>
       </div>
 
       <div class="menu-toolbar">
         <div class="filters" id="filters" aria-label="Menu filters"></div>
         <label class="search-box">
           <i data-lucide="search"></i>
-          <input id="searchInput" type="search" placeholder="Search sattu, millet, paneer, dahi..." autocomplete="off">
+          <input id="searchInput" type="search" placeholder="Search mutton, chicken, biryani, kebab..." autocomplete="off">
         </label>
       </div>
 
@@ -74,19 +71,19 @@
       <div class="section-heading center">
         <span>Suggested Packs</span>
         <h2>Quick add order plans</h2>
-        <p>These shortcuts combine kitchen items with dairy add-ons while keeping fulfilment groups visible.</p>
+        <p>These shortcuts combine mostly non-veg dishes for office lunches, family dinners and party orders.</p>
       </div>
       <div class="combo-grid">
         <article class="combo-card">
           <span class="combo-label">Lunch</span>
           <h3>Office Lunch Box</h3>
-          <p>Millet khichdi, paneer bowl and masala chaas for a clean vegetarian lunch plan.</p>
+          <p>Chicken masala, chicken dal rice and kebab starters for a filling office lunch.</p>
           <button class="btn btn-soft combo-order" type="button" data-combo="Office Lunch Box"><i data-lucide="plus"></i> Add Suggested Items</button>
         </article>
         <article class="combo-card highlighted">
           <span class="combo-label">Dinner</span>
           <h3>Family Dinner Pack</h3>
-          <p>Sattu litti, sattu paratha, fresh dahi and makhana kheer for a Bihar-first family meal.</p>
+          <p>Mutton platter, dum chicken biryani and smoky kebabs for a juicy family dinner.</p>
           <button class="btn btn-primary combo-order" type="button" data-combo="Family Dinner Pack"><i data-lucide="plus"></i> Add Suggested Items</button>
         </article>
         <article class="combo-card">
@@ -115,8 +112,8 @@
         <form class="checkout-form" id="checkoutForm">
           <label><span>Name</span><input id="customerName" type="text" placeholder="Customer name"></label>
           <label><span>Delivery Locality</span><input id="customerArea" type="text" placeholder="Danapur, Saguna More..."></label>
-          <label><span>Service</span><select id="serviceType"><option>Kitchen delivery</option><option>Dairy delivery</option><option>Mixed fulfilment</option><option>Takeaway enquiry</option></select></label>
-          <label><span>Preference</span><select id="spiceLevel"><option>Regular spice</option><option>Mild</option><option>No onion/garlic enquiry</option><option>High-protein preference</option></select></label>
+          <label><span>Service</span><select id="serviceType"><option>Hot kitchen delivery</option><option>Scheduled delivery</option><option>Bulk tray enquiry</option><option>Takeaway enquiry</option></select></label>
+          <label><span>Preference</span><select id="spiceLevel"><option>Regular spice</option><option>Mild</option><option>Medium hot</option><option>Extra gravy</option></select></label>
           <div class="order-mode" role="group" aria-label="Delivery timing">
             <button class="active" type="button" data-order-mode="asap">ASAP</button>
             <button type="button" data-order-mode="schedule">Schedule</button>
@@ -126,7 +123,7 @@
             <label><span>Preferred Time</span><input id="scheduledTime" type="time"></label>
           </div>
           <label><span>Payment Preference</span><select id="paymentPreference"><option>Confirm on WhatsApp</option><option>UPI</option><option>Cash on delivery</option></select></label>
-          <label><span>Notes</span><textarea id="orderNotes" rows="3" placeholder="Allergy, dairy add-on, landmark, delivery timing..."></textarea></label>
+          <label><span>Notes</span><textarea id="orderNotes" rows="3" placeholder="Landmark, allergy, gravy preference, delivery timing..."></textarea></label>
         </form>
       </div>
 
@@ -137,15 +134,15 @@
           <div class="total"><span>Total</span><strong id="cartTotal">Rs 0</strong></div>
         </div>
 
-        <button class="btn btn-primary checkout-button" id="checkoutButton" type="button"><i data-lucide="message-circle"></i> Send NutriBihar Order</button>
+          <button class="btn btn-primary checkout-button" id="checkoutButton" type="button"><i data-lucide="message-circle"></i> Send FlavourSync Order</button>
       </div>
     </div>
   </aside>
 
   <footer class="footer">
     <img src="assets/flavoursync-icon.png" alt="" aria-hidden="true">
-    <div><strong>NutriBihar</strong><span>Daily food from a trusted source.</span></div>
-    <p>Fresh Kitchen and Dairy orders route to WhatsApp.</p>
+    <div><strong>FlavourSync.in</strong><span>Classic flavours. Modern sync.</span></div>
+    <p>Juicy non-veg orders route to WhatsApp.</p>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
