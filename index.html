@@ -59,29 +59,39 @@
 
       <div class="reel-hero-copy">
         <span class="service-pill"><i data-lucide="flame"></i> Non-veg cloud kitchen</span>
-        <h1>Juicy mutton, chicken and kebabs with a reel-worthy reveal.</h1>
-        <p>Swipe through signature gravies, smoky kebab boxes, dum biryani and party trays. Pick a dish, schedule it, and send the order straight to WhatsApp.</p>
+        <h1>Juicy non-veg that hits hot, smoky and saucy.</h1>
+        <p>Signature gravies, tandoori kebabs, dum biryani and party trays move like a food reel. Pick a dish, schedule it, and send the order straight to WhatsApp.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="menu.html#order"><i data-lucide="utensils"></i> Open Juicy Menu</a>
           <a class="btn btn-secondary whatsapp-link" href="#" data-whatsapp="Hello FlavourSync, I want to place a non-veg order."><i data-lucide="message-circle"></i> WhatsApp Order</a>
         </div>
       </div>
 
-      <div class="story-caption">FlavourSync makes it juicy.</div>
-
       <div class="reel-stage" aria-label="Animated food showcase">
-        <div class="browser-strip"><span></span><span></span><span></span><strong>flavoursync.in/nonveg</strong></div>
+        <div class="browser-strip"><span></span><span></span><span></span><strong>flavoursync.in/reel</strong></div>
         <div class="stage-screen">
-          <img class="stage-bg" src="assets/menu/handi-mutton.jpg" alt="">
-          <img class="hero-dish hero-dish-main" src="assets/menu/handi-mutton.jpg" alt="Handi mutton platter">
-          <img class="hero-dish hero-dish-left" src="assets/menu/kebab-box.jpg" alt="Tandoori kebab box">
-          <img class="hero-dish hero-dish-right" src="assets/menu/biryani.jpg" alt="Dum chicken biryani">
+          <video class="stage-video" autoplay muted loop playsinline preload="metadata" poster="assets/menu/party-mutton.jpg">
+            <source src="assets/video/flavoursync-reference-reel.mp4" type="video/mp4">
+          </video>
+          <div class="stage-vignette"></div>
           <div class="sauce-streak sauce-one"></div>
           <div class="sauce-streak sauce-two"></div>
+          <div class="reel-ingredient-tags">
+            <span>Charred chicken</span>
+            <span>Handi gravy</span>
+            <span>Dum aroma</span>
+          </div>
           <div class="pack-reveal">
             <img src="assets/flavoursync-icon.png" alt="">
             <strong>FLAVOURSYNC</strong>
             <span>Sealed hot. Served bold.</span>
+          </div>
+          <div class="taste-sync-card">
+            <span>Hot now</span>
+            <strong>Taste Sync</strong>
+            <div><b>Heat</b><i style="--value: 82%"></i></div>
+            <div><b>Gravy</b><i style="--value: 94%"></i></div>
+            <div><b>Smoke</b><i style="--value: 76%"></i></div>
           </div>
         </div>
       </div>
@@ -126,7 +136,7 @@
         <article>
           <span>01</span>
           <h3>Hook</h3>
-          <p>Black caption block, hot food, sauce glow and right-side action rail create the first-screen pull.</p>
+          <p>Large food photography, kinetic taste meters, sauce glow and right-side action rail create the first-screen pull.</p>
         </article>
         <article>
           <span>02</span>
@@ -175,6 +185,9 @@
   </footer>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="site.js"></script>
+  <script src="kinetic.js"></script>
 </body>
 </html>

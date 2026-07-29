@@ -1,4 +1,4 @@
-const CACHE_NAME = "flavoursync-reel-v1";
+const CACHE_NAME = "flavoursync-reel-v4";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -15,6 +15,7 @@ const APP_SHELL = [
   "./styles.css",
   "./site.js",
   "./app.js",
+  "./kinetic.js",
   "./manifest.webmanifest",
   "./assets/flavoursync-icon.png",
   "./assets/flavoursync-logo.png",
@@ -24,14 +25,15 @@ const APP_SHELL = [
   "./assets/apple-touch-icon.png",
   "./assets/packaging/flavoursync-packaging-spec.csv",
   "./assets/packaging/label-sheet.html",
-  "./assets/menu/handi-mutton.jpg",
-  "./assets/menu/chicken-masala.jpg",
-  "./assets/menu/biryani.jpg",
-  "./assets/menu/kebab-box.jpg",
-  "./assets/menu/dal-rice.jpg",
-  "./assets/menu/party-mutton.jpg",
-  "./assets/menu/paneer-combo.jpg",
-  "./assets/menu/veg-thali.jpg"
+  "./assets/menu-video/mutton-grill.mp4",
+  "./assets/menu-video/chicken-grill.mp4",
+  "./assets/menu-video/biryani-spice.mp4",
+  "./assets/menu-video/kebab-skewers.mp4",
+  "./assets/menu-video/party-bbq.mp4",
+  "./assets/menu-video/dal-sauce.mp4",
+  "./assets/menu-video/paneer-lemon.mp4",
+  "./assets/menu-video/thali-pepper.mp4",
+  "./assets/video/flavoursync-reference-reel.mp4"
 ];
 
 function scopedUrl(path) {

@@ -3788,9 +3788,13 @@ label span {
   --gold-strong: #be5b20;
   --sage: #173a27;
   --line: rgba(65, 36, 20, 0.13);
+  --ring: rgba(229, 104, 34, 0.24);
+  --card: #fffaf0;
+  --card-strong: #fff3df;
   background:
-    radial-gradient(circle at 18% 7%, rgba(245, 178, 58, 0.2), transparent 28%),
-    linear-gradient(180deg, #fff8eb 0%, #f4ead7 56%, #fffaf0 100%);
+    radial-gradient(circle at 17% 8%, rgba(230, 83, 28, 0.18), transparent 30%),
+    radial-gradient(circle at 82% 22%, rgba(245, 178, 58, 0.24), transparent 24%),
+    linear-gradient(180deg, #fff8eb 0%, #f4ead7 48%, #fffaf0 100%);
 }
 
 .flavoursync-menu .topbar {
@@ -3824,9 +3828,24 @@ label span {
   border: 1px solid rgba(65, 36, 20, 0.12);
   border-radius: 8px;
   background:
-    linear-gradient(90deg, rgba(24, 16, 12, 0.84), rgba(24, 16, 12, 0.42)),
-    url("assets/menu/chicken-masala.jpg") center / cover no-repeat;
+    radial-gradient(circle at 78% 42%, rgba(255, 181, 55, 0.42), transparent 21%),
+    radial-gradient(circle at 86% 68%, rgba(42, 123, 65, 0.18), transparent 18%),
+    radial-gradient(ellipse at 70% 60%, rgba(255, 244, 220, 0.18) 0 18%, transparent 19%),
+    linear-gradient(112deg, #21110a 0%, #7a2b17 52%, #f0b247 100%);
   color: #fff6e8;
+  box-shadow: 0 34px 80px rgba(97, 53, 25, 0.18);
+  isolation: isolate;
+}
+
+.flavoursync-menu .compact-hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(110deg, transparent 0 54%, rgba(255, 244, 220, 0.24) 54% 55%, transparent 55%),
+    radial-gradient(ellipse at 77% 56%, rgba(255, 244, 220, 0.42) 0 11%, rgba(255, 244, 220, 0.12) 12% 24%, transparent 25%),
+    radial-gradient(circle at 83% 45%, rgba(117, 45, 18, 0.28) 0 8%, transparent 9%);
+  content: "";
 }
 
 .flavoursync-menu .compact-hero h1,
@@ -3846,7 +3865,8 @@ label span {
 }
 
 .flavoursync-menu .menu-toolbar {
-  top: 92px;
+  position: static;
+  z-index: 40;
   border-color: rgba(65, 36, 20, 0.12);
   background: rgba(255, 248, 235, 0.9);
   box-shadow: 0 14px 38px rgba(65, 36, 20, 0.08);
@@ -3856,17 +3876,26 @@ label span {
   color: #39271b;
   border-color: rgba(65, 36, 20, 0.12);
   background: #fffaf0;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
 }
 
 .flavoursync-menu .filter-chip.active {
   color: #fffaf0;
   background: #1e130d;
+  box-shadow: 0 12px 28px rgba(46, 23, 11, 0.18);
 }
 
 .flavoursync-menu .dish-card {
+  position: relative;
+  isolation: isolate;
   border-color: rgba(65, 36, 20, 0.13);
-  background: #fffaf0;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.54), transparent 26%),
+    var(--card);
   box-shadow: 0 22px 54px rgba(65, 36, 20, 0.1);
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .flavoursync-menu .dish-card:hover {
@@ -3874,69 +3903,642 @@ label span {
   box-shadow: 0 26px 70px rgba(65, 36, 20, 0.16);
 }
 
-.flavoursync-menu .dish-image {
-  height: clamp(230px, 22vw, 286px);
-  background: #21150f;
-}
-
-.flavoursync-menu .dish-image::after {
-  background:
-    linear-gradient(180deg, rgba(32, 21, 14, 0), rgba(32, 21, 14, 0.54)),
-    linear-gradient(90deg, rgba(32, 21, 14, 0.26), transparent 58%);
-}
-
-.flavoursync-menu .dish-tag {
-  color: #1e130d;
-  background: linear-gradient(135deg, #ffd772, #ef982d);
-}
-
-.flavoursync-menu .dish-category {
-  background: rgba(30, 19, 13, 0.74);
-}
-
-.flavoursync-menu .ingredient-burst {
+.flavoursync-menu .dish-card::before {
   position: absolute;
-  z-index: 4;
-  inset: 10px;
+  z-index: -1;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 222, 147, 0.62), transparent 28%, rgba(191, 79, 29, 0.34));
+  opacity: 0;
+  transition: opacity 220ms ease;
+  content: "";
+}
+
+.flavoursync-menu .dish-card:hover::before {
+  opacity: 1;
+}
+
+.flavoursync-menu .dish-card:first-child {
+  grid-column: span 2;
+}
+
+.flavoursync-menu .dish-card:first-child .dish-video-shell {
+  height: clamp(300px, 32vw, 430px);
+}
+
+.flavoursync-menu .dish-video-shell {
+  position: relative;
+  height: clamp(252px, 24vw, 318px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 18%, rgba(255, 178, 46, 0.36), transparent 28%),
+    linear-gradient(145deg, #26130b, #9f3a1f);
+  transform: translateZ(18px);
+  isolation: isolate;
+}
+
+.flavoursync-menu .dish-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.16) contrast(1.05);
+  transform: scale(1);
+  transition: transform 360ms ease;
+}
+
+.flavoursync-menu .dish-video-scrim {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(17, 8, 4, 0.1), rgba(17, 8, 4, 0.34) 62%, rgba(17, 8, 4, 0.78)),
+    radial-gradient(circle at 55% 42%, transparent 0 28%, rgba(33, 14, 6, 0.24) 68%, rgba(33, 14, 6, 0.52));
   pointer-events: none;
 }
 
-.flavoursync-menu .ingredient-burst span {
+.flavoursync-menu .video-progress {
   position: absolute;
-  max-width: min(180px, calc(100% - 18px));
+  z-index: 5;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  height: 4px;
   overflow: hidden;
-  padding: 7px 10px;
-  border: 1px solid rgba(255, 244, 225, 0.26);
   border-radius: 999px;
-  color: #fff8eb;
-  background: rgba(28, 16, 10, 0.76);
-  box-shadow: 0 14px 28px rgba(26, 12, 6, 0.24);
-  font-size: 0.72rem;
-  font-weight: 900;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transform: translateY(12px) scale(0.92);
-  animation: ingredientFloat 5.8s ease-in-out infinite;
-  animation-delay: calc(var(--ingredient-index) * 170ms);
+  background: rgba(255, 248, 235, 0.28);
 }
 
-.flavoursync-menu .ingredient-burst span:nth-child(1) { top: 15%; left: 5%; }
-.flavoursync-menu .ingredient-burst span:nth-child(2) { top: 9%; right: 8%; }
-.flavoursync-menu .ingredient-burst span:nth-child(3) { top: 43%; left: 8%; }
-.flavoursync-menu .ingredient-burst span:nth-child(4) { right: 6%; bottom: 31%; }
-.flavoursync-menu .ingredient-burst span:nth-child(5) { bottom: 13%; left: 12%; }
-.flavoursync-menu .ingredient-burst span:nth-child(6) { right: 13%; bottom: 9%; }
-.flavoursync-menu .ingredient-burst span:nth-child(7) { top: 51%; left: 42%; }
+.flavoursync-menu .video-progress::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #fff6e8, #ffb22e, #ff5a24);
+  transform-origin: left;
+  animation: reelProgress 5.4s linear infinite;
+  content: "";
+}
 
-.flavoursync-menu .dish-card:hover .ingredient-burst span {
-  animation-duration: 3.6s;
+.flavoursync-menu .ingredient-floaters {
+  position: absolute;
+  z-index: 4;
+  inset: 18px;
+  pointer-events: none;
+}
+
+.flavoursync-menu .ingredient-chip {
+  position: absolute;
+  max-width: min(180px, calc(100% - 22px));
+  overflow: hidden;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 246, 232, 0.24);
+  border-radius: 999px;
+  color: #fffaf0;
+  background: rgba(31, 16, 8, 0.7);
+  box-shadow: 0 18px 32px rgba(18, 8, 4, 0.28);
+  font-size: 0.74rem;
+  font-weight: 950;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+  animation: burgerIngredientFloat 4.8s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 160ms);
+}
+
+.flavoursync-menu .ingredient-chip:nth-child(1) { top: 7%; left: 3%; }
+.flavoursync-menu .ingredient-chip:nth-child(2) { top: 10%; right: 6%; }
+.flavoursync-menu .ingredient-chip:nth-child(3) { top: 42%; left: 5%; }
+.flavoursync-menu .ingredient-chip:nth-child(4) { right: 4%; bottom: 29%; }
+.flavoursync-menu .ingredient-chip:nth-child(5) { bottom: 15%; left: 11%; }
+.flavoursync-menu .ingredient-chip:nth-child(6) { right: 9%; bottom: 13%; }
+
+.flavoursync-menu .ingredient-mutton,
+.flavoursync-menu .ingredient-chicken,
+.flavoursync-menu .ingredient-paneer {
+  background: rgba(71, 25, 12, 0.78);
+}
+
+.flavoursync-menu .ingredient-rice,
+.flavoursync-menu .ingredient-roti {
+  color: #24130b;
+  background: rgba(255, 230, 175, 0.78);
+}
+
+.flavoursync-menu .ingredient-salad,
+.flavoursync-menu .ingredient-chutney,
+.flavoursync-menu .ingredient-lemon {
+  background: rgba(24, 84, 48, 0.75);
+}
+
+.flavoursync-menu .recipe-reel {
+  position: absolute;
+  z-index: 4;
+  left: 16px;
+  bottom: 32px;
+  display: flex;
+  max-width: calc(100% - 32px);
+  gap: 7px;
+  overflow: hidden;
+}
+
+.flavoursync-menu .recipe-reel span {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #22150f;
+  background: rgba(255, 246, 232, 0.86);
+  font-size: 0.68rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  animation: recipeStepPulse 4.8s ease-in-out infinite;
+}
+
+.flavoursync-menu .recipe-reel span:nth-child(2) { animation-delay: 180ms; }
+.flavoursync-menu .recipe-reel span:nth-child(3) { animation-delay: 360ms; }
+.flavoursync-menu .recipe-reel span:nth-child(4) { animation-delay: 540ms; }
+
+.flavoursync-menu .dish-card:hover .dish-video {
+  transform: scale(1.11);
+}
+
+.flavoursync-menu .dish-card:hover .ingredient-chip {
+  animation-duration: 3.4s;
+}
+
+.flavoursync-menu .cart-video-thumb {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  border: 1px solid rgba(65, 36, 20, 0.12);
+  border-radius: 8px;
+  background: #21150f;
+}
+
+.flavoursync-menu .cart-video-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.12) contrast(1.08);
+}
+
+.flavoursync-menu .cart-video-thumb span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(20, 9, 4, 0.42));
+}
+
+.flavoursync-menu .dish-motion,
+.flavoursync-menu .cart-dish-motion {
+  --plate: #fff4db;
+  --plate-edge: #e3c49a;
+  --rice: #ffe8b6;
+  --rice-shadow: #dfbd77;
+  --gravy: #9d3521;
+  --gravy-dark: #5f1d14;
+  --protein: #5d2a1a;
+  --protein-hot: #d45c27;
+  --roti: #d7a85c;
+  --roti-dark: #8d5f2d;
+  --green: #4f8d47;
+  --lemon: #f4ce3c;
+  --cup: #fff5db;
+  position: relative;
+}
+
+.flavoursync-menu .dish-motion {
+  height: clamp(230px, 22vw, 286px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 28% 18%, rgba(255, 202, 78, 0.34), transparent 25%),
+    radial-gradient(circle at 80% 18%, rgba(74, 125, 72, 0.16), transparent 24%),
+    linear-gradient(145deg, #fff9ed, #ead2ab);
+  transform: translateZ(18px);
+}
+
+.flavoursync-menu .dish-motion::after {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 42%, rgba(76, 38, 17, 0.15)),
+    radial-gradient(circle at 50% 56%, transparent 0 28%, rgba(104, 54, 28, 0.12) 62%, rgba(104, 54, 28, 0.28));
+  content: "";
+}
+
+.flavoursync-menu .motion-glow {
+  position: absolute;
+  inset: 16% 14% 10%;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 179, 54, 0.46), transparent 58%),
+    radial-gradient(circle at 42% 34%, rgba(221, 63, 30, 0.3), transparent 48%);
+  filter: blur(18px);
+  animation: dishGlow 3.8s ease-in-out infinite;
+}
+
+.flavoursync-menu .motion-plate {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  width: 68%;
+  height: 36%;
+  border: 2px solid var(--plate-edge);
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(255, 255, 255, 0.96), rgba(255, 242, 217, 0.82) 48%, var(--plate-edge) 49% 54%, rgba(255, 255, 255, 0.8) 55%),
+    var(--plate);
+  box-shadow: 0 20px 38px rgba(88, 51, 27, 0.22);
+  transform: translateX(-50%);
+}
+
+.flavoursync-menu .motion-layer,
+.flavoursync-menu .motion-dot,
+.flavoursync-menu .motion-steam,
+.flavoursync-menu .motion-spice,
+.flavoursync-menu .motion-skewer,
+.flavoursync-menu .motion-tray {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  transform-origin: center;
+}
+
+.flavoursync-menu .motion-layer {
+  animation: layerDrop 4.6s cubic-bezier(.2,.82,.2,1) infinite;
+}
+
+.flavoursync-menu .layer-rice {
+  left: 31%;
+  bottom: 23%;
+  width: 29%;
+  height: 19%;
+  border-radius: 55% 45% 50% 46%;
+  background:
+    radial-gradient(circle at 20% 30%, #fff8dd 0 8%, transparent 9%),
+    radial-gradient(circle at 65% 25%, #fff8dd 0 7%, transparent 8%),
+    radial-gradient(circle at 42% 68%, var(--rice-shadow) 0 7%, transparent 8%),
+    var(--rice);
+  box-shadow: 0 10px 22px rgba(102, 58, 28, 0.18);
+  animation-delay: 120ms;
+}
+
+.flavoursync-menu .layer-gravy {
+  right: 28%;
+  bottom: 24%;
+  width: 27%;
+  height: 21%;
+  border: 5px solid rgba(255, 236, 194, 0.55);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 32%, rgba(255, 194, 73, 0.34) 0 13%, transparent 14%),
+    radial-gradient(circle at 66% 58%, var(--gravy-dark) 0 14%, transparent 15%),
+    var(--gravy);
+  box-shadow: 0 12px 24px rgba(97, 39, 18, 0.24);
+  animation-delay: 260ms;
+}
+
+.flavoursync-menu .layer-protein {
+  width: 18%;
+  height: 13%;
+  border-radius: 44% 56% 48% 52%;
+  background:
+    radial-gradient(circle at 36% 30%, var(--protein-hot) 0 20%, transparent 21%),
+    linear-gradient(145deg, var(--protein-hot), var(--protein) 62%, var(--gravy-dark));
+  box-shadow:
+    0 10px 18px rgba(65, 29, 15, 0.24),
+    inset 0 -8px 12px rgba(33, 13, 7, 0.2);
+}
+
+.flavoursync-menu .layer-protein-a {
+  left: 37%;
+  bottom: 34%;
+  transform: rotate(-9deg);
+  animation-delay: 390ms;
+}
+
+.flavoursync-menu .layer-protein-b {
+  right: 34%;
+  bottom: 34%;
+  transform: rotate(12deg);
+  animation-delay: 520ms;
+}
+
+.flavoursync-menu .layer-roti {
+  left: 20%;
+  bottom: 27%;
+  width: 29%;
+  height: 17%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 28% 38%, rgba(105, 64, 26, 0.28) 0 6%, transparent 7%),
+    radial-gradient(circle at 65% 58%, rgba(105, 64, 26, 0.24) 0 7%, transparent 8%),
+    linear-gradient(145deg, #f3d18a, var(--roti));
+  box-shadow: inset 0 -8px 14px rgba(117, 70, 29, 0.2);
+  transform: rotate(-12deg);
+  animation-delay: 640ms;
+}
+
+.flavoursync-menu .layer-garnish {
+  width: 11%;
+  height: 8%;
+  border-radius: 50% 50% 48% 52%;
+  background: var(--green);
+  box-shadow: inset 0 -5px 9px rgba(22, 82, 35, 0.24);
+}
+
+.flavoursync-menu .garnish-one {
+  right: 22%;
+  bottom: 33%;
+  transform: rotate(22deg);
+  animation-delay: 760ms;
+}
+
+.flavoursync-menu .garnish-two {
+  left: 26%;
+  bottom: 44%;
+  width: 8%;
+  background: var(--lemon);
+  transform: rotate(-18deg);
+  animation-delay: 840ms;
+}
+
+.flavoursync-menu .layer-cup {
+  right: 20%;
+  bottom: 21%;
+  width: 13%;
+  height: 12%;
+  border: 4px solid rgba(255, 247, 229, 0.9);
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 8px 15px rgba(80, 39, 16, 0.18);
+  animation-delay: 940ms;
+}
+
+.flavoursync-menu .cup-two {
+  right: 15%;
+  bottom: 34%;
+  width: 11%;
+  height: 10%;
+  background: var(--gravy);
+  animation-delay: 1020ms;
+}
+
+.flavoursync-menu .motion-steam {
+  z-index: 4;
+  bottom: 48%;
+  width: 8px;
+  height: 42px;
+  border-radius: 999px;
+  border-left: 2px solid rgba(126, 59, 25, 0.34);
+  filter: blur(0.1px);
+  animation: steamWisp 2.8s ease-in-out infinite;
+}
+
+.flavoursync-menu .steam-one { left: 39%; animation-delay: 100ms; }
+.flavoursync-menu .steam-two { left: 50%; height: 52px; animation-delay: 420ms; }
+.flavoursync-menu .steam-three { left: 59%; animation-delay: 760ms; }
+
+.flavoursync-menu .motion-spice,
+.flavoursync-menu .motion-dot {
+  z-index: 5;
+  border-radius: 999px;
+  animation: spiceOrbit 4.8s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 130ms);
+}
+
+.flavoursync-menu .motion-spice {
+  width: 8px;
+  height: 8px;
+  background: #c7471f;
+  box-shadow: 0 0 0 5px rgba(199, 71, 31, 0.12);
+}
+
+.flavoursync-menu .spice-one { left: 20%; top: 24%; --i: 1; }
+.flavoursync-menu .spice-two { right: 23%; top: 22%; --i: 3; background: #f2b13d; }
+.flavoursync-menu .spice-three { right: 18%; bottom: 41%; --i: 5; background: #4f8d47; }
+
+.flavoursync-menu .motion-dot {
+  width: 18px;
+  height: 18px;
+  left: var(--dot-x);
+  top: var(--dot-y);
+  background: var(--protein-hot);
+  box-shadow: 0 10px 18px rgba(84, 39, 18, 0.18);
+  opacity: 0.86;
+}
+
+.flavoursync-menu .motion-mutton { background: #5b2618; }
+.flavoursync-menu .motion-chicken { background: #d85b24; }
+.flavoursync-menu .motion-paneer { background: #ffe7a8; border-radius: 5px; }
+.flavoursync-menu .motion-rice { width: 22px; height: 9px; background: #fff0c5; }
+.flavoursync-menu .motion-roti { width: 28px; height: 14px; background: #d9a55c; }
+.flavoursync-menu .motion-salad { background: #4f8d47; }
+.flavoursync-menu .motion-lemon { background: #f4ce3c; }
+.flavoursync-menu .motion-chutney { background: #2f7d47; }
+.flavoursync-menu .motion-dal { background: #cfa740; }
+.flavoursync-menu .motion-pickle { background: #8e6a24; }
+.flavoursync-menu .motion-spice { background: #c7471f; }
+
+.flavoursync-menu .scene-chicken {
+  --gravy: #b84622;
+  --gravy-dark: #6d2114;
+  --protein: #7b2c1b;
+  --protein-hot: #ef6b2d;
+}
+
+.flavoursync-menu .scene-mutton,
+.flavoursync-menu .scene-party {
+  --gravy: #7f2418;
+  --gravy-dark: #43130e;
+  --protein: #4f2118;
+  --protein-hot: #ba4724;
+}
+
+.flavoursync-menu .scene-biryani {
+  --gravy: #df7d24;
+  --gravy-dark: #8e3619;
+  --protein: #8c3a1f;
+  --protein-hot: #e56a24;
+  --rice: #ffe097;
+}
+
+.flavoursync-menu .scene-kebab {
+  --gravy: #9f2c18;
+  --protein: #4a1710;
+  --protein-hot: #e86429;
+  --green: #2f7d47;
+}
+
+.flavoursync-menu .scene-paneer {
+  --gravy: #d85522;
+  --gravy-dark: #8d2e18;
+  --protein: #fff0ba;
+  --protein-hot: #ffe09b;
+}
+
+.flavoursync-menu .scene-bowl,
+.flavoursync-menu .scene-thali {
+  --gravy: #c9922d;
+  --gravy-dark: #6c431b;
+  --protein: #d25a24;
+  --protein-hot: #f3b64c;
+  --green: #579045;
+}
+
+.flavoursync-menu .scene-biryani .layer-rice {
+  left: 25%;
+  bottom: 21%;
+  width: 50%;
+  height: 26%;
+}
+
+.flavoursync-menu .scene-biryani .layer-roti,
+.flavoursync-menu .scene-kebab .layer-roti {
+  display: none;
+}
+
+.flavoursync-menu .scene-kebab .motion-skewer {
+  left: 24%;
+  bottom: 35%;
+  width: 53%;
+  height: 6px;
+  border-radius: 999px;
+  background: #6c4421;
+  transform: rotate(-12deg);
+  animation: skewerSizzle 3.6s ease-in-out infinite;
+}
+
+.flavoursync-menu .scene-kebab .layer-protein-a,
+.flavoursync-menu .scene-kebab .layer-protein-b {
+  width: 20%;
+  height: 10%;
+  border-radius: 10px;
+}
+
+.flavoursync-menu .scene-party .motion-tray,
+.flavoursync-menu .scene-thali .motion-tray {
+  z-index: 2;
+  left: 18%;
+  bottom: 18%;
+  width: 64%;
+  height: 36%;
+  border: 3px solid rgba(180, 154, 112, 0.8);
+  border-radius: 18px;
+  background: rgba(255, 247, 229, 0.45);
+  box-shadow: inset 0 0 0 12px rgba(255, 255, 255, 0.3);
+  animation: layerDrop 4.6s cubic-bezier(.2,.82,.2,1) infinite;
+}
+
+.flavoursync-menu .scene-paneer .layer-protein {
+  border-radius: 8px;
+}
+
+.flavoursync-menu .dish-card:hover .dish-motion {
+  transform: translateZ(22px) scale(1.015);
+}
+
+.flavoursync-menu .dish-card:hover .motion-layer {
+  animation-duration: 3.4s;
+}
+
+.flavoursync-menu .dish-card:hover .motion-dot,
+.flavoursync-menu .dish-card:hover .motion-spice {
+  animation-duration: 3.2s;
+}
+
+.flavoursync-menu .cart-dish-motion {
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  border: 1px solid rgba(65, 36, 20, 0.12);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 46% 36%, rgba(255, 186, 74, 0.36), transparent 42%),
+    #fff6e8;
+}
+
+.flavoursync-menu .cart-dish-motion .motion-glow,
+.flavoursync-menu .cart-dish-motion .motion-steam,
+.flavoursync-menu .cart-dish-motion .motion-dot,
+.flavoursync-menu .cart-dish-motion .motion-spice,
+.flavoursync-menu .cart-dish-motion .layer-cup,
+.flavoursync-menu .cart-dish-motion .motion-skewer,
+.flavoursync-menu .cart-dish-motion .motion-tray {
+  display: none;
+}
+
+.flavoursync-menu .cart-dish-motion .motion-plate {
+  left: 50%;
+  bottom: 12px;
+  width: 58px;
+  height: 29px;
+}
+
+.flavoursync-menu .cart-dish-motion .layer-rice {
+  left: 18px;
+  bottom: 27px;
+  width: 24px;
+  height: 16px;
+}
+
+.flavoursync-menu .cart-dish-motion .layer-gravy {
+  right: 15px;
+  bottom: 26px;
+  width: 25px;
+  height: 22px;
+  border-width: 3px;
+}
+
+.flavoursync-menu .cart-dish-motion .layer-protein {
+  width: 16px;
+  height: 12px;
+}
+
+.flavoursync-menu .cart-dish-motion .layer-protein-a { left: 27px; bottom: 37px; }
+.flavoursync-menu .cart-dish-motion .layer-protein-b { right: 23px; bottom: 35px; }
+.flavoursync-menu .cart-dish-motion .layer-roti {
+  left: 11px;
+  bottom: 29px;
+  width: 27px;
+  height: 15px;
+}
+
+.flavoursync-menu .cart-dish-motion .layer-garnish {
+  right: 13px;
+  bottom: 36px;
+  width: 9px;
+  height: 7px;
 }
 
 .flavoursync-menu .dish-head h3,
 .flavoursync-menu .cart-item h4 {
   color: #20150e;
+}
+
+.flavoursync-menu .dish-body {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  align-content: start;
+}
+
+.flavoursync-menu .dish-head {
+  align-items: center;
+}
+
+.flavoursync-menu .price {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid rgba(190, 91, 32, 0.18);
+  border-radius: 999px;
+  color: #8f3f19;
+  background: #fff3df;
 }
 
 .flavoursync-menu .dish-card p {
@@ -3974,24 +4576,106 @@ label span {
   line-height: 1.35;
 }
 
+.flavoursync-menu .taste-profile {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding: 12px;
+  border: 1px solid rgba(65, 36, 20, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 243, 223, 0.88)),
+    var(--card-strong);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.76) inset;
+}
+
+.flavoursync-menu .taste-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.flavoursync-menu .taste-notes span {
+  padding: 5px 8px;
+  border: 1px solid rgba(190, 91, 32, 0.13);
+  border-radius: 999px;
+  color: #7a3c1d;
+  background: #fffaf0;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.flavoursync-menu .taste-bars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.flavoursync-menu .taste-bars span {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.flavoursync-menu .taste-bars b {
+  color: #604834;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.flavoursync-menu .taste-bars i {
+  position: relative;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(65, 36, 20, 0.12);
+}
+
+.flavoursync-menu .taste-bars i::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--value);
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22150f, #c85824, #f2b13d);
+  transform-origin: left;
+  animation: tasteFill 1400ms cubic-bezier(.2,.8,.2,1) both;
+  content: "";
+}
+
 .flavoursync-menu .dish-card .btn-soft,
 .flavoursync-menu .checkout-button,
 .flavoursync-menu .btn-primary {
   color: #fff8eb;
   background: linear-gradient(135deg, #21150f, #c95924 58%, #f0a334);
+  box-shadow: 0 16px 32px rgba(190, 91, 32, 0.18);
+}
+
+.flavoursync-menu .btn:focus-visible,
+.flavoursync-menu .filter-chip:focus-visible,
+.flavoursync-menu input:focus-visible,
+.flavoursync-menu textarea:focus-visible,
+.flavoursync-menu select:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }
 
 .flavoursync-menu .cart-drawer {
-  background: rgba(18, 11, 7, 0.5);
+  z-index: 2000;
+  background: rgba(18, 11, 7, 0.66);
+  backdrop-filter: blur(6px);
 }
 
 .flavoursync-menu .cart-panel {
   border-color: rgba(65, 36, 20, 0.14);
   background: #fffaf0;
+  opacity: 1;
+  box-shadow: 0 34px 88px rgba(65, 36, 20, 0.28);
 }
 
 .flavoursync-menu .cart-body {
   padding-right: 6px;
+  background: #fffaf0;
 }
 
 .flavoursync-menu .cart-item {
@@ -4015,9 +4699,10 @@ label span {
 .flavoursync-menu .cart-footer {
   position: sticky;
   bottom: 0;
+  z-index: 3;
   padding-top: 12px;
   border-top: 1px solid rgba(65, 36, 20, 0.12);
-  background: linear-gradient(180deg, rgba(255, 250, 240, 0.88), #fffaf0 28%);
+  background: linear-gradient(180deg, rgba(255, 250, 240, 0.98), #fffaf0 28%);
 }
 
 .flavoursync-menu .checkout-form {
@@ -4071,29 +4756,48 @@ label span {
   }
 
   .flavoursync-menu .dish-card {
+    grid-column: auto;
     border-radius: 8px;
   }
 
-  .flavoursync-menu .dish-image {
+  .flavoursync-menu .dish-card:first-child {
+    grid-column: auto;
+  }
+
+  .flavoursync-menu .dish-video-shell {
     height: 240px;
+  }
+
+  .flavoursync-menu .dish-card:first-child .dish-video-shell {
+    height: 260px;
+  }
+
+  .flavoursync-menu .ingredient-floaters {
+    inset: 12px;
+  }
+
+  .flavoursync-menu .ingredient-chip {
+    max-width: 132px;
+    padding: 7px 9px;
+    font-size: 0.68rem;
+  }
+
+  .flavoursync-menu .recipe-reel {
+    left: 12px;
+    right: 12px;
+    bottom: 28px;
   }
 
   .flavoursync-menu .dish-body {
     padding: 16px;
   }
 
-  .flavoursync-menu .ingredient-burst {
-    inset: 8px;
-  }
-
-  .flavoursync-menu .ingredient-burst span {
-    max-width: 132px;
-    padding: 6px 8px;
-    font-size: 0.68rem;
-  }
-
   .flavoursync-menu .dish-card p {
     min-height: 0;
+  }
+
+  .flavoursync-menu .taste-bars {
+    grid-template-columns: 1fr;
   }
 
   .cart-panel {
@@ -4116,7 +4820,7 @@ label span {
     grid-template-columns: 68px minmax(0, 1fr);
   }
 
-  .cart-item img {
+  .flavoursync-menu .cart-video-thumb {
     width: 68px;
     height: 68px;
   }
@@ -4132,15 +4836,16 @@ label span {
 }
 
 @media (max-width: 420px) {
-  .flavoursync-menu .dish-image {
+  .flavoursync-menu .dish-video-shell {
     height: 218px;
   }
 
-  .flavoursync-menu .ingredient-burst span {
+  .flavoursync-menu .ingredient-chip {
     max-width: 118px;
+    font-size: 0.62rem;
   }
 
-  .flavoursync-menu .ingredient-burst span:nth-child(7) {
+  .flavoursync-menu .ingredient-chip:nth-child(6) {
     display: none;
   }
 
@@ -4155,7 +4860,7 @@ label span {
     padding: 9px;
   }
 
-  .cart-item img {
+  .flavoursync-menu .cart-video-thumb {
     width: 58px;
     height: 58px;
   }
@@ -4166,6 +4871,112 @@ label span {
 
   .cart-row strong {
     width: 100%;
+  }
+}
+
+@keyframes dishGlow {
+  0%, 100% {
+    opacity: 0.64;
+    transform: scale(0.94);
+  }
+
+  50% {
+    opacity: 0.92;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes layerDrop {
+  0%, 12% {
+    opacity: 0;
+    transform: translateY(-42px) scale(0.86) rotate(-7deg);
+  }
+
+  27%, 76% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96) rotate(5deg);
+  }
+}
+
+@keyframes steamWisp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scaleY(0.72) rotate(12deg);
+  }
+
+  42% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-38px) scaleY(1.2) rotate(-10deg);
+  }
+}
+
+@keyframes spiceOrbit {
+  0%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.78);
+  }
+
+  22%, 78% {
+    opacity: 0.88;
+  }
+
+  50% {
+    transform: translate3d(12px, -10px, 0) scale(1.04);
+  }
+}
+
+@keyframes skewerSizzle {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateY(0) rotate(-12deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-4px) rotate(-10deg);
+  }
+}
+
+@keyframes reelProgress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes burgerIngredientFloat {
+  0%, 100% {
+    opacity: 0.84;
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.04);
+  }
+}
+
+@keyframes recipeStepPulse {
+  0%, 100% {
+    opacity: 0.72;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
   }
 }
 
@@ -4183,6 +4994,16 @@ label span {
   100% {
     opacity: 0;
     transform: translateY(-13px) scale(0.96);
+  }
+}
+
+@keyframes tasteFill {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
   }
 }
 
@@ -4302,7 +5123,7 @@ label span {
   position: relative;
   min-height: calc(100svh - var(--topbar) - 38px);
   display: grid;
-  grid-template-columns: minmax(280px, 0.74fr) minmax(420px, 1fr);
+  grid-template-columns: minmax(360px, 0.9fr) minmax(420px, 1fr);
   gap: clamp(24px, 5vw, 72px);
   align-items: center;
   padding: 86px max(18px, calc((100vw - 1180px) / 2)) 136px;
@@ -4443,16 +5264,17 @@ label span {
 .reel-hero-copy {
   position: relative;
   z-index: 4;
-  max-width: 640px;
+  max-width: 720px;
   padding-top: 54px;
   animation: reelCopyIn 780ms cubic-bezier(.2,.8,.2,1) both;
 }
 
 .reel-hero-copy h1 {
-  max-width: 700px;
+  max-width: 720px;
   margin-bottom: 18px;
   color: #fff6e8;
-  font-size: clamp(3rem, 6vw, 6.25rem);
+  font-size: clamp(3rem, 5.2vw, 5.35rem);
+  line-height: 0.94;
   text-shadow: 0 16px 42px rgba(0, 0, 0, 0.48);
 }
 
@@ -4487,46 +5309,28 @@ label span {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.story-caption {
-  position: absolute;
-  z-index: 8;
-  top: clamp(170px, 24vh, 248px);
-  left: 50%;
-  width: min(880px, calc(100vw - 80px));
-  padding: 16px 24px;
-  border-radius: 8px;
-  color: #fff;
-  background: #050505;
-  font-size: clamp(1.85rem, 4.4vw, 4.5rem);
-  font-weight: 900;
-  line-height: 1;
-  text-align: center;
-  transform: translateX(-50%) rotate(-0.6deg);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.52);
-  animation: captionPunch 1150ms cubic-bezier(.2,.8,.2,1) both;
-}
-
 .reel-stage {
   position: relative;
   z-index: 3;
   align-self: center;
-  min-height: 560px;
+  min-height: 640px;
   display: grid;
   align-content: center;
+  justify-items: center;
   perspective: 1200px;
 }
 
 .browser-strip {
-  width: min(760px, 100%);
+  width: min(420px, 100%);
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 0;
-  border-radius: 12px 12px 0 0;
+  border-radius: 28px 28px 0 0;
   color: rgba(255, 246, 232, 0.72);
-  background: rgba(255, 246, 232, 0.1);
+  background: linear-gradient(135deg, rgba(255, 246, 232, 0.18), rgba(255, 178, 46, 0.08));
   backdrop-filter: blur(16px);
 }
 
@@ -4547,26 +5351,39 @@ label span {
 
 .stage-screen {
   position: relative;
-  width: min(760px, 100%);
-  aspect-ratio: 16 / 10;
+  width: min(420px, 100%);
+  aspect-ratio: 9 / 16;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  border-radius: 0 0 12px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 0 0 30px 30px;
   background: #130d0a;
-  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.54);
-  transform: rotateX(2deg) rotateY(-4deg);
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.54),
+    0 0 0 10px rgba(255, 246, 232, 0.04);
+  transform: rotateX(2deg) rotateY(-6deg);
   animation: screenFloat 5.8s ease-in-out infinite;
 }
 
-.stage-bg {
+.stage-video,
+.stage-vignette {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.stage-video {
   object-fit: cover;
-  opacity: 0.28;
-  filter: blur(9px) saturate(1.25);
-  transform: scale(1.08);
+  opacity: 0.94;
+  filter: saturate(1.14) contrast(1.08);
+}
+
+.stage-vignette {
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(9, 7, 6, 0.12), rgba(9, 7, 6, 0.08) 36%, rgba(9, 7, 6, 0.78)),
+    radial-gradient(circle at 52% 36%, transparent 0 26%, rgba(226, 75, 34, 0.18) 46%, rgba(9, 7, 6, 0.35) 100%);
+  pointer-events: none;
 }
 
 .hero-dish {
@@ -4606,7 +5423,7 @@ label span {
 
 .sauce-streak {
   position: absolute;
-  z-index: 5;
+  z-index: 4;
   width: 44%;
   height: 12px;
   border-radius: 999px;
@@ -4630,14 +5447,14 @@ label span {
 
 .pack-reveal {
   position: absolute;
-  z-index: 6;
-  left: 8%;
-  top: 12%;
-  width: min(260px, 40%);
+  z-index: 5;
+  left: 7%;
+  top: 7%;
+  width: min(212px, 48%);
   display: grid;
   justify-items: center;
   gap: 8px;
-  padding: 24px 18px;
+  padding: 16px 14px;
   border: 1px solid rgba(255, 90, 36, 0.42);
   border-radius: 8px;
   color: #fff6e8;
@@ -4648,8 +5465,8 @@ label span {
 }
 
 .pack-reveal img {
-  width: 54px;
-  height: 54px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -4664,6 +5481,105 @@ label span {
   color: rgba(255, 246, 232, 0.76);
   font-size: 0.78rem;
   font-weight: 900;
+}
+
+.taste-sync-card {
+  position: absolute;
+  z-index: 5;
+  right: 6%;
+  bottom: 7%;
+  width: min(214px, 52%);
+  display: grid;
+  gap: 9px;
+  padding: 16px;
+  border: 1px solid rgba(255, 210, 126, 0.22);
+  border-radius: 8px;
+  color: #fff6e8;
+  background: linear-gradient(145deg, rgba(255, 246, 232, 0.16), rgba(20, 8, 3, 0.72));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(18px);
+}
+
+.reel-ingredient-tags {
+  position: absolute;
+  z-index: 5;
+  top: 34%;
+  right: 6%;
+  display: grid;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.reel-ingredient-tags span {
+  width: max-content;
+  max-width: 170px;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: #fff6e8;
+  background: rgba(9, 7, 6, 0.54);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  animation: ingredientFloat 3.2s ease-in-out infinite;
+}
+
+.reel-ingredient-tags span:nth-child(2) {
+  justify-self: end;
+  animation-delay: 220ms;
+}
+
+.reel-ingredient-tags span:nth-child(3) {
+  animation-delay: 440ms;
+}
+
+.taste-sync-card > span {
+  width: max-content;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #1d0c05;
+  background: #ffb22e;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.taste-sync-card strong {
+  font-size: 1.18rem;
+}
+
+.taste-sync-card div {
+  display: grid;
+  gap: 5px;
+}
+
+.taste-sync-card b {
+  color: rgba(255, 246, 232, 0.76);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.taste-sync-card i {
+  position: relative;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.taste-sync-card i::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--value);
+  border-radius: inherit;
+  background: linear-gradient(90deg, #25d366, #ffb22e, #ff4a1f);
+  animation: tasteFill 1400ms cubic-bezier(.2,.8,.2,1) both;
+  content: "";
 }
 
 .story-bottom {
@@ -4917,12 +5833,6 @@ label span {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@keyframes captionPunch {
-  0% { opacity: 0; transform: translateX(-50%) translateY(18px) scale(0.94) rotate(-1.4deg); }
-  70% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1.02) rotate(-0.6deg); }
-  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1) rotate(-0.6deg); }
-}
-
 @keyframes screenFloat {
   0%, 100% { transform: rotateX(2deg) rotateY(-4deg) translateY(0); }
   50% { transform: rotateX(1deg) rotateY(2deg) translateY(-10px); }
@@ -4967,12 +5877,12 @@ label span {
   }
 
   .reel-stage {
-    min-height: 430px;
+    min-height: 650px;
   }
 
-  .story-caption {
-    top: 170px;
-    width: min(760px, calc(100vw - 58px));
+  .browser-strip,
+  .stage-screen {
+    width: min(390px, 100%);
   }
 
   .reel-strip {
@@ -5006,53 +5916,55 @@ label span {
     height: 42px;
   }
 
-  .story-caption {
-    top: 144px;
-    width: calc(100vw - 28px);
-    padding: 12px 14px;
-    font-size: clamp(1.55rem, 9vw, 2.8rem);
-  }
-
   .reel-hero-copy {
     padding-top: 92px;
   }
 
   .reel-hero-copy h1 {
-    font-size: clamp(2.52rem, 14vw, 4.4rem);
+    font-size: clamp(2.42rem, 12vw, 3.75rem);
   }
 
   .reel-stage {
-    min-height: 340px;
+    min-height: 520px;
   }
 
   .stage-screen {
-    aspect-ratio: 4 / 4.7;
+    width: min(318px, calc(100vw - 64px));
+    aspect-ratio: 9 / 16;
     transform: none;
   }
 
   .browser-strip {
-    max-width: calc(100vw - 28px);
-  }
-
-  .hero-dish-main {
-    width: 68%;
-    right: 5%;
-    bottom: 12%;
-  }
-
-  .hero-dish-left {
-    width: 46%;
-    left: 4%;
-  }
-
-  .hero-dish-right {
-    width: 42%;
-    right: 5%;
+    width: min(318px, calc(100vw - 64px));
   }
 
   .pack-reveal {
-    width: 52%;
-    padding: 16px 12px;
+    width: 50%;
+    padding: 13px 11px;
+  }
+
+  .taste-sync-card {
+    right: 4%;
+    bottom: 5%;
+    width: min(192px, 60%);
+    padding: 12px;
+    gap: 7px;
+  }
+
+  .taste-sync-card strong {
+    font-size: 1rem;
+  }
+
+  .reel-ingredient-tags {
+    top: 33%;
+    right: 5%;
+    gap: 7px;
+  }
+
+  .reel-ingredient-tags span {
+    max-width: 138px;
+    padding: 7px 9px;
+    font-size: 0.62rem;
   }
 
   .reel-action-rail {

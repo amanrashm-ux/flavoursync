@@ -5,7 +5,7 @@ Professional static website and ordering experience for FlavourSync.in.
 ## Pages
 
 - `index.html` - animated reel-style homepage and brand overview
-- `menu.html` - live menu, animated ingredient cards, cart checkout and schedule mode
+- `menu.html` - live menu, GSAP-enhanced ingredient cards, taste profiles, cart checkout and schedule mode
 - `schedule.html` - dedicated scheduled order flow
 - `about.html` - about us page
 - `story.html` - deeper brand story page
@@ -21,9 +21,13 @@ Professional static website and ordering experience for FlavourSync.in.
 - `assets/flavoursync-icon.png` - cropped icon mark used for loader/header
 - `assets/pwa-icon-192.png`, `assets/pwa-icon-512.png`, `assets/pwa-maskable-512.png` - installable app icons
 - `assets/apple-touch-icon.png` - iOS home-screen icon
-- `assets/menu/` - local dish photos used by menu cards
+- `assets/menu/` - local food photos used on supporting homepage/credit sections
+- `assets/menu-video/` - locally hosted Coverr MP4 clips used for animated menu cards and cart previews
+- Menu cards and cart rows use looping video previews with GSAP/floating ingredient overlays instead of static food photos
+- `assets/video/flavoursync-reference-reel.mp4` - supplied 24-second food reel used in the homepage hero
 - `assets/packaging/flavoursync-packaging-spec.csv` - vendor-ready pack size sheet
 - `assets/packaging/label-sheet.html` - printable A4 label sheet
+- `kinetic.js` - GSAP motion layer for reel, menu and card interactions
 
 ## PWA
 

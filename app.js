@@ -15,7 +15,8 @@
       description: "Slow-cooked mutton gravy with four soft rotis, jeera rice, salad and house chutney.",
       meta: ["Non-veg", "Slow cooked", "Medium hot"],
       ingredients: ["Mutton", "Handi gravy", "Soft roti", "Jeera rice", "Onion", "Lemon", "House chutney"],
-      image: "assets/menu/handi-mutton.jpg"
+      video: "assets/menu-video/mutton-grill.mp4",
+      taste: { heat: 74, richness: 94, smoke: 32, notes: ["bone-rich", "silky gravy", "deep masala"] }
     },
     {
       id: "chicken-masala",
@@ -27,7 +28,8 @@
       description: "Boneless-style chicken masala with rice, two rotis, salad and spicy chutney.",
       meta: ["Non-veg", "Gravy", "Serves 1"],
       ingredients: ["Chicken", "Masala gravy", "Rice", "Roti", "Potato", "Mint", "Spicy chutney"],
-      image: "assets/menu/chicken-masala.jpg"
+      video: "assets/menu-video/chicken-grill.mp4",
+      taste: { heat: 78, richness: 88, smoke: 26, notes: ["juicy curry", "ginger kick", "masala oil"] }
     },
     {
       id: "dum-chicken-biryani",
@@ -39,7 +41,8 @@
       description: "Aromatic chicken biryani with raita, salan and fried onion garnish.",
       meta: ["Non-veg", "Rice meal", "Raita side"],
       ingredients: ["Chicken", "Basmati rice", "Fried onion", "Raita", "Salan", "Cardamom", "Saffron rice"],
-      image: "assets/menu/biryani.jpg"
+      video: "assets/menu-video/biryani-spice.mp4",
+      taste: { heat: 66, richness: 76, smoke: 22, notes: ["dum aroma", "fried onion", "raita cool"] }
     },
     {
       id: "tandoori-kebab-box",
@@ -51,7 +54,8 @@
       description: "Charred kebab pieces with onion rings, mint chutney and lemon.",
       meta: ["Non-veg", "Starter", "Smoky"],
       ingredients: ["Kebab", "Tandoori masala", "Onion", "Lemon", "Mint chutney", "Coriander", "Char smoke"],
-      image: "assets/menu/kebab-box.jpg"
+      video: "assets/menu-video/kebab-skewers.mp4",
+      taste: { heat: 72, richness: 70, smoke: 96, notes: ["charred edge", "mint snap", "lemon lift"] }
     },
     {
       id: "party-mutton-tray",
@@ -63,7 +67,8 @@
       description: "Group-size mutton gravy tray with rice, rotis, salad and chutney cups.",
       meta: ["Non-veg", "Advance order", "Serves 4-6"],
       ingredients: ["Mutton", "Party gravy", "Rice", "Roti", "Salad", "Chutney cups", "Tray seal"],
-      image: "assets/menu/party-mutton.jpg"
+      video: "assets/menu-video/party-bbq.mp4",
+      taste: { heat: 82, richness: 92, smoke: 74, notes: ["party grill", "fat glaze", "shareable"] }
     },
     {
       id: "chicken-dal-rice",
@@ -75,7 +80,8 @@
       description: "Juicy chicken masala served over dal rice with pickle and onion salad.",
       meta: ["Non-veg", "Comfort bowl", "Lunch"],
       ingredients: ["Chicken", "Dal", "Rice", "Ghee tadka", "Pickle", "Onion salad", "Masala oil"],
-      image: "assets/menu/dal-rice.jpg"
+      video: "assets/menu-video/dal-sauce.mp4",
+      taste: { heat: 58, richness: 82, smoke: 20, notes: ["comfort bowl", "ghee tadka", "pickle pop"] }
     },
     {
       id: "paneer-butter-combo",
@@ -87,7 +93,8 @@
       description: "Paneer butter masala with rice, two rotis and salad for vegetarian orders.",
       meta: ["Veg", "Creamy gravy", "Serves 1"],
       ingredients: ["Paneer", "Butter gravy", "Cream", "Rice", "Roti", "Salad", "Kasuri methi"],
-      image: "assets/menu/paneer-combo.jpg"
+      video: "assets/menu-video/paneer-lemon.mp4",
+      taste: { heat: 42, richness: 90, smoke: 18, notes: ["creamy", "butter finish", "methi aroma"] }
     },
     {
       id: "classic-veg-thali",
@@ -99,7 +106,8 @@
       description: "Dal, seasonal sabzi, rice, rotis, salad and chutney for mixed group orders.",
       meta: ["Veg", "Thali", "Serves 1"],
       ingredients: ["Dal", "Sabzi", "Rice", "Roti", "Salad", "Chutney", "Pickle"],
-      image: "assets/menu/veg-thali.jpg"
+      video: "assets/menu-video/thali-pepper.mp4",
+      taste: { heat: 46, richness: 68, smoke: 12, notes: ["balanced", "home-style", "pickle bite"] }
     }
   ];
 
@@ -205,18 +213,70 @@
     });
   }
 
+  function sceneType(item) {
+    if (item.id.includes("biryani")) return "biryani";
+    if (item.id.includes("kebab")) return "kebab";
+    if (item.id.includes("party")) return "party";
+    if (item.id.includes("mutton")) return "mutton";
+    if (item.id.includes("paneer")) return "paneer";
+    if (item.id.includes("thali")) return "thali";
+    if (item.id.includes("dal")) return "bowl";
+    return "chicken";
+  }
+
+  function ingredientKind(ingredient) {
+    const value = ingredient.toLowerCase();
+    if (value.includes("mutton")) return "mutton";
+    if (value.includes("chicken") || value.includes("kebab")) return "chicken";
+    if (value.includes("paneer")) return "paneer";
+    if (value.includes("rice") || value.includes("basmati")) return "rice";
+    if (value.includes("roti")) return "roti";
+    if (value.includes("onion") || value.includes("salad")) return "salad";
+    if (value.includes("lemon")) return "lemon";
+    if (value.includes("chutney") || value.includes("mint")) return "chutney";
+    if (value.includes("dal")) return "dal";
+    if (value.includes("pickle")) return "pickle";
+    return "spice";
+  }
+
+  function renderDishMotion(item, variant = "card") {
+    const scene = sceneType(item);
+    const floaters = item.ingredients.slice(0, 6).map((ingredient, index) => {
+      return `<span class="ingredient-chip ingredient-${ingredientKind(ingredient)}" style="--i: ${index};">${ingredient}</span>`;
+    }).join("");
+
+    if (variant === "cart") {
+      return `
+        <div class="cart-video-thumb scene-${scene}" aria-hidden="true">
+          <video autoplay muted loop playsinline preload="metadata" src="${item.video}"></video>
+          <span></span>
+        </div>`;
+    }
+
+    return `
+      <div class="dish-video-shell scene-${scene}" aria-label="Animated preview for ${item.name}">
+        <video class="dish-video" autoplay muted loop playsinline preload="metadata">
+          <source src="${item.video}" type="video/mp4">
+        </video>
+        <span class="dish-video-scrim"></span>
+        <span class="video-progress"></span>
+        <span class="dish-tag">${item.tag}</span>
+        <span class="dish-category">${item.category}</span>
+        <div class="ingredient-floaters" aria-hidden="true">${floaters}</div>
+        <div class="recipe-reel">
+          <span>Cut</span>
+          <span>Marinate</span>
+          <span>Sear</span>
+          <span>Pack hot</span>
+        </div>
+      </div>`;
+  }
+
   function renderMenu() {
     const items = filteredItems();
     menuGrid.innerHTML = items.length ? items.map(item => `
-      <article class="dish-card">
-        <div class="dish-image">
-          <img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async">
-          <span class="dish-tag">${item.tag}</span>
-          <span class="dish-category">${item.category}</span>
-          <div class="ingredient-burst" aria-label="Key ingredients for ${item.name}">
-            ${item.ingredients.map((ingredient, index) => `<span style="--ingredient-index: ${index}">${ingredient}</span>`).join("")}
-          </div>
-        </div>
+      <article class="dish-card" data-kinetic-card data-dish-id="${item.id}" style="--taste-heat: ${item.taste.heat}%; --taste-richness: ${item.taste.richness}%; --taste-smoke: ${item.taste.smoke}%;">
+        ${renderDishMotion(item)}
         <div class="dish-body">
           <div class="dish-head">
             <h3>${item.name}</h3>
@@ -224,6 +284,14 @@
           </div>
           <p>${item.description}</p>
           <div class="dish-meta">${item.meta.map(meta => `<span>${meta}</span>`).join("")}</div>
+          <div class="taste-profile" aria-label="Taste profile for ${item.name}">
+            <div class="taste-notes">${item.taste.notes.map(note => `<span>${note}</span>`).join("")}</div>
+            <div class="taste-bars">
+              <span><b>Heat</b><i style="--value: ${item.taste.heat}%"></i></span>
+              <span><b>Rich</b><i style="--value: ${item.taste.richness}%"></i></span>
+              <span><b>Smoke</b><i style="--value: ${item.taste.smoke}%"></i></span>
+            </div>
+          </div>
           <div class="ingredient-list"><strong>Ingredients</strong><span>${item.ingredients.join(", ")}</span></div>
           <button class="btn btn-soft add-item" type="button" data-id="${item.id}">
             <i data-lucide="plus"></i> Add to Order
@@ -233,6 +301,7 @@
     `).join("") : `<div class="cart-empty full-field">No dishes match that search.</div>`;
 
     if (window.lucide) window.lucide.createIcons();
+    menuGrid.dispatchEvent(new CustomEvent("flavoursync:menu-rendered", { bubbles: true }));
   }
 
   function addToCart(id, quantity = 1) {
@@ -291,7 +360,7 @@
         <strong class="cart-group-title">${fulfillment}</strong>
         ${groupLines.map(line => `
           <article class="cart-item">
-            <img src="${line.image}" alt="${line.name}">
+            ${renderDishMotion(line, "cart")}
             <div>
               <h4>${line.name}</h4>
               <p>${formatRs(line.price)} each</p>
