@@ -1,4 +1,4 @@
-const CACHE_NAME = "flavoursync-reel-v4";
+const CACHE_NAME = "flavoursync-reel-v5";
 const APP_SHELL = [
   "./",
   "./index.html",
